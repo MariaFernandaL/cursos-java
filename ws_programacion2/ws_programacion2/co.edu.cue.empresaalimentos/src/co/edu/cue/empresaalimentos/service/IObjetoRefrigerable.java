@@ -1,7 +1,7 @@
 package co.edu.cue.empresaalimentos.service;
 
 
-public interface ObjetoRefrigerable {
+public interface IObjetoRefrigerable {
 
 	
 	

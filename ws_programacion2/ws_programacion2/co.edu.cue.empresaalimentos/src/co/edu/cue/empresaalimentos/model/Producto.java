@@ -5,6 +5,8 @@ public class Producto {
 	private String codigo;
 	private String nombre;
 	private double precioCompra;
+	private String descripcion;
+	
 	public String getCodigo() {
 		return codigo;
 	}
@@ -22,6 +24,12 @@ public class Producto {
 	}
 	public void setPrecioCompra(double precioCompra) {
 		this.precioCompra = precioCompra;
+	}
+	public String getDescripcion() {
+		return descripcion;
+	}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 	
 	public void calcularPrecioVenta(){

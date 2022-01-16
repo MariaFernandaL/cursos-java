@@ -1,8 +1,8 @@
 package co.edu.cue.empresaalimentos.model;
 
-import co.edu.cue.empresaalimentos.service.ObjetoRefrigerable;
+import co.edu.cue.empresaalimentos.service.IObjetoRefrigerable;
 
-public class DrogaFarmacologica implements ObjetoRefrigerable{
+public class DrogaFarmacologica implements IObjetoRefrigerable{
 
 	private String codigo;
 	private String nombre; 

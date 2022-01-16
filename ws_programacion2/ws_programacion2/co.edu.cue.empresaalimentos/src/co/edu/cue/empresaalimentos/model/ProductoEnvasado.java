@@ -5,6 +5,8 @@ public class ProductoEnvasado extends Producto{
 	private String fechaEnvasado;
 	private double pesoEnvase;
 	private Pais paisOrigen;
+	
+	
 	public String getFechaEnvasado() {
 		return fechaEnvasado;
 	}
