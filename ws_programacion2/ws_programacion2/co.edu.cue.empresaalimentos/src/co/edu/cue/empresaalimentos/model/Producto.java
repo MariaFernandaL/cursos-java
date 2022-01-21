@@ -4,9 +4,19 @@ public class Producto {
 
 	private String codigo;
 	private String nombre;
-	private double precioCompra;
+	private String precioCompra;
 	private String descripcion;
 	
+	public Producto(){
+		
+	}
+	public Producto(String codigo, String nombre, String precioCompra, String descripcion) {
+		super();
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.precioCompra = precioCompra;
+		this.descripcion = descripcion;
+	}
 	public String getCodigo() {
 		return codigo;
 	}
@@ -19,11 +29,11 @@ public class Producto {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public double getPrecioCompra() {
+	public String getPrecioCompra() {
 		return precioCompra;
 	}
-	public void setPrecioCompra(double precioCompra) {
-		this.precioCompra = precioCompra;
+	public void setPrecioCompra(String precio) {
+		this.precioCompra = precio;
 	}
 	public String getDescripcion() {
 		return descripcion;

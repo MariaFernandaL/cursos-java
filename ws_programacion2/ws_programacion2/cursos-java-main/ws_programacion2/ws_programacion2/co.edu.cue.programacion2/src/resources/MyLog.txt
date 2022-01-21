@@ -1,0 +1,12 @@
+ene 17, 2022 8:02:52 AM flujosDatos.EjemplosBasicos archivoRegistro
+INFORMACIÓN: Primer mensaje 1.1
+ene 17, 2022 8:02:52 AM flujosDatos.EjemplosBasicos archivoRegistro
+ADVERTENCIA: Segundo mensaje 2.1
+ene 17, 2022 8:02:52 AM flujosDatos.EjemplosBasicos archivoRegistro
+GRAVE: Tercer mensaje 3.1
+ene 17, 2022 8:03:36 AM flujosDatos.EjemplosBasicos archivoRegistro
+INFORMACIÓN: Primer mensaje 1.1
+ene 17, 2022 8:03:36 AM flujosDatos.EjemplosBasicos archivoRegistro
+ADVERTENCIA: Segundo mensaje 2.1
+ene 17, 2022 8:03:36 AM flujosDatos.EjemplosBasicos archivoRegistro
+GRAVE: Tercer mensaje 3.1

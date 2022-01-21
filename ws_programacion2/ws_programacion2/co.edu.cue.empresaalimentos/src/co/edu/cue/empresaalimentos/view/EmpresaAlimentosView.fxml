@@ -26,9 +26,10 @@
                                     <TextField fx:id="txtDescripcion" layoutX="108.0" layoutY="111.0" prefHeight="31.0" prefWidth="306.0" />
                                     <TextField fx:id="txtPrecio" layoutX="528.0" layoutY="111.0" prefHeight="31.0" prefWidth="306.0" />
                                     <Separator layoutX="12.0" layoutY="178.0" prefHeight="13.0" prefWidth="837.0" />
-                                    <Button fx:id="btnAgregar" layoutX="196.0" layoutY="225.0" mnemonicParsing="false" onAction="#agregarProductoAction" text="Agregar" />
-                                    <Button fx:id="btnActualizar" layoutX="398.0" layoutY="225.0" mnemonicParsing="false" onAction="#actualizarProductoAction" text="Actualizar" />
+                                    <Button fx:id="btnAgregar" layoutX="100.0" layoutY="225.0" mnemonicParsing="false" onAction="#agregarProductoAction" text="Agregar" />
+                                    <Button fx:id="btnActualizar" layoutX="261.0" layoutY="225.0" mnemonicParsing="false" onAction="#actualizarProductoAction" text="Actualizar" />
                                     <Button fx:id="btnEliminar" layoutX="616.0" layoutY="225.0" mnemonicParsing="false" onAction="#eliminarProductoAction" text="Eliminar" />
+                                    <Button fx:id="btnNuevo" layoutX="453.0" layoutY="225.0" mnemonicParsing="false" onAction="#nuevoProductoAction" text="Nuevo" />
                                  </children></AnchorPane>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="256.0" prefWidth="818.0">
                                  <children>

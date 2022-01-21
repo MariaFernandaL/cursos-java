@@ -46,8 +46,4 @@ public class Aplicacion extends Application {
 			e.printStackTrace();
 		}
 	}
-
-
-
-	  
 }

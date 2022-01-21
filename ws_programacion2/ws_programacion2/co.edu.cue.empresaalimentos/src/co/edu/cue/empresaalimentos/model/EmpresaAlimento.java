@@ -4,25 +4,28 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-public class EmpresaAlimento {
+public class EmpresaAlimento{
 
-	private String nombre;
+	private String nombreE;
 	
 	private ArrayList<Proveedor> listaProveedores = new ArrayList<Proveedor>();
 	private ArrayList<Producto> listaProductos= new ArrayList<Producto>();
 	private ArrayList<DrogaFarmacologica> listaDrogaFarmacologica= new ArrayList<DrogaFarmacologica>();
 	
+	public EmpresaAlimento(){
+		
+	}
 	
-	public EmpresaAlimento() {
-
+	public EmpresaAlimento(String nombre) {
+		nombreE= nombre;
 	}
 
 	public String getNombre() {
-		return nombre;
+		return nombreE;
 	}
 
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		this.nombreE = nombre;
 	}
 
 	public ArrayList<Proveedor> getListaProveedores() {
@@ -50,27 +53,8 @@ public class EmpresaAlimento {
 	}
 
 	//productos
-	private void inicializarDatos(){
-		Producto producto= new Producto();
-		producto.setNombre("arroz");
-		producto.setCodigo("54637");
-		producto.setPrecioCompra(3.000);
-		producto.setDescripcion("producto basico para el hogar");
-		
-		producto= new Producto();
-		producto.setNombre("aceite");
-		producto.setCodigo("12349");
-		producto.setPrecioCompra(10.000);
-		producto.setDescripcion("producto basico para el hogar");
-		
-		producto= new Producto();
-		producto.setNombre("panela");
-		producto.setCodigo("54637");
-		producto.setPrecioCompra(3.000);
-		producto.setDescripcion("producto basico para el hogar");
-	}
 	
-	public Producto agregarProducto(String nombre, String codigo, double precioCompra, String descripcion){
+	public Producto agregarProducto(String nombre, String codigo, String precioCompra, String descripcion){
 		
 		Producto producto = null;
 
@@ -118,7 +102,7 @@ public class EmpresaAlimento {
 
 	}
 	
-	public boolean actualizarProducto(String codigoActual, String nombre, String codigo, double precioCompra, String  descripcion) {
+	public boolean actualizarProducto(String codigoActual, String nombre, String codigo, String precio, String  descripcion) {
 
 		Producto producto = null;
 
@@ -128,7 +112,7 @@ public class EmpresaAlimento {
 
 			producto.setNombre(nombre);
 			producto.setCodigo(codigo);
-			producto.setPrecioCompra(precioCompra);
+			producto.setPrecioCompra(precio);
 			producto.setDescripcion(descripcion);
 
 			return true;
@@ -155,7 +139,7 @@ public class EmpresaAlimento {
 
 	@Override
 	public String toString() {
-		return "EmpresaAlimento [nombre=" + nombre + "]";
+		return "EmpresaAlimento [nombre=" + nombreE + "]";
 	}
 	
 	

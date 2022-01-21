@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="co.edu.cue.drogueria.controller.DrogueriaController">
+   <children>
+      <TabPane layoutX="17.0" layoutY="17.0" prefHeight="650.0" prefWidth="869.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="Empleado">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" layoutY="7.0" orientation="VERTICAL" prefHeight="599.0" prefWidth="862.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="28.0" prefHeight="25.0" prefWidth="83.0" text="Nombre:" />
+                                    <Label layoutX="463.0" layoutY="30.0" prefHeight="21.0" prefWidth="65.0" text="Cedula:" />
+                                    <Label layoutX="12.0" layoutY="95.0" prefHeight="21.0" prefWidth="88.0" text="Telefono:" />
+                                    <Label layoutX="461.0" layoutY="95.0" text="Correo:" />
+                                    <TextField fx:id="txtCedulaE" layoutX="528.0" layoutY="25.0" prefHeight="31.0" prefWidth="306.0" />
+                                    <TextField fx:id="txtNombreE" layoutX="108.0" layoutY="25.0" prefHeight="31.0" prefWidth="306.0" />
+                                    <TextField fx:id="txtTelefonoE" layoutX="108.0" layoutY="90.0" prefHeight="31.0" prefWidth="306.0" />
+                                    <TextField fx:id="txtCorreoE" layoutX="528.0" layoutY="90.0" prefHeight="31.0" prefWidth="306.0" />
+                                    <Separator layoutX="12.0" layoutY="178.0" prefHeight="13.0" prefWidth="837.0" />
+                                    <Button fx:id="btnAgregarE" layoutX="100.0" layoutY="225.0" mnemonicParsing="false" onAction="#agregarEmpleadoAction" text="Agregar" />
+                                    <Button fx:id="btnActualizarE" layoutX="261.0" layoutY="225.0" mnemonicParsing="false" onAction="#actualizarEmpleadoAction" text="Actualizar" />
+                                    <Button fx:id="btnEliminarE" layoutX="616.0" layoutY="225.0" mnemonicParsing="false" onAction="#eliminarEmpleadoAction" text="Eliminar" />
+                                    <Button fx:id="btnNuevoE" layoutX="453.0" layoutY="225.0" mnemonicParsing="false" onAction="#nuevoEmpleadoAction" text="Nuevo" />
+                                    <TextField fx:id="txtSalarioE" layoutX="343.0" layoutY="141.0" prefHeight="31.0" prefWidth="306.0" />
+                                    <Label layoutX="272.0" layoutY="146.0" text="Salario:" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="256.0" prefWidth="818.0">
+                                 <children>
+                                    <TableView fx:id="tableEmpleado" layoutX="-3.0" layoutY="7.0" prefHeight="286.0" prefWidth="861.0">
+                                       <columns>
+                                          <TableColumn fx:id="colCedulaE" prefWidth="157.0" text="Cedula" />
+                                          <TableColumn fx:id="colNombreE" prefWidth="184.0" text="Nombre" />
+                                          <TableColumn fx:id="colTelefonoE" prefWidth="172.0" text="Telefono" />
+                                          <TableColumn fx:id="colCorreoE" prefWidth="189.0" text="Correo" />
+                                          <TableColumn fx:id="colSalarioE" prefWidth="158.0" text="Salario" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Producto">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" layoutY="7.0" orientation="VERTICAL" prefHeight="599.0" prefWidth="862.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="28.0" prefHeight="25.0" prefWidth="83.0" text="Nombre:" />
+                                    <Label layoutX="463.0" layoutY="30.0" prefHeight="21.0" prefWidth="65.0" text="Codigo:" />
+                                    <Label layoutX="8.0" layoutY="116.0" prefHeight="21.0" prefWidth="96.0" text="Valor Unidad:" />
+                                    <Label layoutX="454.0" layoutY="116.0" text="Cantidad:" />
+                                    <TextField fx:id="txtCodigoP" layoutX="528.0" layoutY="25.0" prefHeight="31.0" prefWidth="306.0" />
+                                    <TextField fx:id="txtNombreP" layoutX="108.0" layoutY="25.0" prefHeight="31.0" prefWidth="306.0" />
+                                    <TextField fx:id="txtValorUniP" layoutX="108.0" layoutY="111.0" prefHeight="31.0" prefWidth="306.0" />
+                                    <TextField fx:id="txtCantidadP" layoutX="528.0" layoutY="111.0" prefHeight="31.0" prefWidth="306.0" />
+                                    <Separator layoutX="12.0" layoutY="178.0" prefHeight="13.0" prefWidth="837.0" />
+                                    <Button fx:id="btnAgregarP" layoutX="100.0" layoutY="225.0" mnemonicParsing="false" onAction="#agregarProductoAction" text="Agregar" />
+                                    <Button fx:id="btnActualizarP" layoutX="261.0" layoutY="225.0" mnemonicParsing="false" onAction="#actualizarProductoAction" text="Actualizar" />
+                                    <Button fx:id="btnEliminarP" layoutX="616.0" layoutY="225.0" mnemonicParsing="false" onAction="#eliminarProductoAction" text="Eliminar" />
+                                    <Button fx:id="btnNuevoP" layoutX="453.0" layoutY="225.0" mnemonicParsing="false" onAction="#nuevoProductoAction" text="Nuevo" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="256.0" prefWidth="818.0">
+                                 <children>
+                                    <TableView fx:id="tableProducto" layoutX="-3.0" layoutY="7.0" prefHeight="286.0" prefWidth="861.0">
+                                       <columns>
+                                          <TableColumn fx:id="colCodigoP" prefWidth="275.0" text="Codigo" />
+                                          <TableColumn fx:id="colNombreP" prefWidth="311.0" text="Nombre" />
+                                          <TableColumn fx:id="colValorUnidadP" prefWidth="274.0" text="Valor Unidad" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Cliente">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" layoutY="7.0" orientation="VERTICAL" prefHeight="599.0" prefWidth="862.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="28.0" prefHeight="25.0" prefWidth="83.0" text="Nombre:" />
+                                    <Label layoutX="463.0" layoutY="30.0" prefHeight="21.0" prefWidth="65.0" text="Cedula:" />
+                                    <Label layoutX="12.0" layoutY="96.0" prefHeight="21.0" prefWidth="88.0" text="Telefono:" />
+                                    <Label layoutX="461.0" layoutY="96.0" text="Correo:" />
+                                    <TextField fx:id="txtCedulaC" layoutX="528.0" layoutY="25.0" prefHeight="31.0" prefWidth="306.0" />
+                                    <TextField fx:id="txtNombreC" layoutX="108.0" layoutY="25.0" prefHeight="31.0" prefWidth="306.0" />
+                                    <TextField fx:id="txtTelefonoC" layoutX="108.0" layoutY="91.0" prefHeight="31.0" prefWidth="306.0" />
+                                    <TextField fx:id="txtCorreoC" layoutX="528.0" layoutY="91.0" prefHeight="31.0" prefWidth="306.0" />
+                                    <Separator layoutX="12.0" layoutY="178.0" prefHeight="13.0" prefWidth="837.0" />
+                                    <Button fx:id="btnAgregarC" layoutX="100.0" layoutY="225.0" mnemonicParsing="false" onAction="#agregarClienteAction" text="Agregar" />
+                                    <Button fx:id="btnActualizarC" layoutX="261.0" layoutY="225.0" mnemonicParsing="false" onAction="#actualizarClienteAction" text="Actualizar" />
+                                    <Button fx:id="btnEliminarC" layoutX="616.0" layoutY="225.0" mnemonicParsing="false" onAction="#eliminarClienteAction" text="Eliminar" />
+                                    <Button fx:id="btnNuevoC" layoutX="453.0" layoutY="225.0" mnemonicParsing="false" onAction="#nuevoClienteAction" text="Nuevo" />
+                                    <TextField fx:id="txtDireccionC" layoutX="375.0" layoutY="140.0" prefHeight="31.0" prefWidth="306.0" />
+                                    <Label layoutX="280.0" layoutY="145.0" text="Direccion:" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="256.0" prefWidth="818.0">
+                                 <children>
+                                    <TableView fx:id="tableCliente" layoutX="-3.0" layoutY="7.0" prefHeight="286.0" prefWidth="861.0">
+                                       <columns>
+                                          <TableColumn fx:id="colCedulaC" prefWidth="153.0" text="Cedula" />
+                                          <TableColumn fx:id="colNombreC" prefWidth="196.0" text="Nombre" />
+                                          <TableColumn fx:id="colCorreoC" prefWidth="198.0" text="Correo" />
+                                          <TableColumn fx:id="colTelefonoC" prefWidth="169.0" text="Telefono" />
+                                          <TableColumn fx:id="colDireccionC" prefWidth="144.0" text="Direccion" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Domicilio">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" layoutY="7.0" orientation="VERTICAL" prefHeight="599.0" prefWidth="862.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="28.0" prefHeight="25.0" prefWidth="151.0" text="Domicilio Numero:" />
+                                    <Label layoutX="14.0" layoutY="91.0" prefHeight="21.0" prefWidth="77.0" text="Empleado:" />
+                                    <Label layoutX="200.0" layoutY="137.0" prefHeight="21.0" prefWidth="88.0" text="Cliente:" />
+                                    <Label layoutX="453.0" layoutY="91.0" text="Producto:" />
+                                    <TextField fx:id="txtFechaD" layoutX="543.0" layoutY="25.0" prefHeight="31.0" prefWidth="306.0" />
+                                    <TextField fx:id="txtNumDomicilio" layoutX="151.0" layoutY="25.0" prefHeight="31.0" prefWidth="273.0" />
+                                    <TextField fx:id="txtClienteD" layoutX="304.0" layoutY="132.0" prefHeight="31.0" prefWidth="306.0" />
+                                    <TextField fx:id="txtProductoD" layoutX="543.0" layoutY="86.0" prefHeight="31.0" prefWidth="306.0" />
+                                    <Separator layoutX="12.0" layoutY="178.0" prefHeight="13.0" prefWidth="837.0" />
+                                    <Button fx:id="btnAgregarD" layoutX="100.0" layoutY="225.0" mnemonicParsing="false" onAction="#agregarDomicilioAction" text="Agregar" />
+                                    <Button fx:id="btnActualizarD" layoutX="261.0" layoutY="225.0" mnemonicParsing="false" onAction="#actualizarDomicilioAction" text="Actualizar" />
+                                    <Button fx:id="btnEliminarD" layoutX="616.0" layoutY="225.0" mnemonicParsing="false" onAction="#eliminarDomicilioAction" text="Eliminar" />
+                                    <Button fx:id="btnNuevoD" layoutX="453.0" layoutY="225.0" mnemonicParsing="false" onAction="#nuevoDomicilioAction" text="Nuevo" />
+                                    <Label layoutX="453.0" layoutY="30.0" prefHeight="21.0" prefWidth="88.0" text="Fecha:" />
+                                    <TextField fx:id="txtEmpleadoD" layoutX="147.0" layoutY="86.0" prefHeight="31.0" prefWidth="273.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="256.0" prefWidth="818.0">
+                                 <children>
+                                    <TableView fx:id="tableDomicilio" layoutX="-3.0" layoutY="7.0" prefHeight="286.0" prefWidth="861.0">
+                                       <columns>
+                                          <TableColumn fx:id="colNumeroDomicilio" prefWidth="155.0" text="Numero Domicilio" />
+                                          <TableColumn fx:id="colFechaD" prefWidth="161.0" text="Fecha" />
+                                          <TableColumn fx:id="colEmpleadoD" prefWidth="199.0" text="Empleado" />
+                                          <TableColumn fx:id="colClienteD" prefWidth="184.0" text="Cliente" />
+                                          <TableColumn fx:id="colProductoD" prefWidth="161.0" text="Producto" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
