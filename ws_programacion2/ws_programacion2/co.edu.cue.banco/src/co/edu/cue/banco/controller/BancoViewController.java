@@ -31,10 +31,7 @@ public class BancoViewController {
 	Empleado empleadoSeleccionado;
 	
 	ObservableList<Cliente> listaClientesData   = FXCollections.observableArrayList();
-	
-	
-	
-	
+
 	
     @FXML
     private ResourceBundle resources;

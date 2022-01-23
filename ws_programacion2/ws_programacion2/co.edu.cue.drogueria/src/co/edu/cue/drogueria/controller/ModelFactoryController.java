@@ -33,35 +33,46 @@ public class ModelFactoryController implements IModelFactoryController{
 		public ModelFactoryController() {
 
 			//inicializarDatos();
-			
+			/*
 			try {
 				Persistencia.guardarEmpleados(getDrogueria().getListaEmpleado());
 			} catch (IOException e) {
 				// TODO: handle exception
 				e.printStackTrace();
 			}
-		
 			try {
 				Persistencia.cargarDatosArchivos(drogueria);
 			} catch (IOException e) {
 				// TODO: handle exception
 				e.printStackTrace();
-			}
-			
+			}*/
 			//PERSISTIR LA INFORMACION ARCHIVO BINARIO
 			//guardarResourceBinario();
-			cargarResourceBinario();
+			//cargarResourceBinario();
+			//PERSISTIR INFO ARCHIVO XML
+			//guardarResourceXML();
+			cargarResourceXML();
 			
+			if (drogueria==null) {
+				inicializarDatos();
+				guardarResourceXML();
+			}
 		}
-
-		
-		private void cargarResourceBinario() {
+		//XML
+		public void guardarResourceXML() {
+			Persistencia.guardarRecursoDrogueriaXML(drogueria);
+		}
+		public void cargarResourceXML() {
+			drogueria= Persistencia.cargarRecursoDrogueriaXML();
+		}
+		//BINARIO
+		public void cargarResourceBinario() {
 			Persistencia.cargarRecursoDrogueriaBinario();
 		}
-
-		private void guardarResourceBinario() {
+		public void guardarResourceBinario() {
 			Persistencia.guardarRecursoDrogueriaBinario(drogueria);
 		}
+
 
 		
 		private void inicializarDatos() {

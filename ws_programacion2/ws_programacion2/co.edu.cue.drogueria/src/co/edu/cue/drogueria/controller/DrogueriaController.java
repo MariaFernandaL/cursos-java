@@ -470,6 +470,7 @@ private void mostrarInformacionEmpleado(Empleado empleadoSeleccionado) {
 			empleado= crudEmpleadoViewController.crearEmpleado(nombre, cedula, telefono, correo, salario);
 			if (empleado!=null) {
 				listaEmpleadosData.add(empleado);
+				crudEmpleadoViewController.guardarDatos();
 				mostrarMensaje("Notificacion empleado", "Empleado creado", "El empleado se ha creado con exito", AlertType.INFORMATION);
 				limpiarCamposEmpleado();
 			} else {
@@ -506,6 +507,7 @@ private void mostrarInformacionEmpleado(Empleado empleadoSeleccionado) {
 			producto= crudDrogaViewController.crearProducto(nombre, codigo, valorU, cantidad);
 			if (producto!=null) {
 				listaProductosData.add(producto);
+				crudDrogaViewController.guardarDatos();
 				mostrarMensaje("Notificacion producto", "Producto creado", "El producto se ha creado con exito", AlertType.INFORMATION);
 				limpiarCamposProducto();
 			} else {
@@ -601,6 +603,7 @@ private void mostrarInformacionEmpleado(Empleado empleadoSeleccionado) {
 			cliente= crudClienteViewController.crearCliente(nombre, cedula, telefono, correo, direccion);
 			if (cliente!=null) {
 				listaClientesData.add(cliente);
+				crudClienteViewController.guardarDatos();
 				mostrarMensaje("Notificacion cliente", "Cliente creado", "El cliente se ha creado con exito", AlertType.INFORMATION);
 				limpiarCamposEmpleado();
 			} else {

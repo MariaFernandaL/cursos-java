@@ -20,7 +20,7 @@ public class Persistencia {
 	public static final String RUTA_ARCHIVO_OBJETOS = "src/resources/archivoObjetos.txt";
 	public static final String RUTA_ARCHIVO_MODELO_BANCO_BINARIO = "src/resources/model.dat";
 	public static final String RUTA_ARCHIVO_MODELO_BANCO_XML = "src/resources/model.xml";
-//	C:\td\persistencia
+
 
 	
 	

@@ -38,4 +38,9 @@ public class CrudEmpleadoViewController {
 	public boolean actualizarEmpleado(String cedulaActual,String nombre, String cedula, String telefono, String correo, String salario){
 		return modelFactory.actualizarEmpleado(cedulaActual, nombre, cedula, telefono, correo, salario);
 	}
+	public void guardarDatos() {
+		//modelFactory.guardarResourceBinario();
+		modelFactory.guardarResourceXML();
+	}
+	
 }

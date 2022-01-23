@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_111" class="java.beans.XMLDecoder">
+ <object class="co.edu.cue.drogueria.model.Drogueria" id="Drogueria0">
+  <void property="listaClientes">
+   <void method="add">
+    <object class="co.edu.cue.drogueria.model.Cliente">
+     <void property="cedula">
+      <string>74658</string>
+     </void>
+     <void property="correoE">
+      <string>fernando@gmail.com</string>
+     </void>
+     <void property="direccion">
+      <string>armenia</string>
+     </void>
+     <void property="nombre">
+      <string>Fernando</string>
+     </void>
+     <void property="telefono">
+      <string>6574839911</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.cue.drogueria.model.Cliente">
+     <void property="cedula">
+      <string>35246</string>
+     </void>
+     <void property="correoE">
+      <string>samuel@gmail.com</string>
+     </void>
+     <void property="direccion">
+      <string>quimbaya</string>
+     </void>
+     <void property="nombre">
+      <string>samuel</string>
+     </void>
+     <void property="telefono">
+      <string>1324675940</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.cue.drogueria.model.Cliente">
+     <void property="cedula">
+      <string>86557</string>
+     </void>
+     <void property="correoE">
+      <string>rafael@gmail.com</string>
+     </void>
+     <void property="direccion">
+      <string>buenaVista</string>
+     </void>
+     <void property="nombre">
+      <string>rafael</string>
+     </void>
+     <void property="telefono">
+      <string>3224153667</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.cue.drogueria.model.Cliente">
+     <void property="cedula">
+      <string>5678</string>
+     </void>
+     <void property="correoE">
+      <string>maria@gmail.com</string>
+     </void>
+     <void property="direccion">
+      <string>bogota</string>
+     </void>
+     <void property="nombre">
+      <string>maria</string>
+     </void>
+     <void property="telefono">
+      <string>657657</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="listaEmpleado">
+   <void method="add">
+    <object class="co.edu.cue.drogueria.model.Empleado">
+     <void property="cedula">
+      <string>76878</string>
+     </void>
+     <void property="correoE">
+      <string>pepito@gmail.com</string>
+     </void>
+     <void property="nombre">
+      <string>pepito</string>
+     </void>
+     <void property="salario">
+      <string>345.788</string>
+     </void>
+     <void property="telefono">
+      <string>5463892928</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.cue.drogueria.model.Empleado">
+     <void property="cedula">
+      <string>37847</string>
+     </void>
+     <void property="correoE">
+      <string>pablo@gmail.com</string>
+     </void>
+     <void property="nombre">
+      <string>pablo</string>
+     </void>
+     <void property="salario">
+      <string>456.553</string>
+     </void>
+     <void property="telefono">
+      <string>3526476899</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.cue.drogueria.model.Empleado">
+     <void property="cedula">
+      <string>85611</string>
+     </void>
+     <void property="correoE">
+      <string>ana@gmail.com</string>
+     </void>
+     <void property="nombre">
+      <string>ana</string>
+     </void>
+     <void property="salario">
+      <string>645.899</string>
+     </void>
+     <void property="telefono">
+      <string>9564722289</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.cue.drogueria.model.Empleado">
+     <void property="cedula">
+      <string>12345</string>
+     </void>
+     <void property="correoE">
+      <string>maria@gmail.com</string>
+     </void>
+     <void property="nombre">
+      <string>maria</string>
+     </void>
+     <void property="salario">
+      <string>546.879</string>
+     </void>
+     <void property="telefono">
+      <string>2251635</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="listaProductos">
+   <void method="add">
+    <object class="co.edu.cue.drogueria.model.Producto">
+     <void property="cantExis">
+      <int>6</int>
+     </void>
+     <void property="codigo">
+      <string>64757</string>
+     </void>
+     <void property="nombre">
+      <string>dolex</string>
+     </void>
+     <void property="valorU">
+      <string>1.000</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.cue.drogueria.model.Producto">
+     <void property="cantExis">
+      <int>10</int>
+     </void>
+     <void property="codigo">
+      <string>85647</string>
+     </void>
+     <void property="nombre">
+      <string>alcohol</string>
+     </void>
+     <void property="valorU">
+      <string>5.000</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.cue.drogueria.model.Producto">
+     <void property="cantExis">
+      <int>4</int>
+     </void>
+     <void property="codigo">
+      <string>35462</string>
+     </void>
+     <void property="nombre">
+      <string>gasas</string>
+     </void>
+     <void property="valorU">
+      <string>3.000</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.cue.drogueria.model.Producto">
+     <void property="cantExis">
+      <int>6</int>
+     </void>
+     <void property="codigo">
+      <string>739884</string>
+     </void>
+     <void property="nombre">
+      <string>bombom</string>
+     </void>
+     <void property="valorU">
+      <string>3.000</string>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>

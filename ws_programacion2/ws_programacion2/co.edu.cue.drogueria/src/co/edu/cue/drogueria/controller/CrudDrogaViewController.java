@@ -39,4 +39,10 @@ public class CrudDrogaViewController {
 	public boolean actualizarProducto(String codigoActual, String nombre, String codigo, String valorU, int cantExis){
 		return modelFactory.actualizarProducto(codigoActual, nombre, codigo, valorU, cantExis);
 	}
+	
+	public void guardarDatos() {
+		//modelFactory.guardarResourceBinario();
+		modelFactory.guardarResourceXML();
+	}
+	
 }

@@ -39,4 +39,9 @@ public class CrudClienteViewController {
 	public boolean actualizarCliente(String cedulaActual,String nombre, String cedula, String telefono, String correo, String direccion){
 		return modelFactory.actualizarCliente(cedulaActual, nombre, cedula, telefono, correo, direccion);
 	}
+	
+	public void guardarDatos() {
+		//modelFactory.guardarResourceBinario();
+		modelFactory.guardarResourceXML();
+	}
 }

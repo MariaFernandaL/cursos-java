@@ -133,13 +133,29 @@
       <string>lopez</string>
      </void>
      <void property="cedula">
-      <string>123456</string>
+      <string>1005090</string>
      </void>
      <void property="fechaNacimiento">
       <string>03012003</string>
      </void>
      <void property="nombre">
       <string>maria</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.cue.banco.model.Empleado">
+     <void property="apellido">
+      <string>jimenez</string>
+     </void>
+     <void property="cedula">
+      <string>283798</string>
+     </void>
+     <void property="fechaNacimiento">
+      <string>19051981</string>
+     </void>
+     <void property="nombre">
+      <string>paola</string>
      </void>
     </object>
    </void>

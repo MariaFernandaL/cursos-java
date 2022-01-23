@@ -16,7 +16,7 @@ public class Persistencia {
 	public static final String RUTA_ARCHIVO_LOG = "src/resources/DrogueriaLog.txt";
 	public static final String RUTA_ARCHIVO_PRODUCTOS = "src/resources/archivoProductos.txt";
 	public static final String RUTA_ARCHIVO_MODELO_DROGUERIA_BINARIO = "src/resources/model.dat";
-	public static final String RUTA_ARCHIVO_MODELO_DROGUERIA_XML = "C://td//persistencia//model.xml";
+	public static final String RUTA_ARCHIVO_MODELO_DROGUERIA_XML = "src/resources/model.xml";
 //	C:\td\persistencia
 
 	
