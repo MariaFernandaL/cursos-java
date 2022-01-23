@@ -53,6 +53,7 @@ public class DrogueriaController {
 	}
 
 	public ObservableList<Cliente> getListaClientesData() {
+		listaClientesData.addAll(crudClienteViewController.obtenerCliente());
 		return listaClientesData;
 	}
 
@@ -61,6 +62,7 @@ public class DrogueriaController {
 	}
 
 	public ObservableList<Producto> getListaProductosData() {
+		listaProductosData.addAll(crudDrogaViewController.obtenerProducto());
 		return listaProductosData;
 	}
 
@@ -262,8 +264,8 @@ public class DrogueriaController {
     	crudDrogaViewController= new CrudDrogaViewController(modelFactory);
     	
     	inicializarEmpleadoView();
-    	//inicializarClienteView();
-    	//inicializarProductoView();
+    	inicializarClienteView();
+    	inicializarProductoView();
     	//inicializarDomicilioView();
     }
     
@@ -443,7 +445,7 @@ private void mostrarInformacionEmpleado(Empleado empleadoSeleccionado) {
 				}
 			}
 		}else {
-			mostrarMensaje("Notificación empleado", "Empleado no seleccionado", "Seleccionado un empleado de la lista", AlertType.WARNING);
+			mostrarMensaje("Notificación empleado", "Empleado no seleccionado", "Seleccione un empleado de la lista", AlertType.WARNING);
 		}
 	}
 
@@ -474,7 +476,7 @@ private void mostrarInformacionEmpleado(Empleado empleadoSeleccionado) {
 				mostrarMensaje("Notificación empleado", "Empleado no creado", "El empleado no se ha creado con éxito", AlertType.INFORMATION);
 			}
 		}else {
-			mostrarMensaje("Notificación empleado", "Empleado no creado", "Los datos ingresados son invalidos", AlertType.ERROR);
+			mostrarMensaje("Notificación empleado", "Empleado no creado", "Los datos ingresados no son invalidos", AlertType.ERROR);
 		}
 	}
 
@@ -490,20 +492,89 @@ private void mostrarInformacionEmpleado(Empleado empleadoSeleccionado) {
 
     @FXML
     void agregarProductoAction(ActionEvent event) {
-
+    	agregarProducto();
     }
 
-    @FXML
+    private void agregarProducto() {
+    	String nombre= txtNombreP.getText();
+    	String codigo= txtCodigoP.getText();
+    	String valorU= txtValorUniP.getText();
+    	int cantidad= Integer.parseInt(txtCantidadP.getText());
+    			
+    	if (datosValidosProducto(nombre, codigo, valorU, cantidad)== true) {
+			Producto producto= null;
+			producto= crudDrogaViewController.crearProducto(nombre, codigo, valorU, cantidad);
+			if (producto!=null) {
+				listaProductosData.add(producto);
+				mostrarMensaje("Notificacion producto", "Producto creado", "El producto se ha creado con exito", AlertType.INFORMATION);
+				limpiarCamposProducto();
+			} else {
+				mostrarMensaje("Notificación producto", "Producto no creado", "El producto no se ha creado con éxito", AlertType.INFORMATION);
+			}
+		}else {
+			mostrarMensaje("Notificación producto", "producto no creado", "Los datos ingresados no son invalidos", AlertType.ERROR);
+		}
+	}
+
+	@FXML
     void actualizarProductoAction(ActionEvent event) {
-
+		actualizarProducto();
     }
 
-    @FXML
+    private void actualizarProducto() {
+    	String nombre= txtNombreP.getText();
+    	String codigo= txtCodigoP.getText();
+    	String valorU= txtValorUniP.getText();
+    	int cantidad= Integer.parseInt(txtCantidadP.getText());
+    	boolean productoActualizado= false;
+    	
+    	if (productoSeleccionado!=null) {
+			if (datosValidosProducto(nombre, codigo, valorU, cantidad)) {
+				
+				productoActualizado= crudDrogaViewController.actualizarProducto(productoSeleccionado.getCodigo(), nombre, codigo, valorU, cantidad);
+				if (productoActualizado==true) {
+					tableProducto.refresh();
+        			mostrarMensaje("Notificación producto", "Producto actualizado", "El producto se ha actualizado con éxito", AlertType.INFORMATION);
+        			limpiarCamposEmpleado();
+				}else {
+        			mostrarMensaje("Notificación producto", "Producto no actualizado", "El producto no se ha actualizado con éxito", AlertType.INFORMATION);
+				}
+			}else {
+        		mostrarMensaje("Notificación producto", "Producto no creado", "Los datos ingresados son invalidos", AlertType.ERROR);
+			}
+		}else {
+    		mostrarMensaje("Notificación producto", "Producto no actualizado", "El producto no ha sido seleccionado", AlertType.ERROR);
+		}
+	}
+
+	@FXML
     void eliminarProductoAction(ActionEvent event) {
-
+    	eliminarProducto();
     }
 
-    @FXML
+    private void eliminarProducto() {
+    	boolean productoEliminado= false;
+    	if (productoSeleccionado!=null) {
+			if (mostrarMensajeConfirmacion("¿Estas seguro de elmininar el producto?")) {
+				productoEliminado= crudDrogaViewController.eliminarProducto(productoSeleccionado.getCodigo());
+				if (productoEliminado==true) {
+					
+					listaProductosData.remove(productoSeleccionado);
+					productoSeleccionado=null;
+					
+					tableProducto.getSelectionModel().clearSelection();
+					limpiarCamposProducto();
+					mostrarMensaje("Notificación producto", "Producto eliminado", "El producto se ha eliminado con éxito", AlertType.INFORMATION);
+				} else {
+					mostrarMensaje("Notificación producto", "Producto no eliminado", "El producto no se puede eliminar", AlertType.ERROR);
+				}
+			}
+		}else {
+			mostrarMensaje("Notificación producto", "Producto no seleccionado", "Seleccione un producto de la lista", AlertType.WARNING);
+		}
+	}
+
+	@FXML
     void nuevoProductoAction(ActionEvent event) {
 
     	txtNombreP.setText("Ingrese el nombre");
@@ -514,20 +585,93 @@ private void mostrarInformacionEmpleado(Empleado empleadoSeleccionado) {
 
     @FXML
     void agregarClienteAction(ActionEvent event) {
-
+    	agregarCliente();
     }
 
-    @FXML
+    private void agregarCliente() {
+
+    	String nombre= txtNombreC.getText();
+    	String cedula= txtCedulaC.getText();
+    	String telefono= txtTelefonoC.getText();
+    	String correo= txtCorreoC.getText();
+    	String direccion= txtDireccionC.getText();
+    	
+    	if (datosValidosCliente(nombre, cedula, telefono, correo, direccion)== true) {
+			Cliente cliente= null;
+			cliente= crudClienteViewController.crearCliente(nombre, cedula, telefono, correo, direccion);
+			if (cliente!=null) {
+				listaClientesData.add(cliente);
+				mostrarMensaje("Notificacion cliente", "Cliente creado", "El cliente se ha creado con exito", AlertType.INFORMATION);
+				limpiarCamposEmpleado();
+			} else {
+				mostrarMensaje("Notificación cliente", "Cliente no creado", "El cliente no se ha creado con éxito", AlertType.INFORMATION);
+			}
+		}else {
+			mostrarMensaje("Notificación cliente", "Cliente no creado", "Los datos ingresados no son invalidos", AlertType.ERROR);
+		}
+	}
+
+	@FXML
     void actualizarClienteAction(ActionEvent event) {
 
+    	actualizarCliente();
     }
 
-    @FXML
+    private void actualizarCliente() {
+
+    	String nombre= txtNombreC.getText();
+    	String cedula= txtCedulaC.getText();
+    	String telefono= txtTelefonoC.getText();
+    	String correo= txtCorreoC.getText();
+    	String direccion= txtDireccionC.getText();
+    	boolean clienteActualizado= false;
+    	
+    	if (clienteSeleccionado!=null) {
+			if (datosValidosCliente(nombre, cedula, telefono, correo, direccion)) {
+				
+				clienteActualizado= crudClienteViewController.actualizarCliente(clienteSeleccionado.getCedula(), nombre, cedula, telefono, correo, direccion);
+				if (clienteActualizado==true) {
+					tableCliente.refresh();
+        			mostrarMensaje("Notificación cliente", "Cliente actualizado", "El cliente se ha actualizado con éxito", AlertType.INFORMATION);
+        			limpiarCamposEmpleado();
+				}else {
+        			mostrarMensaje("Notificación cliente", "Cliente no actualizado", "El cliente no se ha actualizado con éxito", AlertType.INFORMATION);
+				}
+			}else {
+        		mostrarMensaje("Notificación cliente", "Cliente no creado", "Los datos ingresados son invalidos", AlertType.ERROR);
+			}
+		}else {
+    		mostrarMensaje("Notificación cliente", "Cliente no actualizado", "El cliente no ha sido seleccionado", AlertType.ERROR);
+		}
+	}
+
+	@FXML
     void eliminarClienteAction(ActionEvent event) {
-
+		eliminarCliente();
     }
 
-    @FXML
+    private void eliminarCliente() {
+    	boolean clienteEliminado= false;
+    	if (clienteSeleccionado!=null) {
+			if (mostrarMensajeConfirmacion("¿Estas seguro de elmininar al cliente?")) {
+				clienteEliminado= crudClienteViewController.eliminarCliente(clienteSeleccionado.getCedula());
+				if (clienteEliminado==true) {
+					listaClientesData.remove(clienteSeleccionado);
+					clienteSeleccionado=null;
+					
+					tableCliente.getSelectionModel().clearSelection();
+					limpiarCamposCliente();
+					mostrarMensaje("Notificación cliente", "Cliente eliminado", "El cliente se ha eliminado con éxito", AlertType.INFORMATION);
+				} else {
+					mostrarMensaje("Notificación cliente", "Cliente no eliminado", "El cliente no se puede eliminar", AlertType.ERROR);
+				}
+			}
+		}else {
+			mostrarMensaje("Notificación cliente", "Cliente no seleccionado", "Seleccione un cliente de la lista", AlertType.WARNING);
+		}
+	}
+
+	@FXML
     void nuevoClienteAction(ActionEvent event) {
 
     	txtNombreC.setText("Ingrese el nombre");
@@ -641,5 +785,54 @@ private void mostrarInformacionEmpleado(Empleado empleadoSeleccionado) {
 			return false;
 		}
 	}
+    private boolean datosValidosCliente(String nombre, String cedula, String telefono,  String correo, String direccion) {
+
+		String mensaje = "";
+ 
+		if(nombre == null || nombre.equals(""))
+			mensaje += "El nombre es invalido \n" ;
+
+		if(cedula == null || cedula.equals(""))
+			mensaje += "La cedula es invalida \n" ;
+
+		if(telefono == null || telefono.equals(""))
+			mensaje += "El telefono es invalido \n" ;
+
+		if(correo == null || correo.equals(""))
+			mensaje += "El correo es invalida \n" ;
+		
+		if(direccion == null || direccion.equals(""))
+			mensaje += "La direccion es invalida \n" ;
+		
+		if(mensaje.equals("")){
+			return true;
+		}else{
+			mostrarMensaje("Notificación cliente","Datos invalidos",mensaje, AlertType.WARNING);
+			return false;
+		}
+	}
     
+    private boolean datosValidosProducto(String nombre, String codigo, String valorUnidad,  int cantidad) {
+
+		String mensaje = "";
+ 
+		if(nombre == null || nombre.equals(""))
+			mensaje += "El nombre es invalido \n" ;
+
+		if(codigo == null || codigo.equals(""))
+			mensaje += "El codigo es invalido \n" ;
+
+		if(valorUnidad == null || valorUnidad.equals(""))
+			mensaje += "El telefono es invalido \n" ;
+
+		if(cantidad <= 0 )
+			mensaje += "La cantidad es invalida \n" ;
+		
+		if(mensaje.equals("")){
+			return true;
+		}else{
+			mostrarMensaje("Notificación producto","Datos invalidos",mensaje, AlertType.WARNING);
+			return false;
+		}
+	}
 }

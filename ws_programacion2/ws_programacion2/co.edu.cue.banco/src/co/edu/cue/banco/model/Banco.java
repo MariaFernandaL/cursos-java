@@ -1,11 +1,12 @@
 package co.edu.cue.banco.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import co.edu.cue.banco.exception.EmpleadoException;
 import co.edu.cue.banco.services.IBancoService;
 
-public class Banco implements IBancoService{
+public class Banco implements IBancoService, Serializable{
 
 	/**
 	 * 

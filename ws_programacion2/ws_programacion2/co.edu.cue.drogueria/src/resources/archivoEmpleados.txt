@@ -1,9 +1,3 @@
 pepito,76878,5463892928,pepito@gmail.com,345.788
 pablo,37847,3526476899,pablo@gmail.com,456.553
 ana,85611,9564722289,ana@gmail.com,645.899
-pepito,76878,5463892928,pepito@gmail.com,345.788
-pablo,37847,3526476899,pablo@gmail.com,456.553
-ana,85611,9564722289,ana@gmail.com,645.899
-pepito,76878,5463892928,pepito@gmail.com,345.788
-pablo,37847,3526476899,pablo@gmail.com,456.553
-ana,85611,9564722289,ana@gmail.com,645.899

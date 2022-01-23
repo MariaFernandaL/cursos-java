@@ -31,10 +31,10 @@ public class ModelFactoryController implements IModelFactoryService{
 	public ModelFactoryController() {
 
 		//1. inicializar datos del modelo
-		inicializarDatos();
+		//inicializarDatos();
 		
 		//2. guardar los datos de los empleados en un archivo
-		try {
+		/*try {
 			Persistencia.guardarEmpleados(getBanco().getListaEmpleados());
 		} catch (IOException e) {
 			// TODO: handle exception
@@ -47,10 +47,40 @@ public class ModelFactoryController implements IModelFactoryService{
 		} catch (IOException e) {
 			// TODO: handle exception
 			e.printStackTrace();
-		}
+		}*/
 		
+		//PERSISTIR LA INFORMACION ARCHIVO BINARIO
+		//guardarResourceBinario();
+		//cargarResourceBinario();
+		
+		//PERSISTIR INFO ARCHIVO XML
+		//guardarResourceXML();
+		cargarResourceXML();
+		
+		if (banco==null) {
+			inicializarDatos();
+			guardarResourceXML();
+		}
 	}
 
+	//XML
+	public void guardarResourceXML() {
+		Persistencia.guardarRecursoBancoXML(banco);	
+	}
+	public void cargarResourceXML() {
+		banco= Persistencia.cargarRecursoBancoXML();
+	}
+	
+	//BINARIO
+	public void cargarResourceBinario() {
+		banco=Persistencia.cargarRecursoBancoBinario();
+	}
+	public void guardarResourceBinario() {
+		Persistencia.guardarRecursoBancoBinario(banco);
+	}
+		
+
+		
 	private void inicializarDatos() {
 
 		banco = new Banco();

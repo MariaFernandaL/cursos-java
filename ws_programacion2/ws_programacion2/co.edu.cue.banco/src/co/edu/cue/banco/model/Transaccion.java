@@ -1,7 +1,11 @@
 package co.edu.cue.banco.model;
 
-public class Transaccion {
+import java.io.Serializable;
 
+public class Transaccion implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	
 	private String fecha;
 	private String hora;
 	private Double valor;

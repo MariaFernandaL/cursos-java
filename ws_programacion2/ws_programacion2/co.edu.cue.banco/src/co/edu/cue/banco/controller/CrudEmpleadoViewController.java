@@ -50,4 +50,10 @@ public class CrudEmpleadoViewController {
 		return modelFactoryController.actualizarEmpleado(cedulaActual, nombre, apellido, cedula, fechaNacimiento);
 	}
 
+
+	public void guardarDatos() {
+		//modelFactoryController.guardarResourceBinario();
+		modelFactoryController.guardarResourceXML();
+	}
+
 }

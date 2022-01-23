@@ -3,7 +3,9 @@ package co.edu.cue.drogueria.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import co.edu.cue.drogueria.exception.ClienteException;
 import co.edu.cue.drogueria.exception.EmpleadoException;
+import co.edu.cue.drogueria.exception.ProductoException;
 import co.edu.cue.drogueria.model.Cliente;
 import co.edu.cue.drogueria.model.Drogueria;
 import co.edu.cue.drogueria.model.Empleado;
@@ -30,7 +32,7 @@ public class ModelFactoryController implements IModelFactoryController{
 		
 		public ModelFactoryController() {
 
-			inicializarDatos();
+			//inicializarDatos();
 			
 			try {
 				Persistencia.guardarEmpleados(getDrogueria().getListaEmpleado());
@@ -46,10 +48,21 @@ public class ModelFactoryController implements IModelFactoryController{
 				e.printStackTrace();
 			}
 			
+			//PERSISTIR LA INFORMACION ARCHIVO BINARIO
+			//guardarResourceBinario();
+			cargarResourceBinario();
+			
 		}
 
 		
-		
+		private void cargarResourceBinario() {
+			Persistencia.cargarRecursoDrogueriaBinario();
+		}
+
+		private void guardarResourceBinario() {
+			Persistencia.guardarRecursoDrogueriaBinario(drogueria);
+		}
+
 		
 		private void inicializarDatos() {
 			
@@ -79,7 +92,7 @@ public class ModelFactoryController implements IModelFactoryController{
 			empleado.setSalario("645.899");
 			drogueria.getListaEmpleado().add(empleado);
 			
-			/*
+			
 			Cliente cliente= new Cliente();
 			cliente.setNombre("Fernando");
 			cliente.setCedula("74658");
@@ -124,7 +137,7 @@ public class ModelFactoryController implements IModelFactoryController{
 			producto.setCantExis(4);
 			producto.setValorU("3.000");
 			drogueria.getListaProductos().add(producto);
-			*/
+			
 			System.out.println("Drogueria inicializada ");
 		}
 
@@ -136,6 +149,7 @@ public class ModelFactoryController implements IModelFactoryController{
 			this.drogueria = drogueria;
 		}
 
+		//EMPLEADO
 		@Override
 		public Empleado crearEmpleado(String nombre, String cedula, String telefono, String correo, String salario) {
 
@@ -178,5 +192,94 @@ public class ModelFactoryController implements IModelFactoryController{
 
 			return drogueria.actualizarEmpleado(cedulaActual, nombre, cedula, telefono, correo, salario);
 		}
+
+		//CLIENTE
+		@Override
+		public Cliente crearCliente(String nombre, String cedula, String telefono, String correo, String direccion) {
+			
+			Cliente cliente=null;
+			try {
+				cliente= getDrogueria().crearCliente(nombre, cedula, telefono, correo, direccion);
+			} catch (ClienteException e) {
+				e.getMessage();
+}
+			return cliente;
+		}
+
+		@Override
+		public Boolean eliminarCliente(String cedula) {
+			
+			boolean clienteExiste= false;
+			
+			try {
+				clienteExiste= getDrogueria().eliminarCliente(cedula);
+			} catch (ClienteException e) {
+				e.getMessage();
+			}
+			
+			return clienteExiste;
+		}
+
+		@Override
+		public Cliente obtenerCliente(String cedula) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public ArrayList<Cliente> obtenerClientes() {
+			return drogueria.getListaClientes();
+		}
+
+		@Override
+		public boolean actualizarCliente(String cedulaActual, String nombre, String cedula, String telefono,
+				String correo, String direccion) {
+			return drogueria.actualizarCliente(cedulaActual, nombre, cedula, telefono, correo, direccion);
+		}
+
+		//PRODUCTO
+		@Override
+		public Producto crearProducto(String nombre, String codigo, String valorU, int cantExis) {
+			
+			Producto producto=null;
+			try {
+				producto= getDrogueria().crearProducto(nombre, codigo, valorU, cantExis);
+			} catch (ProductoException e) {
+				e.getMessage();
+}
+			return producto;
+		}
+
+		@Override
+		public Boolean eliminarProducto(String codigo) {
+			
+			boolean productoExiste= false;
+			
+			try {
+				productoExiste= getDrogueria().eliminarProducto(codigo);
+			} catch (ProductoException e) {
+				e.getMessage();
+			}
+			
+			return productoExiste;
+		}
+
+		@Override
+		public Producto obtenerProducto(String codigo) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public ArrayList<Producto> obtenerProducto() {
+			return drogueria.getListaProductos();
+		}
+
+		@Override
+		public boolean actualizarProducto(String codigoActual, String nombre, String codigo, String valorU,
+				int cantExis) {
+			return drogueria.actualizarProducto(codigoActual, nombre, codigo, valorU, cantExis);
+		}
+		
 		
 }

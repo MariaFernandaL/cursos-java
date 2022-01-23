@@ -184,6 +184,7 @@ public class BancoViewController {
     		
     		if(empleado != null){
     			listaEmpleadosData.add(empleado);
+    			crudEmpleadoViewController.guardarDatos();
     			mostrarMensaje("Notificación empleado", "Empleado creado", "El empleado se ha creado con éxito", AlertType.INFORMATION);
     			limpiarCamposEmpleado();
     		}else{

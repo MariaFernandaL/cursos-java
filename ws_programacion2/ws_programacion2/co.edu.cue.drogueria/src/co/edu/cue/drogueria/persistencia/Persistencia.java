@@ -7,13 +7,14 @@ import java.util.ArrayList;
 import co.edu.cue.drogueria.model.Cliente;
 import co.edu.cue.drogueria.model.Drogueria;
 import co.edu.cue.drogueria.model.Empleado;
+import co.edu.cue.drogueria.model.Producto;
 
 public class Persistencia {
 	
 	public static final String RUTA_ARCHIVO_CLIENTES = "src/resources/archivoClientes.txt";
 	public static final String RUTA_ARCHIVO_EMPLEADOS = "src/resources/archivoEmpleados.txt";
 	public static final String RUTA_ARCHIVO_LOG = "src/resources/DrogueriaLog.txt";
-	public static final String RUTA_ARCHIVO_OBJETOS = "src/resources/archivoProductos.txt";
+	public static final String RUTA_ARCHIVO_PRODUCTOS = "src/resources/archivoProductos.txt";
 	public static final String RUTA_ARCHIVO_MODELO_DROGUERIA_BINARIO = "src/resources/model.dat";
 	public static final String RUTA_ARCHIVO_MODELO_DROGUERIA_XML = "C://td//persistencia//model.xml";
 //	C:\td\persistencia
@@ -30,24 +31,18 @@ public class Persistencia {
 		
 		
 		//cargar archivo de clientes
-//		ArrayList<Cliente> clientesCargados = cargarClientes();
-//		
-//		if(clientesCargados.size() > 0)
-//			banco.getListaClientes().addAll(clientesCargados);
+		ArrayList<Cliente> clientesCargados = cargarClientes();
 		
-		//cargar archivo objetos
+		if(clientesCargados.size() > 0)
+			drogueria.getListaClientes().addAll(clientesCargados);
 		
-		//cargar archivo empleados
+		//cargar archivo productos
+		ArrayList<Producto> productosCargados = cargarProductos();
 		
-		//cargar archivo prestamo
+		if(productosCargados.size() > 0)
+			drogueria.getListaProductos().addAll(productosCargados);
 		
 	}
-	
-	
-	
-
-
-
 
 	/**
 	 * Guarda en un archivo de texto todos la información de las personas almacenadas en el ArrayList
@@ -64,7 +59,7 @@ public class Persistencia {
 			contenido+= cliente.getNombre()+","+cliente.getCedula()+","+cliente.getDireccion()+","+cliente.getCorreoE()
 		     +","+cliente.getTelefono()+"\n";
 		}
-		ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_CLIENTES, contenido, true);
+		ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_CLIENTES, contenido, false);
 		
 	}
 	
@@ -77,9 +72,19 @@ public class Persistencia {
 		{
 			contenido+= empleado.getNombre()+","+empleado.getCedula()+","+empleado.getTelefono()+","+empleado.getCorreoE()+","+empleado.getSalario()+"\n";
 		}
-		ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_EMPLEADOS, contenido, true);
+		ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_EMPLEADOS, contenido, false);
 	}
 	
+public static void guardarProductos(ArrayList<Producto> listaProductos) throws IOException {
+		
+		String contenido = "";
+		
+		for(Producto producto:listaProductos) 
+		{
+			contenido+= producto.getNombre()+","+producto.getCodigo()+","+producto.getValorU()+","+producto.getCantExis()+"\n";
+		}
+		ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_PRODUCTOS, contenido, false);
+	}
 	
 	
 //	----------------------LOADS------------------------
@@ -102,7 +107,7 @@ public class Persistencia {
 		
 		for (int i = 0; i < contenido.size(); i++)
 		{
-			linea = contenido.get(i);//juan,arias,125454,Armenia,uni1@,12454,125444
+			linea = contenido.get(i);
 			Cliente cliente = new Cliente();
 			cliente.setNombre(linea.split(",")[0]);
 			cliente.setCedula(linea.split(",")[1]);
@@ -137,7 +142,27 @@ public class Persistencia {
 		
 		
 	}
-	
+	private static ArrayList<Producto> cargarProductos() throws FileNotFoundException, IOException {
+
+		ArrayList<Producto> productos =new ArrayList<Producto>();
+		
+		ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_PRODUCTOS);
+		String linea="";
+		
+		for (int i = 0; i < contenido.size(); i++)
+		{
+			linea = contenido.get(i);
+			Producto producto = new Producto();
+			producto.setNombre(linea.split(",")[0]);
+			producto.setCodigo(linea.split(",")[1]);
+			producto.setValorU(linea.split(",")[2]);
+			producto.setCantExis(Integer.parseInt(linea.split(",")[3]));
+			productos.add(producto);
+		}
+		return productos;
+		
+		
+	}
 	
 	
 

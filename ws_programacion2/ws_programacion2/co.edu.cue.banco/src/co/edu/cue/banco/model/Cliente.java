@@ -3,8 +3,10 @@ package co.edu.cue.banco.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Cliente extends Persona{
+public class Cliente extends Persona implements Serializable{
 
+	private static final long serialVersionUID = 1L;
+	
 	Empleado empleadoAsociado;
 	ArrayList<Cuenta> listCuentasCliente = new ArrayList<Cuenta>();
 	

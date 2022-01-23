@@ -15,8 +15,7 @@ public class Aplicacion extends Application {
 	
 	private Stage primaryStage;
 	private BorderPane rootLayout;
-	
-	
+
 	
 	@Override
 	public void start(Stage primaryStage) {
