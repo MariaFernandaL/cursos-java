@@ -16,6 +16,7 @@ public class Producto implements Serializable{
 	public Producto(){
 		
 	}
+	
 	public Producto(String nombre, String codigo, String valorU, int cantExis) {
 		super();
 		this.nombre = nombre;

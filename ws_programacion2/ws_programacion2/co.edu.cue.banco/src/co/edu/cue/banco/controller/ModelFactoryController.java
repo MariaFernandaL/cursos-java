@@ -8,12 +8,15 @@ import co.edu.cue.banco.exception.EmpleadoException;
 import co.edu.cue.banco.model.Banco;
 import co.edu.cue.banco.model.Cliente;
 import co.edu.cue.banco.model.Empleado;
+import co.edu.cue.banco.persistencia.BoundedSemaphore;
 import co.edu.cue.banco.persistencia.Persistencia;
 import co.edu.cue.banco.services.IModelFactoryService;
 
-public class ModelFactoryController implements IModelFactoryService{
+public class ModelFactoryController implements IModelFactoryService, Runnable{
 
 	Banco banco;
+	Thread hiloServicio1_Persistencia;
+	BoundedSemaphore semaforo = new BoundedSemaphore(1);
 	
 	
 	//------------------------------  Singleton ------------------------------------------------
@@ -63,21 +66,7 @@ public class ModelFactoryController implements IModelFactoryService{
 		}
 	}
 
-	//XML
-	public void guardarResourceXML() {
-		Persistencia.guardarRecursoBancoXML(banco);	
-	}
-	public void cargarResourceXML() {
-		banco= Persistencia.cargarRecursoBancoXML();
-	}
 	
-	//BINARIO
-	public void cargarResourceBinario() {
-		banco=Persistencia.cargarRecursoBancoBinario();
-	}
-	public void guardarResourceBinario() {
-		Persistencia.guardarRecursoBancoBinario(banco);
-	}
 		
 
 		
@@ -202,9 +191,36 @@ public class ModelFactoryController implements IModelFactoryService{
 		
 		return banco.getListaEmpleados();
 	}
-
-
 	
+	//PERSISTENCIA
+	//XML
+		public void guardarResourceXML() {
+			Persistencia.guardarRecursoBancoXML(banco);	
+		}
+		public void cargarResourceXML() {
+			banco= Persistencia.cargarRecursoBancoXML();
+		}
+		
+		//BINARIO
+		public void cargarResourceBinario() {
+			banco=Persistencia.cargarRecursoBancoBinario();
+		}
+		public void guardarResourceBinario() {
+			Persistencia.guardarRecursoBancoBinario(banco);
+		}
+		
+	//HILOS
+	@Override
+	public void run() {
+
+		//HILO PARA MANEJAR LA PERSISTENCIA 
+		
+		//HILO PARA REGISTRAR LAS ACCIONES DEL SISTEMA 
+		
+		//HILO PARA GENERAR ARCHIVO DE INTEGRACION
+		
+		//HILO PARA GENERAR REPORTE 
+	}
 	
 	
 }

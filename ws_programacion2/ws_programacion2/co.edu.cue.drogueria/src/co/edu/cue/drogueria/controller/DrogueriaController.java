@@ -527,7 +527,7 @@ private void mostrarInformacionEmpleado(Empleado empleadoSeleccionado) {
     	String nombre= txtNombreP.getText();
     	String codigo= txtCodigoP.getText();
     	String valorU= txtValorUniP.getText();
-    	int cantidad= Integer.parseInt(txtCantidadP.getText());
+    	int cantidad = Integer.parseInt(txtCantidadP.getText());
     	boolean productoActualizado= false;
     	
     	if (productoSeleccionado!=null) {
