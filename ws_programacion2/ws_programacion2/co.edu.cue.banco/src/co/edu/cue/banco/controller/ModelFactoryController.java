@@ -16,7 +16,11 @@ public class ModelFactoryController implements IModelFactoryService, Runnable{
 
 	Banco banco;
 	Thread hiloServicio1_Persistencia;
+	Thread hiloServicio2_RegistrarAcciones;
 	BoundedSemaphore semaforo = new BoundedSemaphore(1);
+	private String mensajeLog;
+	private int nivel;
+	private String accion;
 	
 	
 	//------------------------------  Singleton ------------------------------------------------
@@ -195,8 +199,10 @@ public class ModelFactoryController implements IModelFactoryService, Runnable{
 	//PERSISTENCIA
 	//XML
 		public void guardarResourceXML() {
-			Persistencia.guardarRecursoBancoXML(banco);	
+			hiloServicio1_Persistencia = new Thread(this);
+			hiloServicio1_Persistencia.start();
 		}
+		
 		public void cargarResourceXML() {
 			banco= Persistencia.cargarRecursoBancoXML();
 		}
@@ -209,17 +215,48 @@ public class ModelFactoryController implements IModelFactoryService, Runnable{
 			Persistencia.guardarRecursoBancoBinario(banco);
 		}
 		
+		public void registrarAccioneSistema(String mensajeLog, int nivel, String accion) {
+			hiloServicio2_RegistrarAcciones = new Thread(this);
+			this.mensajeLog = mensajeLog;
+			this.nivel = nivel;
+			this.accion = accion;
+			hiloServicio2_RegistrarAcciones.start();
+		}
+		
 	//HILOS
 	@Override
 	public void run() {
-
-		//HILO PARA MANEJAR LA PERSISTENCIA 
 		
-		//HILO PARA REGISTRAR LAS ACCIONES DEL SISTEMA 
+		Thread hiloActual = Thread.currentThread();
 		
-		//HILO PARA GENERAR ARCHIVO DE INTEGRACION
+		try {
+			semaforo.ocupar();
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
+		}
+		//1. hilo 1 para manejar la persistencia
+		if(hiloActual == hiloServicio1_Persistencia){
+			Persistencia.guardarRecursoBancoXML(banco);
+			try {
+				semaforo.liberar();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 		
-		//HILO PARA GENERAR REPORTE 
+		//2. hilo 2 para registrar las acciones del sistema
+		if(hiloActual == hiloServicio2_RegistrarAcciones){
+			Persistencia.guardaRegistroLog(mensajeLog, nivel, accion);
+			try {
+				semaforo.liberar();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		//3. Para genera un archivo de integracion
+		
+		//4. Para generar reporte
 	}
 	
 	

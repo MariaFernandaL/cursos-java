@@ -1,4 +1,4 @@
-package co.edu.cue.banco.persistencia;
+package co.edu.cue.drogueria.persistencia;
 
 public class BoundedSemaphore {
 

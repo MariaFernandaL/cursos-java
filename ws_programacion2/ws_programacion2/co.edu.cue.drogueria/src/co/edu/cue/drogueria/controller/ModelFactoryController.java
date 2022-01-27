@@ -10,12 +10,19 @@ import co.edu.cue.drogueria.model.Cliente;
 import co.edu.cue.drogueria.model.Drogueria;
 import co.edu.cue.drogueria.model.Empleado;
 import co.edu.cue.drogueria.model.Producto;
+import co.edu.cue.drogueria.persistencia.BoundedSemaphore;
 import co.edu.cue.drogueria.persistencia.Persistencia;
 import co.edu.cue.drogueria.service.IModelFactoryController;
 
-public class ModelFactoryController implements IModelFactoryController{
+public class ModelFactoryController implements IModelFactoryController, Runnable{
 
 	Drogueria drogueria;
+	Thread hiloServicio1_Persistencia;
+	Thread hiloServicio2_RegistrarAcciones;
+	BoundedSemaphore semaforo = new BoundedSemaphore(1);
+	private String mensajeLog;
+	private int nivel;
+	private String accion;
 	
 	
 	//------------------------------  Singleton ------------------------------------------------
@@ -58,23 +65,7 @@ public class ModelFactoryController implements IModelFactoryController{
 				guardarResourceXML();
 			}
 		}
-		//XML
-		public void guardarResourceXML() {
-			Persistencia.guardarRecursoDrogueriaXML(drogueria);
-		}
-		public void cargarResourceXML() {
-			drogueria= Persistencia.cargarRecursoDrogueriaXML();
-		}
-		//BINARIO
-		public void cargarResourceBinario() {
-			Persistencia.cargarRecursoDrogueriaBinario();
-		}
-		public void guardarResourceBinario() {
-			Persistencia.guardarRecursoDrogueriaBinario(drogueria);
-		}
 
-
-		
 		private void inicializarDatos() {
 			
 			drogueria= new Drogueria();
@@ -293,4 +284,65 @@ public class ModelFactoryController implements IModelFactoryController{
 		}
 		
 		
+		//XML
+		public void guardarResourceXML() {
+			hiloServicio1_Persistencia = new Thread(this);
+			hiloServicio1_Persistencia.start();
+			}
+		public void cargarResourceXML() {
+			drogueria= Persistencia.cargarRecursoDrogueriaXML();
+			}
+		//BINARIO
+		public void cargarResourceBinario() {
+			Persistencia.cargarRecursoDrogueriaBinario();
+			}
+		public void guardarResourceBinario() {
+			Persistencia.guardarRecursoDrogueriaBinario(drogueria);
+			}
+		
+		public void registrarAccioneSistema(String mensajeLog, int nivel, String accion) {
+			hiloServicio2_RegistrarAcciones = new Thread(this);
+			this.mensajeLog = mensajeLog;
+			this.nivel = nivel;
+			this.accion = accion;
+			hiloServicio2_RegistrarAcciones.start();
+		}
+		
+		
+		//HILOS
+		@Override
+		public void run() {
+			
+			Thread hiloActual = Thread.currentThread();
+			
+			try {
+				semaforo.ocupar();
+			} catch (InterruptedException e1) {
+				e1.printStackTrace();
+			}
+			//1. hilo 1 para manejar la persistencia
+			if(hiloActual == hiloServicio1_Persistencia){
+				Persistencia.guardarRecursoDrogueriaXML(drogueria);
+				try {
+					semaforo.liberar();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			//2. hilo 2 para registrar las acciones del sistema
+			if(hiloActual == hiloServicio2_RegistrarAcciones){
+				Persistencia.guardaRegistroLog(mensajeLog, nivel, accion);
+				try {
+					semaforo.liberar();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			
+			//3. Para genera un archivo de integracion
+			
+			//4. Para generar reporte
+		}
 }
