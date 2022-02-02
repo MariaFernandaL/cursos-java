@@ -33,7 +33,26 @@ public class Persistencia {
 				contenido+= producto.getCodigo()+"#"+producto.getNombre()+"#"+producto.getPrecio()+"#"+producto.getDescripcion()
 			     +"#"+producto.getEstado()+"\n";
 			}
-			ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_PRODUCTOS, contenido, false);
+			ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_PRODUCTOS, contenido, false);	
+		}
+		
+		//CARGAR DE ARCHIVO TXT EJERCICIO 2 PRODUCTOS
+		public static ArrayList<String> cargarProductos() throws FileNotFoundException, IOException {
+
+			ArrayList<String> productos =new ArrayList<String>();
 			
+			ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_PRODUCTOS);
+			String linea="";
+			String producto="";
+			
+			for (int i = 0; i < contenido.size(); i++)
+			{
+				linea = contenido.get(i);
+				producto= "";
+				producto=linea.split(",")[0];
+				productos.add(producto);
+			}
+			
+			return productos;
 		}
 }

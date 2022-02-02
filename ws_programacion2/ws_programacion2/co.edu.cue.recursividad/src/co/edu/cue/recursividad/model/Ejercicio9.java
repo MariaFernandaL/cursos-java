@@ -20,27 +20,7 @@ public class Ejercicio9 {
 
 	//9 
 	public static int sumarDiagonalMatriz(int matriz[][], int i, int j, int filas, int columnas){
-		int sumaDiagonal=0;
-		if (i==j) {
-			sumaDiagonal=sumaDiagonal+matriz[i][j];
-			sumarDiagonalMatriz(matriz, sumaDiagonal, j, filas, columnas);
-		} else {
-			return sumarDiagonalMatriz(matriz, sumaDiagonal, j, filas, columnas);
-		}
 		return 0;
-		
-		/*
-		if (i<filas) {
-			if (j<columnas) {
-				//System.out.print(matriz[i][j]);
-				sumaDiagonal=sumaDiagonal+matriz[i][j];
-				sumarDiagonalMatriz(matriz, i+1, j+1, filas, columnas);
-				return sumaDiagonal;
-			} else {
-				System.out.println("La suma no se puede hacer");
-			}
-		}
-		return 0;*/
 	}
 	
 }

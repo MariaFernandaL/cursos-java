@@ -39,15 +39,15 @@ public class Main {
 	
 	
 	private static ArrayList<Producto> inicializarDatosProducto(ArrayList<Producto> listaProducto) {
-		Producto producto= new Producto("79877", "Arroz", 3.000, "producto basico para el hogar", "disponible");
+		Producto producto= new Producto("79877", "Arroz", 3000, "producto basico para el hogar", "disponible");
 		listaProducto.add(producto);
 		System.out.println(producto.toString());
 		
-		producto= new Producto("8748927", "Panela", 4.000, "producto basico para el hogar", "no disponible");
+		producto= new Producto("8748927", "Panela", 4000, "producto basico para el hogar", "no disponible");
 		listaProducto.add(producto);
 		System.out.println(producto.toString());
 		
-		producto= new Producto("97489324", "Frijoles", 2.000, "producto basico para el hogar", "disponible");
+		producto= new Producto("97489324", "Frijoles", 2000, "producto basico para el hogar", "disponible");
 		listaProducto.add(producto);
 		System.out.println(producto.toString());
 		

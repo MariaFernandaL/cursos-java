@@ -57,6 +57,8 @@ public class Ejercicio2 {
 		return programaBuscar;
 	}
 
+	
+	
 	private static String obtenerModalidad() {
 		ArrayList<String> listaModalidades=null;
 		String modalidadSeleccionada="";
@@ -76,6 +78,12 @@ public class Ejercicio2 {
 		return modalidadSeleccionada;
 	}
 
+	
+	
+	
+	
+	
+	
 	private static String leerStringConsola(String mensaje) {
 		String captura="";
 		System.out.println(mensaje);

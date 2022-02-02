@@ -4,7 +4,7 @@ public class Producto {
 
 	private String codigo;
 	private String nombre;
-	private double precio;
+	private int precio;
 	private String descripcion;
 	private String estado;
 	
@@ -12,7 +12,7 @@ public class Producto {
 		
 	}
 
-	public Producto(String codigo, String nombre, double precio, String descripcion, String estado) {
+	public Producto(String codigo, String nombre, int precio, String descripcion, String estado) {
 		super();
 		this.codigo = codigo;
 		this.nombre = nombre;
@@ -63,11 +63,11 @@ public class Producto {
 		this.nombre = nombre;
 	}
 
-	public double getPrecio() {
+	public int getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(double precio) {
+	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
 

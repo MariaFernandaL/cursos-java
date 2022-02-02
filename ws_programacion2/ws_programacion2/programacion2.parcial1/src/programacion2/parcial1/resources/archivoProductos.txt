@@ -1,3 +1,3 @@
-79877#Arroz#3.0#producto basico para el hogar#disponible
-8748927#Panela#4.0#producto basico para el hogar#no disponible
-97489324#Frijoles#2.0#producto basico para el hogar#disponible
+79877#Arroz#3000#producto basico para el hogar#disponible
+8748927#Panela#4000#producto basico para el hogar#no disponible
+97489324#Frijoles#2000#producto basico para el hogar#disponible
