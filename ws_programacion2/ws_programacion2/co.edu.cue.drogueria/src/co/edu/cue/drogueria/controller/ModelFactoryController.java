@@ -56,6 +56,7 @@ public class ModelFactoryController implements IModelFactoryController, Runnable
 			//PERSISTIR LA INFORMACION ARCHIVO BINARIO
 			//guardarResourceBinario();
 			//cargarResourceBinario();
+			
 			//PERSISTIR INFO ARCHIVO XML
 			//guardarResourceXML();
 			cargarResourceXML();

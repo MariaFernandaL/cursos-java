@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_111" class="java.beans.XMLDecoder">
+ <object class="co.edu.cue.preParcial1.Ejercicio2.Universidad" id="Universidad0">
+  <void property="listaFacultades">
+   <void method="add">
+    <object class="co.edu.cue.preParcial1.Ejercicio2.Facultad" id="Facultad0">
+     <void property="listaProgramas">
+      <void method="add">
+       <object class="co.edu.cue.preParcial1.Ejercicio2.Programa">
+        <void property="codigoP">
+         <string>12345</string>
+        </void>
+        <void property="modalidad">
+         <string>distancia</string>
+        </void>
+        <void property="nombreP">
+         <string>software</string>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="co.edu.cue.preParcial1.Ejercicio2.Programa">
+        <void property="codigoP">
+         <string>54321</string>
+        </void>
+        <void property="modalidad">
+         <string>presencial</string>
+        </void>
+        <void property="nombreP">
+         <string>civil</string>
+        </void>
+       </object>
+      </void>
+     </void>
+     <void property="nombreF">
+      <string>ingenieria</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="nombreU">
+   <string>Universidad del Quindio</string>
+  </void>
+ </object>
+</java>

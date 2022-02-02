@@ -39,12 +39,6 @@ public class Hilo2 extends Thread{
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				
-				/*try {
-					this.join();
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}*/
 			}
 			runHilo=false;
 		}

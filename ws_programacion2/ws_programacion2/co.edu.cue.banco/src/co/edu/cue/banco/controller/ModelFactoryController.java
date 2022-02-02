@@ -39,9 +39,9 @@ public class ModelFactoryController implements IModelFactoryService, Runnable{
 
 		//1. inicializar datos del modelo
 		//inicializarDatos();
-		
+		/*
 		//2. guardar los datos de los empleados en un archivo
-		/*try {
+		try {
 			Persistencia.guardarEmpleados(getBanco().getListaEmpleados());
 		} catch (IOException e) {
 			// TODO: handle exception
