@@ -21,7 +21,18 @@ public class Hilo1 extends Thread{
 	
 	@Override
 	public void run() {
+		try{
+			sleep(1000);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 		System.out.println("La cantidad de 0 en el arreglo son: "+contarCerosArreglo(array, elementoBuscar,n2));
+		try{
+			sleep(1000);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	private int contarCerosArreglo(int [] array,int valor,int posInici) {

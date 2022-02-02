@@ -30,6 +30,7 @@ public class Hilo2 extends Thread {
 	}
 	
 	private int sumarElementosMatriz(int[][] matriz, int i, int j) {
+		
 		if (i != matriz.length) { 
 	        if (j > 0) {
 	            return matriz[i][j - 1] + sumarElementosMatriz(matriz, i, --j); 
