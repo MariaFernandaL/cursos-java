@@ -11,20 +11,25 @@ public class Domicilio implements Serializable{
 	private Cliente cliente;
 	private Producto producto;
 	private Empleado empleado;
+	private String direccion;
+	private double costo;
 	
 	
 	public Domicilio(){
 		
 	}
 	
-	public Domicilio(String numeroDomicilio, String fecha, Cliente cliente, Producto producto, Empleado empleado) {
+	public Domicilio(String numeroDomicilio, String fecha, Cliente cliente, Producto producto, Empleado empleado, String direccion, double costo) {
 		super();
 		this.numeroDomicilio = numeroDomicilio;
 		this.fecha = fecha;
 		this.cliente = cliente;
 		this.producto = producto;
 		this.empleado= empleado;
+		this.direccion= direccion;
+		this.costo= costo;
 	}
+	
 	public String getNumeroDomicilio() {
 		return numeroDomicilio;
 	}
@@ -55,5 +60,16 @@ public class Domicilio implements Serializable{
 	public void setEmpleado(Empleado empleado) {
 		this.empleado = empleado;
 	}
-	
+	public String getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+	public double getCosto() {
+		return costo;
+	}
+	public void setCosto(double costo) {
+		this.costo = costo;
+	}	
 }

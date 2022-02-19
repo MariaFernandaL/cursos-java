@@ -163,6 +163,9 @@ public class DrogueriaController {
     private TableColumn<Empleado, String> colNombreE;
 
     @FXML
+    private TextField txtDireccionD;
+    
+    @FXML
     private TextField txtNombreE;
 
     @FXML
@@ -251,6 +254,9 @@ public class DrogueriaController {
 
     @FXML
     private TextField txtValorUniP;
+    
+    @FXML
+    private TextField txtCostosD;
 
     @FXML
     private TableColumn<Producto, String> colValorUnidadP;
@@ -707,6 +713,8 @@ private void mostrarInformacionEmpleado(Empleado empleadoSeleccionado) {
     	txtClienteD.setText("Ingrese la cedula del cliente");
     	txtEmpleadoD.setText("Ingrese la cedula del empleado");
     	txtProductoD.setText("Ingrese el codigo del producto");
+    	txtDireccionD.setText("Ingrese la direccion");
+    	txtCostosD.setText("Ingrese el costo");
     }
 
     private void limpiarCamposEmpleado() {
@@ -735,6 +743,8 @@ private void mostrarInformacionEmpleado(Empleado empleadoSeleccionado) {
     	txtClienteD.setText("");
     	txtEmpleadoD.setText("");
     	txtProductoD.setText("");
+    	txtDireccionD.setText("");
+    	txtCostosD.setText("");
     }
     
     private void mostrarMensaje(String titulo, String header, String contenido, AlertType alertType) {

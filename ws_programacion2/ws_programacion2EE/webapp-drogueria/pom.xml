@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>co.edu.cue.webapp.drogueria</groupId>
-    <artifactId>webapp_drogueria</artifactId>
+    <artifactId>webapp-drogueria</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
@@ -13,6 +13,7 @@
         <maven.compiler.source>14</maven.compiler.source>
         <maven.compiler.target>14</maven.compiler.target>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>jakarta.platform</groupId>

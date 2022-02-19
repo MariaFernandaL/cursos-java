@@ -1,0 +1,9 @@
+div.container-form{
+box-shadow: 0 2px 7px rgb(0 0 0 /15%) !important;
+background: #ffffff;
+border-radius: 5px !important;
+border: solid 1px;
+border-color: #c7bebe;
+padding: 10px;
+margin: 5px;
+}
