@@ -61,7 +61,7 @@ public class DomicilioServlet extends HttpServlet {
             }
         } else {
             req.setAttribute("errores", listaErrores);
-            getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
+            getServletContext().getRequestDispatcher("/transaccion.jsp").forward(req,resp);
         }
     }
 

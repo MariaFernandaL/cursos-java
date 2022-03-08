@@ -40,7 +40,7 @@
              if(errores!=null && errores.containsKey("fechaDomicilio")){
              out.println("<div class='rpw mb-3 alert-danger col sm-4' style= 'color: red;'>"+errores.get("fechaDomicilio")+"</div>");
              }
-             %>
+            %>
 
             <div class="row mb-3">
                 <label for="direccionDomicilio"  class="col-form-label col-sm-2">Direccion del Domicilio</label>
