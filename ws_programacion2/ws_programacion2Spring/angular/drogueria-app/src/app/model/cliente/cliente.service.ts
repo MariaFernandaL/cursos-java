@@ -23,6 +23,4 @@ export class ClienteService {
      //map(response => response as Cliente[])
     //);
   }
-
-  
 }
