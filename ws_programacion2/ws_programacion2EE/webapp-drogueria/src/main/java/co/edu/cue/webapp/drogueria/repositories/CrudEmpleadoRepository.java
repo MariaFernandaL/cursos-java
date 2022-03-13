@@ -1,8 +1,6 @@
 package co.edu.cue.webapp.drogueria.repositories;
 
-import co.edu.cue.webapp.drogueria.entity.Cliente;
 import co.edu.cue.webapp.drogueria.entity.Empleado;
-import co.edu.cue.webapp.drogueria.exceptions.ClienteException;
 import co.edu.cue.webapp.drogueria.exceptions.EmpleadoException;
 import jakarta.persistence.EntityManager;
 
@@ -44,4 +42,49 @@ public class CrudEmpleadoRepository implements CrudRepository<Empleado>{
             em.remove(empleado);
         }
     }
+
+    @Override
+    public void create(Empleado empleado) {
+
+    }
+
+    @Override
+    public void update(Empleado empleado) {
+
+    }
+
+    @Override
+    public Empleado obtenerPorCedula(String cedula) {
+        return null;
+    }
+
+    @Override
+    public List<Empleado> consulta1(String direccion) {
+        return null;
+    }
+
+    @Override
+    public long consulta2(long parametro) {
+
+        return parametro;
+    }
+
+
+    @Override
+    public List<Empleado> consulta3(String parametro) {
+        return null;
+    }
+
+    @Override
+    public long consulta4(long parametro) {
+        return 0;
+    }
+
+
+    @Override
+    public Double consulta5(double parametro) {
+        return null;
+    }
+
+
 }

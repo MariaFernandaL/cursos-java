@@ -3,6 +3,7 @@ package co.edu.cue.webapp.drogueria.entity;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name="empleado")
@@ -18,6 +19,19 @@ public class Empleado implements Serializable {
     private String telefono;
     private String correo;
     private double salario;
+
+
+    @OneToMany(mappedBy="empleado")
+    private List<Domicilio> domicilios;
+
+    public List<Domicilio> getDomicilios() {
+        return domicilios;
+    }
+
+    public void setDomicilios(List<Domicilio> domicilios) {
+        this.domicilios = domicilios;
+    }
+
 
     public Empleado() {
 

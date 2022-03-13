@@ -1,4 +1,4 @@
-package co.edu.cue.webapp.drogueria.services.util;
+package co.edu.cue.webapp.drogueria.util;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;

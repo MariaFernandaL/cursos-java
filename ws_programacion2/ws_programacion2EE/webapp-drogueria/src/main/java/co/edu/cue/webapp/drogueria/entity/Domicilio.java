@@ -24,45 +24,42 @@ public class Domicilio implements Serializable {
     private double costo;
 
 
-    @OneToMany(
-            mappedBy = "domicilio"
-    )
-    private List<Cliente> clientes;
-    @OneToMany(
-            mappedBy = "domicilio"
-    )
-    private List<Empleado> empleados;
-    @OneToMany(
-            mappedBy = "domicilio"
-    )
-    private List<Producto> productos;
+    @ManyToOne
+    private Cliente cliente;
+
+    @ManyToOne
+    private Producto producto;
+
+    @ManyToOne
+    private Empleado empleado;
+
 
 
     public Domicilio() {
     }
 
-    public List<Cliente> getClientes() {
-        return clientes;
+    public Cliente getCliente() {
+        return this.cliente;
     }
 
-    public void setClientes(List<Cliente> clientes) {
-        this.clientes = clientes;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
-    public List<Empleado> getEmpleados() {
-        return empleados;
+    public Producto getProducto() {
+        return this.producto;
     }
 
-    public void setEmpleados(List<Empleado> empleados) {
-        this.empleados = empleados;
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 
-    public List<Producto> getProductos() {
-        return productos;
+    public Empleado getEmpleado() {
+        return this.empleado;
     }
 
-    public void setProductos(List<Producto> productos) {
-        this.productos = productos;
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 
     public int getIdDomicilio() {

@@ -1,9 +1,10 @@
 package co.edu.cue.webapp.drogueria.entity;
 
 
+import jakarta.persistence.*;
 
 import java.io.Serializable;
-import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="cliente")
@@ -14,11 +15,24 @@ public class Cliente implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCliente;
 
+
     private String nombre;
     private String cedula;
     private String direccion;
     private String telefono;
     private String correo;
+    private Double pago;
+
+    @OneToMany(mappedBy="cliente")
+    private List<Domicilio> domicilios;
+
+    public List<Domicilio> getDomicilios() {
+        return domicilios;
+    }
+
+    public void setDomicilios(List<Domicilio> domicilios) {
+        this.domicilios = domicilios;
+    }
 
 
 
@@ -74,6 +88,14 @@ public class Cliente implements Serializable {
         this.correo = correo;
     }
 
+    public Double getPago() {
+        return pago;
+    }
+
+    public void setPago(Double pago) {
+        this.pago = pago;
+    }
+
     @Override
     public String toString() {
         return "Cliente{" +
@@ -83,6 +105,7 @@ public class Cliente implements Serializable {
                 ", direccion='" + direccion + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", correo='" + correo + '\'' +
+                ", pago='" + pago + '\'' +
                 '}';
     }
 }

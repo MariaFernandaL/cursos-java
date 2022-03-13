@@ -1,9 +1,7 @@
 package co.edu.cue.webapp.drogueria.services;
 
-import co.edu.cue.webapp.drogueria.entity.Cliente;
 import co.edu.cue.webapp.drogueria.entity.Empleado;
 import co.edu.cue.webapp.drogueria.exceptions.EmpleadoException;
-import co.edu.cue.webapp.drogueria.repositories.CrudClienteRepository;
 import co.edu.cue.webapp.drogueria.repositories.CrudEmpleadoRepository;
 import co.edu.cue.webapp.drogueria.repositories.CrudRepository;
 import jakarta.persistence.EntityManager;

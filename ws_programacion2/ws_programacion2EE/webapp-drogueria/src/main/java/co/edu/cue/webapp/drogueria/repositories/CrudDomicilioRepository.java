@@ -1,17 +1,14 @@
 package co.edu.cue.webapp.drogueria.repositories;
 
-import co.edu.cue.webapp.drogueria.entity.Cliente;
 import co.edu.cue.webapp.drogueria.entity.Domicilio;
-import co.edu.cue.webapp.drogueria.entity.Producto;
-import co.edu.cue.webapp.drogueria.exceptions.ClienteException;
+import co.edu.cue.webapp.drogueria.entity.Empleado;
 import co.edu.cue.webapp.drogueria.exceptions.DomicilioException;
-import co.edu.cue.webapp.drogueria.exceptions.EmpleadoException;
-import co.edu.cue.webapp.drogueria.exceptions.ProductoException;
 import jakarta.persistence.EntityManager;
 
 import java.util.List;
 
 public class CrudDomicilioRepository implements CrudRepository<Domicilio>{
+
     EntityManager em;
 
     public CrudDomicilioRepository(EntityManager em) {
@@ -46,4 +43,47 @@ public class CrudDomicilioRepository implements CrudRepository<Domicilio>{
             em.remove(domicilio);
         }
     }
+
+    @Override
+    public void create(Domicilio domicilio) {
+
+    }
+
+    @Override
+    public void update(Domicilio domicilio) {
+
+    }
+
+    @Override
+    public Domicilio obtenerPorCedula(String cedula) {
+        return null;
+    }
+
+    @Override
+    public List<Domicilio> consulta1(String direccion) {
+        return null;
+    }
+
+    @Override
+    public long consulta2(long parametro) {
+        return parametro;
+    }
+
+
+    @Override
+    public List<Domicilio> consulta3(String parametro) {
+        return null;
+    }
+
+    @Override
+    public long consulta4(long parametro) {
+        return 0;
+    }
+
+    @Override
+    public Double consulta5(double parametro) {
+        return null;
+    }
+
+
 }

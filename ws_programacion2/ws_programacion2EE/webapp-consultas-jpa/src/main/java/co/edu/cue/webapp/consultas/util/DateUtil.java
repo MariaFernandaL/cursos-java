@@ -1,4 +1,4 @@
-package co.edu.cue.webapp.consultas.exceptions.util;
+package co.edu.cue.webapp.consultas.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

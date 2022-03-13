@@ -1,0 +1,28 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">Empleados</div>
+    <div class="card-body text-primary">
+        <h5 class="card-title">Listado de empleados</h5>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Cedula</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Salario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let empleado of empleado">
+                    <td>{{empleado.idEmpleado}}</td>
+                    <td>{{empleado.nombre}}</td>
+                    <td>{{empleado.cedula}}</td>
+                    <td>{{empleado.telefono}}</td>
+                    <td>{{empleado.correo}}</td>
+                    <td>{{empleado.salario}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

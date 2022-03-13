@@ -14,4 +14,16 @@ public interface CrudRepository <T> {
     T obtenerPorId(int id);
     void guardar(T t);
     void eliminar(int id) throws ClienteException, EmpleadoException, ProductoException, DomicilioException;
+
+    void create(T t);
+    void update(T t);
+    T obtenerPorCedula(String cedula);
+
+    //CONSULTAS
+    List<T> consulta1(String parametro);
+    long consulta2(long parametro);
+    List<T> consulta3(String parametro);
+    long consulta4(long parametro);
+    Double consulta5(double parametro);
+
 }

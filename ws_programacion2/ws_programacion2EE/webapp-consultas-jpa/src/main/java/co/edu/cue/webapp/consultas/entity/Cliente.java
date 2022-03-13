@@ -1,9 +1,9 @@
-package co.edu.cue.webapp.drogueria.entity;
+package co.edu.cue.webapp.consultas.entity;
 
 
+import jakarta.persistence.*;
 
 import java.io.Serializable;
-import jakarta.persistence.*;
 
 @Entity
 @Table(name="cliente")
@@ -24,6 +24,11 @@ public class Cliente implements Serializable {
 
     public Cliente(){
 
+    }
+
+    public Cliente(String nombre, String direccion){
+        this.nombre= nombre;
+        this.direccion=direccion;
     }
 
     public int getIdCliente() {
@@ -83,6 +88,13 @@ public class Cliente implements Serializable {
                 ", direccion='" + direccion + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", correo='" + correo + '\'' +
+                '}';
+    }
+
+    public String listarClientes(){
+        return "Cliente{" +
+                ", nombre='" + nombre + '\'' +
+                ", direccion='" + direccion + '\'' +
                 '}';
     }
 }

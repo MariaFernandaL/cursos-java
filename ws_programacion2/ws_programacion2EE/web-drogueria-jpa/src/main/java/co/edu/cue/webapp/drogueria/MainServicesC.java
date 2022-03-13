@@ -10,7 +10,7 @@ import jakarta.persistence.EntityManager;
 import javax.swing.*;
 import java.util.List;
 
-public class MainServices {
+public class MainServicesC {
 
     public static void main(String[] args) throws ClienteException {
         EntityManager em= JpaUtil.getEntityManager();
@@ -27,11 +27,11 @@ public class MainServices {
         actualizarCliente(clienteService, cliente1);*/
 
 
-        int idCliente= setDataEliminar(clienteService);
-        listarClientes(clienteService);
+        /*int idCliente= setDataEliminar(clienteService);
         eliminarCliente(clienteService, idCliente);
-        System.out.println("El cliente fue eliminado");
+        System.out.println("El cliente fue eliminado");*/
 
+        listarClientes(clienteService);
         em.close();
     }
 

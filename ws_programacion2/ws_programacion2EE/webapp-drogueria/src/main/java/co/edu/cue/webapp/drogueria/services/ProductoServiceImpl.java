@@ -1,8 +1,6 @@
 package co.edu.cue.webapp.drogueria.services;
 
-import co.edu.cue.webapp.drogueria.entity.Empleado;
 import co.edu.cue.webapp.drogueria.entity.Producto;
-import co.edu.cue.webapp.drogueria.exceptions.EmpleadoException;
 import co.edu.cue.webapp.drogueria.exceptions.ProductoException;
 import co.edu.cue.webapp.drogueria.repositories.CrudProductoRepository;
 import co.edu.cue.webapp.drogueria.repositories.CrudRepository;

@@ -1,4 +1,4 @@
-package co.edu.cue.webapp.consultas.exceptions.util;
+package co.edu.cue.webapp.consultas.util;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;

@@ -1,5 +1,4 @@
-package co.edu.cue.webapp.drogueria.servlet;
-
+package co.edu.cue.webapp.drogueria.controller;
 
 import co.edu.cue.webapp.drogueria.entity.Cliente;
 import co.edu.cue.webapp.drogueria.services.ClienteServiceImpl;

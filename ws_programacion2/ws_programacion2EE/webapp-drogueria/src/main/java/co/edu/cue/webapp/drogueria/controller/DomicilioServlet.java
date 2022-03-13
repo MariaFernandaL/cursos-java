@@ -1,4 +1,4 @@
-package co.edu.cue.webapp.drogueria.servlet;
+package co.edu.cue.webapp.drogueria.controller;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

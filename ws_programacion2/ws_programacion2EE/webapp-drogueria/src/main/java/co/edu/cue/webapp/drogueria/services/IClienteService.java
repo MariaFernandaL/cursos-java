@@ -11,4 +11,15 @@ public interface IClienteService {
     Cliente obtenerPorId(int id);
     void guardar(Cliente cliente);
     void eliminar(int id) throws ClienteException;
+
+    void crearCliente(Cliente cliente);
+    void actualizarCliente(Cliente cliente);
+    Cliente obtenerPorCedula(String cedula);
+
+    //CONSULTAS
+    List<Cliente> consulta1(String parametros);
+    long consulta2(long parametros);
+    List<Cliente> consulta3(String parametros);
+    long consulta4(long parametro);
+    Double consulta5(double parametros);
 }
