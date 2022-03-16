@@ -2,6 +2,13 @@
     <div class="card-header">Productos</div>
     <div class="card-body text-primary">
         <h5 class="card-title">Listado de productos</h5>
+
+        <div>
+            <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/productos/formproductos']">
+                Agregar Producto
+            </button>
+        </div>
+
         <table class="table">
             <thead>
                 <tr>
@@ -10,6 +17,7 @@
                     <th scope="col">Codigo</th>
                     <th scope="col">Valor por Unidad</th>
                     <th scope="col">Cantidad</th>
+                    <th scope="col">Editar</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,6 +27,11 @@
                     <td>{{producto.codigo}}</td>
                     <td>{{producto.valorUnidad}}</td>
                     <td>{{producto.cantidad}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-sm">
+                            Editar
+                        </button>
+                    </td>
                 </tr>
             </tbody>
         </table>

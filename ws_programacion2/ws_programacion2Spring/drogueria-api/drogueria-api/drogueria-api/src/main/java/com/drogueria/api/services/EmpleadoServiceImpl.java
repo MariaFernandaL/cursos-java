@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.drogueria.api.entities.Empleado;
+import com.drogueria.api.exception.ClienteException;
+import com.drogueria.api.exception.EmpleadoException;
 import com.drogueria.api.repositories.IEmpleadoRepository;
 
 @Service
@@ -38,8 +40,10 @@ public class EmpleadoServiceImpl implements IEmpleadoService{
 
 	@Override
 	@Transactional
-	public void update(Empleado empleado, int id) {
-		//empleado= empleadoRepository.findById(id);
+	public void update(Empleado empleado, int id) throws EmpleadoException{
+		if (findById(id)==null) {
+			throw new EmpleadoException("El empleado no existe");
+		}
 		empleadoRepository.save(empleado);
 	}
 

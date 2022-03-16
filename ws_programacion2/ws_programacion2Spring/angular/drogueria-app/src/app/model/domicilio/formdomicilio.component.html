@@ -1,0 +1,61 @@
+<div class="card bg-dark text-white">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body">
+        <form>
+            <div class="form-group-row">
+                <label for="" class="col-form-label col-sm-2">Cliente:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="domicilio.cliente_idCliente" name="cliente_idCliente">
+                </div>
+            </div>
+
+            <div class="form-group-row">
+                <label for="" class="col-form-label col-sm-2">Empleado:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="domicilio.empleado_idEmpleado" name="empleado_idEmpleado">
+                </div>
+            </div>
+
+            <div class="form-group-row">
+                <label for="" class="col-form-label col-sm-2">Producto:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="domicilio.producto_idProducto" name="producto_idProducto">
+                </div>
+            </div>
+
+            <div class="form-group-row">
+                <label for="" class="col-form-label col-sm-2">Codigo:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="domicilio.codigo" name="codigo">
+                </div>
+            </div>
+
+            <div class="form-group-row">
+                <label for="" class="col-form-label col-sm-2">Fecha:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="domicilio.fecha" name="fecha">
+                </div>
+            </div>
+
+            <div class="form-group-row">
+                <label for="" class="col-form-label col-sm-2">Direccion:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="domicilio.direccion" name="direccion">
+                </div>
+            </div>
+
+            <div class="form-group-row">
+                <label for="" class="col-form-label col-sm-2">Costo:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="domicilio.costo" name="costo">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <button class="btn btn-primary" role="button" (click)='crearDomicilio()'>Crear</button>
+                </div>
+            </div>
+        </form>
+
+    </div>

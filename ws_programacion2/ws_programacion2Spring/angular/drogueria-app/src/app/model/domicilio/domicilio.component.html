@@ -1,1 +1,45 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">Domicilios</div>
+    <div class="card-body text-primary">
+        <h5 class="card-title">Listado de Domicilios</h5>
 
+        <div>
+            <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/domicilios/formdomicilio']">
+                Agregar Domicilio
+            </button>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Empleado</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Direccion</th>
+                    <th scope="col">Costo</th>
+                    <th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let domicilio of domicilio">
+                    <td>{{domicilio.idDomicilio}}</td>
+                    <td>{{domicilio.cliente_idCliente}}</td>
+                    <td>{{domicilio.empleado_idEmpleado}}</td>
+                    <td>{{domicilio.producto_idProducto}}</td>
+                    <td>{{domicilio.codigo}}</td>
+                    <td>{{domicilio.fecha}}</td>
+                    <td>{{domicilio.direccion}}</td>
+                    <td>{{domicilio.costo}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-sm">
+                            Editar
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

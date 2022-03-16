@@ -11,17 +11,32 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class EmpleadoService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   private urlEndPoint: string = 'http://localhost:8080/api/drogueria/empleados';
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
  
   
   getEmpleados(): Observable <Empleado[]>{
-    return of (EMPLEADOSDATA);
-    //return this.http.get(this.urlEndPoint).pipe(
-     //map(response => response as Empleado[])
-    //);
+    return this.http.get(this.urlEndPoint).pipe(
+     map(response => response as Empleado[])
+    );
+  }
+
+  crearEmpleado(Empleado:Empleado):Observable<Empleado> {
+    return this.http.post<Empleado>(this.urlEndPoint,Empleado,{headers:this.httpHeaders});
+  }
+
+  getEmpleado(id): Observable<Empleado>{
+    return this.http.get<Empleado>(`${this.urlEndPoint}/${id}`)
+  }
+
+  updateEmpleado(Empleado: Empleado): Observable<Empleado>{
+    return this.http.put<Empleado>(`${this.urlEndPoint}/${Empleado.idEmpleado}`, Empleado, {headers: this.httpHeaders})
+  }
+
+  deleteEmpleado(id: number): Observable<Empleado>{
+    return this.http.delete<Empleado>(`${this.urlEndPoint}/${id}`, {headers: this.httpHeaders})
   }
 
   

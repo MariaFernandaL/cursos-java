@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.drogueria.api.entities.Domicilio;
+import com.drogueria.api.exception.ClienteException;
+import com.drogueria.api.exception.DomicilioException;
 import com.drogueria.api.repositories.IDomicilioRepository;
 
 @Service
@@ -38,8 +40,10 @@ public class DomicilioServiceImpl implements IDomicilioService{
 
 	@Override
 	@Transactional
-	public void update(Domicilio domicilio, int id) {
-		//domicilio= domicilioRepository.findById(id);
+	public void update(Domicilio domicilio, int id) throws DomicilioException{
+		if (findById(id)==null) {
+			throw new DomicilioException("El domicilio no existe");
+		}
 		domicilioRepository.save(domicilio);
 	}
 

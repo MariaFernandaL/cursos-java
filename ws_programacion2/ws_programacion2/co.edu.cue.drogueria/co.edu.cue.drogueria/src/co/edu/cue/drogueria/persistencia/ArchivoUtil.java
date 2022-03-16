@@ -24,6 +24,7 @@ import java.util.logging.SimpleFormatter;
  * @author Admin
  *
  */
+
 public class ArchivoUtil {
 
 	static String fechaSistema = "";

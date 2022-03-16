@@ -2,6 +2,13 @@
     <div class="card-header">Empleados</div>
     <div class="card-body text-primary">
         <h5 class="card-title">Listado de empleados</h5>
+
+        <div>
+            <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/empleados/formempleados']">
+                Agregar Empleado
+            </button>
+        </div>
+
         <table class="table">
             <thead>
                 <tr>
@@ -11,6 +18,7 @@
                     <th scope="col">Telefono</th>
                     <th scope="col">Correo</th>
                     <th scope="col">Salario</th>
+                    <th scope="col">Editar</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,6 +29,11 @@
                     <td>{{empleado.telefono}}</td>
                     <td>{{empleado.correo}}</td>
                     <td>{{empleado.salario}}</td>
+
+                    <td>
+                        <button type="button" class="btn btn-primary btn-sm">Editar</button>
+                    </td>
+
                 </tr>
             </tbody>
         </table>

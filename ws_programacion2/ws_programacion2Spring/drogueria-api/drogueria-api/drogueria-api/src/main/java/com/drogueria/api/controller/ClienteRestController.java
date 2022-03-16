@@ -17,9 +17,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.drogueria.api.entities.Cliente;
+import com.drogueria.api.exception.ClienteException;
 import com.drogueria.api.services.ClienteServiceImpl;
 
-//@CrossOrigin(origins = {"http://localhost:4200" })
+@CrossOrigin(origins = {"http://localhost:4200" })
 @RestController
 @RequestMapping("/api/drogueria")
 public class ClienteRestController {
@@ -39,24 +40,24 @@ public class ClienteRestController {
 	}
 
 	
-	@PostMapping("/cliente")
+	@PostMapping("/clientes")
 	@ResponseStatus(HttpStatus.CREATED)
 	public void createClient(@RequestBody Cliente cliente) {
 		System.out.println("Servicio de crear solicitado");
 		clienteServiceImpl.save(cliente);
 	}
 
-	@DeleteMapping("clientes/delete/{id}")
+	@DeleteMapping("/clientes/delete/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void deleteClient(@PathVariable int id) {
 		clienteServiceImpl.delete(id);
 	}
 	
-//	@PutMapping("cliente/update/{id}")
-//	@ResponseStatus(HttpStatus.ACCEPTED)
-//	public void updateClient(@RequestBody Cliente cliente, @PathVariable int id) {
-//		
-//	}
+	@PutMapping("/cliente/update/{id}")
+	@ResponseStatus(HttpStatus.ACCEPTED)
+	public void updateClient(@RequestBody Cliente cliente, @PathVariable int id) throws ClienteException{
+		clienteServiceImpl.update(cliente,id);
+	}
 	
 	/*
 	private ArrayList<Cliente> getClientes() {

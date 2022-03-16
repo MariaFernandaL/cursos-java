@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.drogueria.api.entities.Cliente;
+import com.drogueria.api.exception.ClienteException;
 import com.drogueria.api.repositories.IClienteRepository;
 
 @Service
@@ -38,8 +39,10 @@ public class ClienteServiceImpl implements IClienteService{
 
 	@Override
 	@Transactional
-	public void update(Cliente cliente, int id) {
-		//cliente= clienteRepository.findById(id);
+	public void update(Cliente cliente, int id) throws ClienteException{
+		if (findById(id)==null) {
+			throw new ClienteException("El cliente no existe");
+		}
 		clienteRepository.save(cliente);
 	}
 
