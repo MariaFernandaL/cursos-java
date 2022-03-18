@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.drogueria.api.entities.Cliente;
 import com.drogueria.api.entities.Empleado;
 import com.drogueria.api.exception.ClienteException;
 import com.drogueria.api.exception.EmpleadoException;
@@ -34,8 +35,8 @@ public class EmpleadoServiceImpl implements IEmpleadoService{
 
 	@Override
 	@Transactional
-	public Optional<Empleado> findById(int id) {
-		return empleadoRepository.findById(id);
+	public Empleado findById(int id) {
+		return empleadoRepository.findById(id).orElse(null);
 	}
 
 	@Override

@@ -37,7 +37,7 @@ public class EmpleadoRestController {
 	}
 	
 	@GetMapping("/empleados/{id}")
-	public Optional<Empleado> getEmpleado(@PathVariable int id) {
+	public Empleado getEmpleado(@PathVariable int id) {
 		return empleadoServiceImpl.findById(id);
 	}
 
@@ -49,13 +49,13 @@ public class EmpleadoRestController {
 		empleadoServiceImpl.save(empleado);
 	}
 
-	@DeleteMapping("empleados/delete/{id}")
+	@DeleteMapping("empleados/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void deleteEmpleado(@PathVariable int id) {
 		empleadoServiceImpl.delete(id);
 	}
 	
-	@PutMapping("/empleados/update/{id}")
+	@PutMapping("/empleados/{id}")
 	@ResponseStatus(HttpStatus.ACCEPTED)
 	public void updateEmpleado(@RequestBody Empleado empleado, @PathVariable int id) throws EmpleadoException{
 		empleadoServiceImpl.update(empleado,id);

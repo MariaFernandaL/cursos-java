@@ -34,8 +34,8 @@ public class ProductoServiceImpl implements IProductoService{
 
 	@Override
 	@Transactional
-	public Optional<Producto> findById(int id) {
-		return productoRepository.findById(id);
+	public Producto findById(int id) {
+		return productoRepository.findById(id).orElse(null);
 	}
 
 	@Override

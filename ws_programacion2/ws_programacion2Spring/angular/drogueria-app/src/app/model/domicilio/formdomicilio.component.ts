@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Domicilio } from './domicilio'; 
 import { DomicilioService } from './domicilio.service'; 
 import Swal from 'sweetalert2';
@@ -16,10 +16,12 @@ export class FormdomicilioComponent implements OnInit {
   
   constructor(
     private DomicilioService: DomicilioService,
-    private router: Router
+    private router: Router,
+    private activateRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+    this.cargarDomicilio();
   }
 
   crearDomicilio(): void{
@@ -31,5 +33,23 @@ export class FormdomicilioComponent implements OnInit {
   );
   }
 
+  cargarDomicilio():void{
+    this.activateRoute.params.subscribe(params =>{
+      let id = params['id']
+      if(id){
+        this.DomicilioService.getDomicilio(id).subscribe( (domicilio) => this.domicilio = domicilio )
+      }
+    })
+  }
+
+
+  actualizarDomicilio():void{
+    this.DomicilioService.updateDomicilio(this.domicilio).subscribe(
+      domicilio =>{
+        this.router.navigate(['/domicilios'])
+        Swal.fire('Domicilio Actualizado', `Domicilios ${this.domicilio.codigo} actualizado con éxito!`, 'success')
+      }
+    )
+  }
 
 }

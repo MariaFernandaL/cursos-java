@@ -1,12 +1,18 @@
 package com.drogueria.api.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="producto")
@@ -22,6 +28,12 @@ public class Producto implements Serializable {
     private String codigo;
     private Double valorUnidad;
     private int cantidad;
+    
+    
+    @JsonIgnoreProperties(value = {"producto", "hybernateLazyInitializer", "handler"}, allowSetters = true)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "producto", cascade = CascadeType.ALL)
+    private List<Domicilio> domicilios;
+    
     
     public Producto() {
     	
@@ -66,9 +78,16 @@ public class Producto implements Serializable {
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
-
 	
-	 @Override
+	 public List<Domicilio> getDomicilios() {
+		return domicilios;
+	}
+
+	public void setDomicilios(List<Domicilio> domicilios) {
+		this.domicilios = domicilios;
+	}
+
+	@Override
 	    public String toString() {
 	        return "Producto{" +
 	                "idProducto=" + idProducto +

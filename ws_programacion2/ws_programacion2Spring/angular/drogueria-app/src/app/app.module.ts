@@ -17,6 +17,8 @@ import { FormsModule } from '@angular/forms';
 import { FormempleadosComponent } from './model/empleados/formempleados.component';
 import { FormproductosComponent } from './model/producto/formproductos.component';
 import { FormdomicilioComponent } from './model/domicilio/formdomicilio.component';
+import { HomeComponent } from './base_components/homeee/home.components';
+
 
 const routes: Routes=[
   {path: '', redirectTo: '/drogueria', pathMatch:'full'},
@@ -28,7 +30,12 @@ const routes: Routes=[
   {path: 'clientes/formcliente', component: FormclienteComponent},
   {path: 'empleados/formempleados', component: FormempleadosComponent},
   {path: 'productos/formproductos', component: FormproductosComponent},
-  {path: 'domicilios/formdomicilio', component: FormdomicilioComponent}
+  {path: 'domicilios/formdomicilio', component: FormdomicilioComponent},
+  {path: 'clientes/formcliente/:id', component: FormclienteComponent},
+  {path: 'empleados/formempleados/:id', component: FormempleadosComponent},
+  {path: 'productos/formproductos/:id', component: FormproductosComponent},
+  {path: 'domicilios/formdomicilio/:id', component: FormdomicilioComponent},
+  {path: 'homes', component: HomeComponent}
 ]
 
   @NgModule({
@@ -44,7 +51,8 @@ const routes: Routes=[
       FormclienteComponent,
       FormempleadosComponent,
       FormproductosComponent,
-      FormdomicilioComponent
+      FormdomicilioComponent,
+      HomeComponent
     ],
   
   imports: [

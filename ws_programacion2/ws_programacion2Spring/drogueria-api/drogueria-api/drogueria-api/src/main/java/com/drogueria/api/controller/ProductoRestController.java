@@ -38,7 +38,7 @@ public class ProductoRestController {
 	}
 	
 	@GetMapping("/productos/{id}")
-	public Optional<Producto> getProducto(@PathVariable int id) {
+	public Producto getProducto(@PathVariable int id) {
 		return productoServiceImpl.findById(id);
 	}
 	
@@ -50,13 +50,13 @@ public class ProductoRestController {
 		productoServiceImpl.save(producto);
 	}
 	
-	@DeleteMapping("productos/delete/{id}")
+	@DeleteMapping("productos/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void deleteProducto(@PathVariable int id) {
 		productoServiceImpl.delete(id);
 	}
 	
-	@PutMapping("productos/update/{id}")
+	@PutMapping("productos/{id}")
 	@ResponseStatus(HttpStatus.ACCEPTED)
 	public void updateProducto(@RequestBody Producto producto, @PathVariable int id) throws ProductoException{
 		productoServiceImpl.update(producto,id);

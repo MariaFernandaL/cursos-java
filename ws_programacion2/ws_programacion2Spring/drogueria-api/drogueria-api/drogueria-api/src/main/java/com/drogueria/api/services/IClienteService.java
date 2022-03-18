@@ -11,7 +11,7 @@ public interface IClienteService {
 	
 	public List<Cliente> findAll();
 	public void save(Cliente cliente);
-	public Optional<Cliente> findById(int id);
+	public Cliente findById(int id);
 	void update(Cliente cliente, int id) throws ClienteException;
 	void delete(int id);
 	

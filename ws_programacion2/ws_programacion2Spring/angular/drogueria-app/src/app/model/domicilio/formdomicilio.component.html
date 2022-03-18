@@ -53,7 +53,12 @@
 
             <div class="form-group row">
                 <div class="col-sm-6">
-                    <button class="btn btn-primary" role="button" (click)='crearDomicilio()'>Crear</button>
+                    <button class="btn btn-primary" role="button" (click)='crearDomicilio()' *ngIf="!domicilio.idDomicilio else elseBlock">Crear</button>
+                    <ng-template #elseBlock>
+                        <button class="btn btn-primary" role="button" (click)='actualizarDomicilio()'>
+                            Actualizar
+                        </button>
+                    </ng-template>
                 </div>
             </div>
         </form>

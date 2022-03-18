@@ -35,7 +35,7 @@ public class DomicilioRestController {
 	}
 	
 	@GetMapping("/domicilios/{id}")
-	public Optional<Domicilio> getDomicilio(@PathVariable int id) {
+	public Domicilio getDomicilio(@PathVariable int id) {
 		return domicilioServiceImpl.findById(id);
 	}
 	
@@ -44,16 +44,16 @@ public class DomicilioRestController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public void createDomicilio(@RequestBody Domicilio domicilio) {
 		System.out.println("Servicio de crear solicitado");
-		domicilioServiceImpl.save(domicilio);
+		//domicilioServiceImpl.save(domicilio);
 	}
 	
-	@DeleteMapping("/domicilios/delete/{id}")
+	@DeleteMapping("/domicilios/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void deleteDomicilio(@PathVariable int id) {
 		domicilioServiceImpl.delete(id);
 	}
 	
-	@PutMapping("/domicilios/update/{id}")
+	@PutMapping("/domicilios/{id}")
 	@ResponseStatus(HttpStatus.ACCEPTED)
 	public void updateDomicilio(@RequestBody Domicilio domicilio, @PathVariable int id) throws DomicilioException{
 		domicilioServiceImpl.update(domicilio, id);

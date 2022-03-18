@@ -1,9 +1,12 @@
 package com.drogueria.api.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -34,9 +38,33 @@ public class ClienteRestController {
 		return clienteServiceImpl.findAll();
 	}
 	
+//	@GetMapping("/clientes/{id}")
+//	public Optional<Cliente> getClient(@PathVariable int id) {
+//		return clienteServiceImpl.findById(id);
+//	}
+	
 	@GetMapping("/clientes/{id}")
-	public Optional<Cliente> getClient(@PathVariable int id) {
-		return clienteServiceImpl.findById(id);
+	public ResponseEntity<?> getClient(@PathVariable int id) {
+		
+		Map<String, Object> response= new HashMap<>();
+		Cliente cliente=null;
+		
+		try {
+			cliente=clienteServiceImpl.findById(id);
+		} catch (DataAccessException e) {
+			response.put("mensaje", "Error de conexion en la base de datos");
+			response.put("mensaje", e.getMostSpecificCause());
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+		
+		if (cliente==null) {
+			response.put("mensaje", "El cliente con ID: ".concat(""+id).concat(" no existe en la base de datos"));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+		
+		return new ResponseEntity<Cliente> (cliente, HttpStatus.OK);
+		
+		
 	}
 
 	
@@ -47,13 +75,13 @@ public class ClienteRestController {
 		clienteServiceImpl.save(cliente);
 	}
 
-	@DeleteMapping("/clientes/delete/{id}")
+	@DeleteMapping("/clientes/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void deleteClient(@PathVariable int id) {
 		clienteServiceImpl.delete(id);
 	}
 	
-	@PutMapping("/cliente/update/{id}")
+	@PutMapping("/clientes/{id}")
 	@ResponseStatus(HttpStatus.ACCEPTED)
 	public void updateClient(@RequestBody Cliente cliente, @PathVariable int id) throws ClienteException{
 		clienteServiceImpl.update(cliente,id);

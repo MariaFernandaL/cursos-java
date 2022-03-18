@@ -3,7 +3,10 @@ package com.drogueria.api.entities;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name="cliente")
@@ -22,6 +25,10 @@ public class Cliente implements Serializable {
     private String correo;
     private Double pago;
 
+    
+    @JsonIgnoreProperties(value = {"cliente", "hybernateLazyInitializer", "handler"}, allowSetters = true)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "cliente", cascade = CascadeType.ALL)
+    private List<Domicilio> domicilios;
     
     public Cliente(){
 
@@ -83,7 +90,16 @@ public class Cliente implements Serializable {
         this.pago = pago;
     }
 
-    @Override
+    
+    public List<Domicilio> getDomicilios() {
+		return domicilios;
+	}
+
+	public void setDomicilios(List<Domicilio> domicilios) {
+		this.domicilios = domicilios;
+	}
+
+	@Override
     public String toString() {
         return "Cliente{" +
                 "idCliente=" + idCliente +

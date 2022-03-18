@@ -8,10 +8,9 @@ import com.drogueria.api.exception.DomicilioException;
 
 public interface IDomicilioService {
 
-	
 	public List<Domicilio> findAll();
-	public void save(Domicilio domicilio);
-	public Optional<Domicilio> findById(int id);
+	public void save(Domicilio domicilio, int idCliente);//idEmpleado, idProducto
+	public Domicilio findById(int id);
 	void update(Domicilio domicilio, int id) throws DomicilioException;
-	void delete(int id);
+	void delete(int id) throws DomicilioException;
 }

@@ -1,12 +1,18 @@
 package com.drogueria.api.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="empleado")
@@ -25,7 +31,19 @@ public class Empleado implements Serializable {
     private Double salario;
     
     
-    public Empleado(){
+    @JsonIgnoreProperties(value = {"empleado", "hybernateLazyInitializer", "handler"}, allowSetters = true)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empleado", cascade = CascadeType.ALL)
+    private List<Domicilio> domicilios;
+    
+    public List<Domicilio> getDomicilios() {
+		return domicilios;
+	}
+
+	public void setDomicilios(List<Domicilio> domicilios) {
+		this.domicilios = domicilios;
+	}
+
+	public Empleado(){
 
     }
 

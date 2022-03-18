@@ -4,12 +4,14 @@
         <h5 class="card-title">Listado de empleados</h5>
 
         <div>
-            <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/empleados/formempleados']">
+            <button class="my-2 text-left" type="button" [routerLink]="['/empleados/formempleados']">
                 Agregar Empleado
             </button>
         </div>
 
-        <table class="table">
+        <div *ngIf="empleado?.length == 0" class="alert alert-info">Hay registros</div>
+
+        <table class="table table-bordered table-striped" *ngIf="empleado?.length>0" id="htmlData2">
             <thead>
                 <tr>
                     <th scope="col">Id</th>
@@ -19,6 +21,7 @@
                     <th scope="col">Correo</th>
                     <th scope="col">Salario</th>
                     <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,11 +34,20 @@
                     <td>{{empleado.salario}}</td>
 
                     <td>
-                        <button type="button" class="btn btn-primary btn-sm">Editar</button>
+                        <button type="button" [routerLink]="['/empleados/formempleados',empleado.idEmpleado]" class="btn btn-primary btn-sm">
+                            Editar
+                        </button>
                     </td>
-
+                    <td>
+                        <button type="button" name="eliminar" (click)="delete(empleado)" class="btn btn-danger btn-sm">
+                            Eliminar
+                        </button>
+                    </td>
                 </tr>
             </tbody>
+            <div>
+                <button class="btn btn-danger btn-sm" (click)="downloadPDF()">Descargar PDF</button>
+            </div>
         </table>
     </div>
 </div>

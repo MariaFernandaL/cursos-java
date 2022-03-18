@@ -10,7 +10,7 @@ public interface IProductoService {
 
 	public List<Producto> findAll();
 	public void save(Producto producto);
-	public Optional<Producto> findById(int id);
+	public Producto findById(int id);
 	void update(Producto producto, int id) throws ProductoException;
 	void delete(int id);
 }

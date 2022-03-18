@@ -28,14 +28,14 @@ public class DomicilioServiceImpl implements IDomicilioService{
 
 	@Override
 	@Transactional
-	public void save(Domicilio domicilio) {
+	public void save(Domicilio domicilio, int idCliente) {
 		domicilioRepository.save(domicilio);
 	}
 
 	@Override
 	@Transactional
-	public Optional<Domicilio> findById(int id) {
-		return domicilioRepository.findById(id);
+	public Domicilio findById(int id) {
+		return domicilioRepository.findById(id).orElse(null);
 	}
 
 	@Override
