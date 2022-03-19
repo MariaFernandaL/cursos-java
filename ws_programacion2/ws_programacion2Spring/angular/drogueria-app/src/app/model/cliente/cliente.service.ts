@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Cliente } from './cliente';
-import { CLIENTESDATA } from './cliente.json';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { map } from 'rxjs';

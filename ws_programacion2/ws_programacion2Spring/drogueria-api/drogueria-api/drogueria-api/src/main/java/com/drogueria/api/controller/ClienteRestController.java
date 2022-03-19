@@ -21,7 +21,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.drogueria.api.entities.Cliente;
+import com.drogueria.api.entities.Domicilio;
 import com.drogueria.api.exception.ClienteException;
+import com.drogueria.api.exception.DomicilioException;
 import com.drogueria.api.services.ClienteServiceImpl;
 
 @CrossOrigin(origins = {"http://localhost:4200" })
@@ -38,34 +40,31 @@ public class ClienteRestController {
 		return clienteServiceImpl.findAll();
 	}
 	
-//	@GetMapping("/clientes/{id}")
-//	public Optional<Cliente> getClient(@PathVariable int id) {
-//		return clienteServiceImpl.findById(id);
-//	}
-	
 	@GetMapping("/clientes/{id}")
-	public ResponseEntity<?> getClient(@PathVariable int id) {
-		
-		Map<String, Object> response= new HashMap<>();
-		Cliente cliente=null;
-		
-		try {
-			cliente=clienteServiceImpl.findById(id);
-		} catch (DataAccessException e) {
-			response.put("mensaje", "Error de conexion en la base de datos");
-			response.put("mensaje", e.getMostSpecificCause());
-			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
-		}
-		
-		if (cliente==null) {
-			response.put("mensaje", "El cliente con ID: ".concat(""+id).concat(" no existe en la base de datos"));
-			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
-		}
-		
-		return new ResponseEntity<Cliente> (cliente, HttpStatus.OK);
-		
-		
+	public Cliente getClient(@PathVariable int id) {
+		return clienteServiceImpl.findById(id);
 	}
+	
+//	@GetMapping("/clientes/{id}")
+//	public ResponseEntity<?> getClient(@PathVariable int id) {
+//		
+//		Map<String, Object> response= new HashMap<>();
+//		Cliente cliente=null;
+//		
+//		try {
+//			cliente=clienteServiceImpl.findById(id);
+//		} catch (DataAccessException e) {
+//			response.put("mensaje", "Error de conexion en la base de datos");
+//			response.put("mensaje", e.getMostSpecificCause());
+//			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+//		}
+//		
+//		if (cliente==null) {
+//			response.put("mensaje", "El cliente con ID: ".concat(""+id).concat(" no existe en la base de datos"));
+//			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+//		}
+//		return new ResponseEntity<Cliente> (cliente, HttpStatus.OK);
+//	}
 
 	
 	@PostMapping("/clientes")
@@ -83,8 +82,8 @@ public class ClienteRestController {
 	
 	@PutMapping("/clientes/{id}")
 	@ResponseStatus(HttpStatus.ACCEPTED)
-	public void updateClient(@RequestBody Cliente cliente, @PathVariable int id) throws ClienteException{
-		clienteServiceImpl.update(cliente,id);
+	public void updateDomicilio(@RequestBody Cliente cliente, @PathVariable int id) throws ClienteException{
+		clienteServiceImpl.update(cliente, id);
 	}
 	
 	/*

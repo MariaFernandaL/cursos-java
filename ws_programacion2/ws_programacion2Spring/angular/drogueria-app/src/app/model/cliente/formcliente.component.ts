@@ -24,18 +24,18 @@ export class FormclienteComponent implements OnInit {
   }
 
   crearCliente(): void{
-    this.ClienteService.crearCliente(this.cliente).subscribe(
-      cliente=> {
-        this.router.navigate(['./clientes'])
-        Swal.fire({
-          title: `Cliente ${this.cliente.nombre} creado con éxito!`,
-          imageUrl: 'https://unsplash.it/400/200',
-          imageWidth: 400,
-          imageHeight: 200,
-          imageAlt: 'Custom image',
-        })
-      }
-  );
+      this.ClienteService.crearCliente(this.cliente).subscribe(
+        cliente=> {
+          this.router.navigate(['./clientes'])
+          Swal.fire({
+            title: `Cliente ${this.cliente.nombre} creado con éxito!`,
+            imageUrl: 'https://unsplash.it/400/200',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: 'Custom image',
+          })
+        }
+    );
   }
   cargarCliente():void{
     this.activateRoute.params.subscribe(params =>{
@@ -49,7 +49,7 @@ export class FormclienteComponent implements OnInit {
   actualizarCliente():void{
     this.ClienteService.updateCliente(this.cliente).subscribe(
       cliente =>{
-        this.router.navigate(['./clientes'])
+        this.router.navigate(['/clientes'])
         Swal.fire('Cliente Actualizado', `Cliente ${this.cliente.nombre} actualizado con éxito!`, 'success')
       }
     )

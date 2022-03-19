@@ -1,7 +1,6 @@
 package com.drogueria.api.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -36,11 +35,11 @@ public class ClienteServiceImpl implements IClienteService{
 	public Cliente findById(int id) {
 		return clienteRepository.findById(id).orElse(null);
 	}
-
+	
 	@Override
 	@Transactional
 	public void update(Cliente cliente, int id) throws ClienteException{
-		if (findById(id)==null) { 
+		if (findById(id)==null) {
 			throw new ClienteException("El cliente no existe");
 		}
 		clienteRepository.save(cliente);

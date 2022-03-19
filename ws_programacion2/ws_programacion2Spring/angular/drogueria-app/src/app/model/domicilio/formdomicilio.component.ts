@@ -47,7 +47,7 @@ export class FormdomicilioComponent implements OnInit {
     this.DomicilioService.updateDomicilio(this.domicilio).subscribe(
       domicilio =>{
         this.router.navigate(['/domicilios'])
-        Swal.fire('Domicilio Actualizado', `Domicilios ${this.domicilio.codigo} actualizado con éxito!`, 'success')
+        Swal.fire('Domicilio Actualizado', `Domicilio ${this.domicilio.codigo} actualizado con éxito!`, 'success')
       }
     )
   }
