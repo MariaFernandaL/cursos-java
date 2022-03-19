@@ -40,31 +40,31 @@ public class ClienteRestController {
 		return clienteServiceImpl.findAll();
 	}
 	
-	@GetMapping("/clientes/{id}")
-	public Cliente getClient(@PathVariable int id) {
-		return clienteServiceImpl.findById(id);
-	}
-	
 //	@GetMapping("/clientes/{id}")
-//	public ResponseEntity<?> getClient(@PathVariable int id) {
-//		
-//		Map<String, Object> response= new HashMap<>();
-//		Cliente cliente=null;
-//		
-//		try {
-//			cliente=clienteServiceImpl.findById(id);
-//		} catch (DataAccessException e) {
-//			response.put("mensaje", "Error de conexion en la base de datos");
-//			response.put("mensaje", e.getMostSpecificCause());
-//			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
-//		}
-//		
-//		if (cliente==null) {
-//			response.put("mensaje", "El cliente con ID: ".concat(""+id).concat(" no existe en la base de datos"));
-//			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
-//		}
-//		return new ResponseEntity<Cliente> (cliente, HttpStatus.OK);
+//	public Cliente getClient(@PathVariable int id) {
+//		return clienteServiceImpl.findById(id);
 //	}
+	
+	@GetMapping("/clientes/{id}")
+	public ResponseEntity<?> getClient(@PathVariable int id) {
+		
+		Map<String, Object> response= new HashMap<>();
+		Cliente cliente=null;
+		
+		try {
+			cliente=clienteServiceImpl.findById(id);
+		} catch (DataAccessException e) {
+			response.put("mensaje", "Error de conexion en la base de datos");
+			response.put("mensaje", e.getMostSpecificCause());
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+		
+		if (cliente==null) {
+			response.put("mensaje", "El cliente con ID: ".concat(""+id).concat(" no existe en la base de datos"));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<Cliente> (cliente, HttpStatus.OK);
+	}
 
 	
 	@PostMapping("/clientes")
@@ -83,7 +83,12 @@ public class ClienteRestController {
 	@PutMapping("/clientes/{id}")
 	@ResponseStatus(HttpStatus.ACCEPTED)
 	public void updateDomicilio(@RequestBody Cliente cliente, @PathVariable int id) throws ClienteException{
-		clienteServiceImpl.update(cliente, id);
+		try {
+			clienteServiceImpl.update(cliente, id);
+		} catch (ClienteException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	/*

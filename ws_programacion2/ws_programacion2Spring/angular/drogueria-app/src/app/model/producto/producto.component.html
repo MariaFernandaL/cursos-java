@@ -1,9 +1,9 @@
 <h1 style='text-align:center'>Productos</h1>
 
-<div class="card border-primary mb-3">
+<div class="card mb-3" style="border-color: #f8a561;">
     <div class="card-header">Productos</div>
     <div class="card-body text-primary">
-        <h5 class="card-title">Listado de productos</h5>
+        <h5 class="card-title" style="color: #f8a561;">Listado de productos</h5>
 
         <div>
             <button class="my-2 text-left" type="button" [routerLink]="['/productos/formproductos']">
@@ -33,7 +33,7 @@
                     <td>{{producto.valorUnidad}}</td>
                     <td>{{producto.cantidad}}</td>
                     <td>
-                        <button type="button" [routerLink]="['/productos/formproductos',producto.idProducto]" class="btn btn-primary btn-sm">
+                        <button type="button" [routerLink]="['/productos/formproductos',producto.idProducto]" class="btn btn-primary btn-sm" style="background-color: #f8a561; border-color: #f8a561;">
                             Editar
                         </button>
                     </td>
