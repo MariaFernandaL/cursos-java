@@ -24,6 +24,7 @@ import com.drogueria.api.entities.Cliente;
 import com.drogueria.api.entities.Domicilio;
 import com.drogueria.api.exception.ClienteException;
 import com.drogueria.api.exception.DomicilioException;
+import com.drogueria.api.persistencia.ArchivoUtil;
 import com.drogueria.api.services.ClienteServiceImpl;
 
 @CrossOrigin(origins = {"http://localhost:4200" })
@@ -35,10 +36,18 @@ public class ClienteRestController {
 	private ClienteServiceImpl clienteServiceImpl;
 	
 	
+	public static final String RUTA_ARCHIVO_LOG = "src/main/java/resources/DrogueriaLogCliente.txt";
+	
 	@GetMapping("/clientes")
 	public List<Cliente> getClientes(){
+		try {
+			ArchivoUtil.guardarRegistroLog("Se muestran todos los clientes", 1, "GetMapping", RUTA_ARCHIVO_LOG);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return clienteServiceImpl.findAll();
 	}
+	
 	
 //	@GetMapping("/clientes/{id}")
 //	public Cliente getClient(@PathVariable int id) {
@@ -53,6 +62,7 @@ public class ClienteRestController {
 		
 		try {
 			cliente=clienteServiceImpl.findById(id);
+			ArchivoUtil.guardarRegistroLog("Se muestran el cliente", 1, "GetMapping", RUTA_ARCHIVO_LOG);
 		} catch (DataAccessException e) {
 			response.put("mensaje", "Error de conexion en la base de datos");
 			response.put("mensaje", e.getMostSpecificCause());
@@ -64,6 +74,7 @@ public class ClienteRestController {
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<Cliente> (cliente, HttpStatus.OK);
+		
 	}
 
 	
@@ -71,19 +82,31 @@ public class ClienteRestController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public void createClient(@RequestBody Cliente cliente) {
 		System.out.println("Servicio de crear solicitado");
-		clienteServiceImpl.save(cliente);
+		try {
+			clienteServiceImpl.save(cliente);
+			ArchivoUtil.guardarRegistroLog("Se creo un cliente", 1, "PostMapping", RUTA_ARCHIVO_LOG);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@DeleteMapping("/clientes/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void deleteClient(@PathVariable int id) {
-		clienteServiceImpl.delete(id);
+		try {
+			clienteServiceImpl.delete(id);
+			ArchivoUtil.guardarRegistroLog("Se elimino un cliente", 1, "DeleteMapping", RUTA_ARCHIVO_LOG);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	@PutMapping("/clientes/{id}")
 	@ResponseStatus(HttpStatus.ACCEPTED)
 	public void updateDomicilio(@RequestBody Cliente cliente, @PathVariable int id) throws ClienteException{
 		try {
+			ArchivoUtil.guardarRegistroLog("Se actualizo un cliente", 1, "PutMapping", RUTA_ARCHIVO_LOG);
 			clienteServiceImpl.update(cliente, id);
 		} catch (ClienteException e) {
 			e.printStackTrace();

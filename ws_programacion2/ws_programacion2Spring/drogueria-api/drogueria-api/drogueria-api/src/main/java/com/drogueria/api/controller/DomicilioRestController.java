@@ -42,9 +42,9 @@ public class DomicilioRestController {
 	
 	@PostMapping("/domicilios")
 	@ResponseStatus(HttpStatus.CREATED)
-	public void createDomicilio(@RequestBody Domicilio domicilio) {
+	public void createDomicilio(@RequestBody Domicilio domicilio, @PathVariable int id) {
 		System.out.println("Servicio de crear solicitado");
-		//domicilioServiceImpl.save(domicilio);
+		domicilioServiceImpl.save(domicilio, id);
 	}
 	
 	@DeleteMapping("/domicilios/{id}")
