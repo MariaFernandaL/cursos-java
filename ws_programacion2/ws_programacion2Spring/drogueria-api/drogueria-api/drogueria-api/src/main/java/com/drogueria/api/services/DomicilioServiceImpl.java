@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.drogueria.api.entities.Cliente;
 import com.drogueria.api.entities.Domicilio;
 import com.drogueria.api.exception.ClienteException;
 import com.drogueria.api.exception.DomicilioException;
@@ -28,7 +29,14 @@ public class DomicilioServiceImpl implements IDomicilioService{
 
 	@Override
 	@Transactional
-	public void save(Domicilio domicilio, int idCliente) {
+	public void save(Domicilio domicilio) throws DomicilioException{
+		
+		Domicilio domicilio2= null;
+		domicilio2=domicilioRepository.findDomicilioByCodigo(domicilio.getCodigo());
+		
+		if (domicilio2!=null) {
+			throw new DomicilioException("El domiciloo ya esta registrado con este codigo");
+		}
 		domicilioRepository.save(domicilio);
 	}
 

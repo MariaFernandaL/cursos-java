@@ -1,0 +1,14 @@
+mar. 19, 2022 11:19:00 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los empleados,-03-19-11-19
+mar. 20, 2022 12:43:23 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los empleados,-03-20-0-43
+mar. 20, 2022 12:43:26 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los empleados,-03-20-0-43
+mar. 20, 2022 12:43:46 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PostMapping,Se creo el empleado,-03-20-0-43
+mar. 20, 2022 12:43:46 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los empleados,-03-20-0-43
+mar. 20, 2022 12:43:56 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: DeleteMapping,Se elimino el empleado,-03-20-0-43
+mar. 20, 2022 12:43:59 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los empleados,-03-20-0-43

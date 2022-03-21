@@ -3,7 +3,6 @@ package com.drogueria.api.controller;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -20,9 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.drogueria.api.entities.Cliente;
 import com.drogueria.api.entities.Empleado;
-import com.drogueria.api.exception.ClienteException;
 import com.drogueria.api.exception.EmpleadoException;
 import com.drogueria.api.persistencia.ArchivoUtil;
 import com.drogueria.api.services.EmpleadoServiceImpl;
@@ -85,19 +82,34 @@ public class EmpleadoRestController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public void createEmpleado(@RequestBody Empleado empleado) {
 		System.out.println("Servicio de crear solicitado");
-		empleadoServiceImpl.save(empleado);
+		try {
+			empleadoServiceImpl.save(empleado);
+			ArchivoUtil.guardarRegistroLog("Se creo el empleado", 1, "PostMapping", RUTA_ARCHIVO_LOG);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@DeleteMapping("empleados/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void deleteEmpleado(@PathVariable int id) {
-		empleadoServiceImpl.delete(id);
+		try {
+			empleadoServiceImpl.delete(id);
+			ArchivoUtil.guardarRegistroLog("Se elimino el empleado", 1, "DeleteMapping", RUTA_ARCHIVO_LOG);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@PutMapping("/empleados/{id}")
 	@ResponseStatus(HttpStatus.ACCEPTED)
 	public void updateEmpleado(@RequestBody Empleado empleado, @PathVariable int id) throws EmpleadoException{
-		empleadoServiceImpl.update(empleado,id);
+		try {
+			empleadoServiceImpl.update(empleado,id);
+			ArchivoUtil.guardarRegistroLog("Se actualizo el empleado", 1, "PutMapping", RUTA_ARCHIVO_LOG);
+		} catch (EmpleadoException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

@@ -6,6 +6,7 @@ import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -99,6 +100,17 @@ public class Cliente implements Serializable {
 		this.domicilios = domicilios;
 	}
 
+	//VIDEO
+	public void agregarDomicilios(Domicilio domicilio) {
+		if (domicilios==null) {
+			domicilios=new ArrayList<>();
+			domicilios.add(domicilio);
+			domicilio.setCliente(this);
+		}
+	}
+	//EN EL CLIENTECONTROLER SE CREARIAN LOS CLIENTES CON SUS DOMICILIOS
+	//FIN
+	
 	@Override
     public String toString() {
         return "Cliente{" +

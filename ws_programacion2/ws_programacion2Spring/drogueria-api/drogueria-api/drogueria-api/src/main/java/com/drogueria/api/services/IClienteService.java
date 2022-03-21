@@ -10,10 +10,10 @@ public interface IClienteService {
 
 	
 	public List<Cliente> findAll();
-	public void save(Cliente cliente);
+	public void save(Cliente cliente) throws ClienteException;
 	public Cliente findById(int id);
 	void update(Cliente cliente, int id) throws ClienteException;
-	void delete(int id);
+	void delete(int id) throws ClienteException;
 	
 	
 }

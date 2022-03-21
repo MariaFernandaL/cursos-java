@@ -74,13 +74,12 @@ public class ClienteRestController {
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<Cliente> (cliente, HttpStatus.OK);
-		
 	}
 
 	
 	@PostMapping("/clientes")
 	@ResponseStatus(HttpStatus.CREATED)
-	public void createClient(@RequestBody Cliente cliente) {
+	public void createClient(@RequestBody Cliente cliente)throws ClienteException {
 		System.out.println("Servicio de crear solicitado");
 		try {
 			clienteServiceImpl.save(cliente);
@@ -99,7 +98,6 @@ public class ClienteRestController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
 	
 	@PutMapping("/clientes/{id}")
@@ -111,7 +109,6 @@ public class ClienteRestController {
 		} catch (ClienteException e) {
 			e.printStackTrace();
 		}
-		
 	}
 	
 	/*

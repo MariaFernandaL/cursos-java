@@ -1,0 +1,20 @@
+mar. 19, 2022 11:19:01 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los productos,-03-19-11-19
+mar. 19, 2022 11:19:23 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los productos,-03-19-11-19
+mar. 19, 2022 11:19:26 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestra el producto,-03-19-11-19
+mar. 19, 2022 11:19:29 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PutMapping,Se actualizo un cliente,-03-19-11-19
+mar. 19, 2022 11:19:31 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PutMapping,Se actualizo un cliente,-03-19-11-19
+mar. 19, 2022 11:19:33 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los productos,-03-19-11-19
+mar. 19, 2022 11:19:41 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los productos,-03-19-11-19
+mar. 19, 2022 11:20:02 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los productos,-03-19-11-20
+mar. 19, 2022 11:20:22 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PostMapping,Se creo un producto,-03-19-11-20
+mar. 19, 2022 11:20:22 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los productos,-03-19-11-20
