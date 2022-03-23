@@ -77,22 +77,23 @@ public class DomicilioRestController {
 	
 	@PostMapping("/domicilios")
 	@ResponseStatus(HttpStatus.CREATED)
-	public ResponseEntity<String> createDomicilio(@RequestBody Domicilio domicilio) {
+	public  void createDomicilio(@RequestBody Domicilio domicilio) {
+		//ResponseEntity<String>
 		System.out.println("Servicio de crear solicitado");
 		try {
 			domicilioServiceImpl.save(domicilio);
 			ArchivoUtil.guardarRegistroLog("Se creo un domicilio", 1, "PostMapping", RUTA_ARCHIVO_LOG);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return new ResponseEntity<>("",HttpStatus.BAD_REQUEST);
+			//return new ResponseEntity<>("",HttpStatus.BAD_REQUEST);
 		}
-		return new ResponseEntity<>("",HttpStatus.CREATED);
+		//return new ResponseEntity<>("",HttpStatus.CREATED);
 	}
 	
 	@DeleteMapping("/domicilios/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void deleteDomicilio(@PathVariable int id) {
-		try {
+		try { 
 			domicilioServiceImpl.delete(id);
 			ArchivoUtil.guardarRegistroLog("Se elimino un domicilio", 1, "DeleteMapping", RUTA_ARCHIVO_LOG);
 		} catch (Exception e) {

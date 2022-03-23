@@ -58,12 +58,12 @@ public class ClienteServiceImpl implements IClienteService{
 	@Override
 	@Transactional
 	public void delete(int id) throws ClienteException{
-		Domicilio domicilio= null;
-		domicilio=domicilioRepository.findClienteByIdEliminar(id);
-		
-		if (domicilio!=null) {
-			throw new ClienteException("El cliente no se puede eliminar");
-		}
+//		Domicilio domicilio= null;
+//		domicilio=domicilioRepository.findClienteByIdEliminar(id);
+//		
+//		if (domicilio!=null) {
+//			throw new ClienteException("El cliente no se puede eliminar");
+//		}
 		clienteRepository.deleteById(id);
 	}
 	

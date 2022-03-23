@@ -30,14 +30,12 @@ public class DomicilioServiceImpl implements IDomicilioService{
 	@Override
 	@Transactional
 	public void save(Domicilio domicilio) throws DomicilioException{
-		
 		Domicilio domicilio2= null;
 		domicilio2=domicilioRepository.findDomicilioByCodigo(domicilio.getCodigo());
 		
 		if (domicilio2!=null) {
 			throw new DomicilioException("El domiciloo ya esta registrado con este codigo");
 		}
-		
 		domicilioRepository.save(domicilio);
 	}
 

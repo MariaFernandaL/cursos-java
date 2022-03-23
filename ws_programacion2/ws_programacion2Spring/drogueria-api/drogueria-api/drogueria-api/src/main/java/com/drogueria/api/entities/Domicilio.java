@@ -23,11 +23,7 @@ public class Domicilio implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idDomicilio;
-    
-    
-    private int cliente_idcliente;
-    private int producto_idproducto;
-    private int empleado_idempleado;
+
     private String codigo;
     private Date fecha;
     private String direccion;
@@ -56,30 +52,6 @@ public class Domicilio implements Serializable {
 
 	public void setIdDomicilio(int idDomicilio) {
 		this.idDomicilio = idDomicilio;
-	}
-
-	public int getCliente_idcliente() {
-		return cliente_idcliente;
-	}
-
-	public void setCliente_idcliente(int cliente_idcliente) {
-		this.cliente_idcliente = cliente_idcliente;
-	}
-
-	public int getProducto_idproducto() {
-		return producto_idproducto;
-	}
-
-	public void setProducto_idproducto(int producto_idproducto) {
-		this.producto_idproducto = producto_idproducto;
-	}
-
-	public int getEmpleado_idempleado() {
-		return empleado_idempleado;
-	}
-
-	public void setEmpleado_idempleado(int empleado_idempleado) {
-		this.empleado_idempleado = empleado_idempleado;
 	}
 
 	public String getCodigo() {
@@ -142,9 +114,6 @@ public class Domicilio implements Serializable {
     public String toString() {
         return "Domicilio{" +
                 "idDomicilio=" + idDomicilio  +
-                ", cliente='" + cliente_idcliente + '\'' +
-                ", producto='" + producto_idproducto + '\'' +
-                ", empleado='" + empleado_idempleado + '\'' +
                 ", codigo='" + codigo + '\'' +
                 ", fecha='" + fecha + '\'' +
                 ", costo='" + costo + '\'' +

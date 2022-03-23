@@ -14,9 +14,9 @@ public interface IDomicilioRepository extends CrudRepository<Domicilio, Integer>
 	Domicilio findDomicilioByCodigo(
 			@Param ("codigo") String codigo);
 	
-	@Query("SELECT d FROM Domicilio d WHERE d.cliente_idcliente= :idcliente")
-	Domicilio findClienteByIdEliminar(
-			@Param ("idcliente") int idcliente);
+//	@Query("SELECT d FROM Domicilio d WHERE d.cliente= :idcliente")
+//	Domicilio findClienteByIdEliminar(
+//			@Param ("idcliente") int idcliente);
 	
 	
 	
