@@ -3,7 +3,7 @@
  <object class="co.edu.cue.drogueria.model.Drogueria" id="Drogueria0">
   <void property="listaClientes">
    <void method="add">
-    <object class="co.edu.cue.drogueria.model.Cliente">
+    <object class="co.edu.cue.drogueria.model.Cliente" id="Cliente0">
      <void property="cedula">
       <string>74658</string>
      </void>
@@ -22,7 +22,7 @@
     </object>
    </void>
    <void method="add">
-    <object class="co.edu.cue.drogueria.model.Cliente">
+    <object class="co.edu.cue.drogueria.model.Cliente" id="Cliente1">
      <void property="cedula">
       <string>35246</string>
      </void>
@@ -41,7 +41,7 @@
     </object>
    </void>
    <void method="add">
-    <object class="co.edu.cue.drogueria.model.Cliente">
+    <object class="co.edu.cue.drogueria.model.Cliente" id="Cliente2">
      <void property="cedula">
       <string>86557</string>
      </void>
@@ -79,25 +79,198 @@
     </object>
    </void>
   </void>
-  <void property="listaEmpleado">
+  <void property="listaDomicilios">
    <void method="add">
-    <object class="co.edu.cue.drogueria.model.Empleado">
-     <void property="cedula">
-      <string>76878</string>
+    <object class="co.edu.cue.drogueria.model.Domicilio">
+     <void property="cliente">
+      <object idref="Cliente0"/>
      </void>
-     <void property="correoE">
-      <string>pepito@gmail.com</string>
+     <void property="costo">
+      <double>10000.0</double>
      </void>
-     <void property="nombre">
-      <string>pepito</string>
+     <void property="direccion">
+      <string>armenia</string>
      </void>
-     <void property="salario">
-      <string>345.788</string>
+     <void property="empleado">
+      <object class="co.edu.cue.drogueria.model.Empleado" id="Empleado0">
+       <void property="cedula">
+        <string>76878</string>
+       </void>
+       <void property="correoE">
+        <string>pepito@gmail.com</string>
+       </void>
+       <void property="nombre">
+        <string>pepito</string>
+       </void>
+       <void property="salario">
+        <string>345.788</string>
+       </void>
+       <void property="telefono">
+        <string>5463892928</string>
+       </void>
+      </object>
      </void>
-     <void property="telefono">
-      <string>5463892928</string>
+     <void property="fecha">
+      <string>2022-04-18</string>
+     </void>
+     <void property="numeroDomicilio">
+      <string>001</string>
+     </void>
+     <void property="producto">
+      <object class="co.edu.cue.drogueria.model.Producto" id="Producto0">
+       <void property="cantExis">
+        <int>6</int>
+       </void>
+       <void property="codigo">
+        <string>64757</string>
+       </void>
+       <void property="nombre">
+        <string>dolex</string>
+       </void>
+       <void property="valorU">
+        <string>1.000</string>
+       </void>
+      </object>
      </void>
     </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.cue.drogueria.model.Domicilio">
+     <void property="cliente">
+      <object idref="Cliente0"/>
+     </void>
+     <void property="costo">
+      <double>10000.0</double>
+     </void>
+     <void property="direccion">
+      <string>armenia</string>
+     </void>
+     <void property="empleado">
+      <object idref="Empleado0"/>
+     </void>
+     <void property="fecha">
+      <string>2022-04-17</string>
+     </void>
+     <void property="numeroDomicilio">
+      <string>003</string>
+     </void>
+     <void property="producto">
+      <object class="co.edu.cue.drogueria.model.Producto" id="Producto1">
+       <void property="cantExis">
+        <int>10</int>
+       </void>
+       <void property="codigo">
+        <string>85647</string>
+       </void>
+       <void property="nombre">
+        <string>alcohol</string>
+       </void>
+       <void property="valorU">
+        <string>5.000</string>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.cue.drogueria.model.Domicilio">
+     <void property="cliente">
+      <object idref="Cliente1"/>
+     </void>
+     <void property="costo">
+      <double>6099.0</double>
+     </void>
+     <void property="direccion">
+      <string>calarca</string>
+     </void>
+     <void property="empleado">
+      <object class="co.edu.cue.drogueria.model.Empleado" id="Empleado1">
+       <void property="cedula">
+        <string>63938</string>
+       </void>
+       <void property="correoE">
+        <string>maria@gmail.com</string>
+       </void>
+       <void property="nombre">
+        <string>maria</string>
+       </void>
+       <void property="salario">
+        <string>675.978</string>
+       </void>
+       <void property="telefono">
+        <string>30847983</string>
+       </void>
+      </object>
+     </void>
+     <void property="fecha">
+      <string>2022-05-19</string>
+     </void>
+     <void property="numeroDomicilio">
+      <string>002</string>
+     </void>
+     <void property="producto">
+      <object idref="Producto1"/>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.cue.drogueria.model.Domicilio">
+     <void property="cliente">
+      <object idref="Cliente2"/>
+     </void>
+     <void property="costo">
+      <double>6000.0</double>
+     </void>
+     <void property="direccion">
+      <string>filandia</string>
+     </void>
+     <void property="empleado">
+      <object class="co.edu.cue.drogueria.model.Empleado" id="Empleado2">
+       <void property="cedula">
+        <string>67367</string>
+       </void>
+       <void property="correoE">
+        <string>pepito@gmail.com</string>
+       </void>
+       <void property="nombre">
+        <string>pepito</string>
+       </void>
+       <void property="salario">
+        <string>345.788</string>
+       </void>
+       <void property="telefono">
+        <string>5463892928</string>
+       </void>
+      </object>
+     </void>
+     <void property="fecha">
+      <string>2022-06-04</string>
+     </void>
+     <void property="numeroDomicilio">
+      <string>004</string>
+     </void>
+     <void property="producto">
+      <object class="co.edu.cue.drogueria.model.Producto" id="Producto2">
+       <void property="cantExis">
+        <int>8</int>
+       </void>
+       <void property="codigo">
+        <string>35462</string>
+       </void>
+       <void property="nombre">
+        <string>gasas</string>
+       </void>
+       <void property="valorU">
+        <string>3.000</string>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="listaEmpleado">
+   <void method="add">
+    <object idref="Empleado0"/>
    </void>
    <void method="add">
     <object class="co.edu.cue.drogueria.model.Empleado">
@@ -108,7 +281,7 @@
       <string>pablo@gmail.com</string>
      </void>
      <void property="nombre">
-      <string>pablo</string>
+      <string>pablitoo</string>
      </void>
      <void property="salario">
       <string>456.553</string>
@@ -119,73 +292,21 @@
     </object>
    </void>
    <void method="add">
-    <object class="co.edu.cue.drogueria.model.Empleado">
-     <void property="cedula">
-      <string>63938</string>
-     </void>
-     <void property="correoE">
-      <string>maria@gmail.com</string>
-     </void>
-     <void property="nombre">
-      <string>maria</string>
-     </void>
-     <void property="salario">
-      <string>675.978</string>
-     </void>
-     <void property="telefono">
-      <string>30847983</string>
-     </void>
-    </object>
+    <object idref="Empleado1"/>
+   </void>
+   <void method="add">
+    <object idref="Empleado2"/>
    </void>
   </void>
   <void property="listaProductos">
    <void method="add">
-    <object class="co.edu.cue.drogueria.model.Producto">
-     <void property="cantExis">
-      <int>6</int>
-     </void>
-     <void property="codigo">
-      <string>64757</string>
-     </void>
-     <void property="nombre">
-      <string>dolex</string>
-     </void>
-     <void property="valorU">
-      <string>1.000</string>
-     </void>
-    </object>
+    <object idref="Producto0"/>
    </void>
    <void method="add">
-    <object class="co.edu.cue.drogueria.model.Producto">
-     <void property="cantExis">
-      <int>10</int>
-     </void>
-     <void property="codigo">
-      <string>85647</string>
-     </void>
-     <void property="nombre">
-      <string>alcohol</string>
-     </void>
-     <void property="valorU">
-      <string>5.000</string>
-     </void>
-    </object>
+    <object idref="Producto1"/>
    </void>
    <void method="add">
-    <object class="co.edu.cue.drogueria.model.Producto">
-     <void property="cantExis">
-      <int>8</int>
-     </void>
-     <void property="codigo">
-      <string>35462</string>
-     </void>
-     <void property="nombre">
-      <string>gasas</string>
-     </void>
-     <void property="valorU">
-      <string>3.000</string>
-     </void>
-    </object>
+    <object idref="Producto2"/>
    </void>
    <void method="add">
     <object class="co.edu.cue.drogueria.model.Producto">

@@ -2,6 +2,7 @@ package co.edu.cue.drogueria.model;
 
 import java.io.Serializable;
 
+
 public class Domicilio implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -18,6 +19,22 @@ public class Domicilio implements Serializable{
 	public Domicilio(){
 		
 	}
+	
+	
+	private String nombreCliente;
+	private String nombreEmpleado;
+	private String nombreProducto;
+	
+	public String getNombreCliente() {
+		return this.cliente.getNombre();
+	}
+	public String getNombreEmpleado() {
+		return this.empleado.getNombre();
+	}
+	public String getNombreProducto() {
+		return this.producto.getNombre();
+	}
+	
 	
 	public Domicilio(String numeroDomicilio, String fecha, Cliente cliente, Producto producto, Empleado empleado, String direccion, double costo) {
 		super();

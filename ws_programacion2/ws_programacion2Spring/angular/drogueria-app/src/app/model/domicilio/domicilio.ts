@@ -1,8 +1,12 @@
+import { Cliente } from "../cliente/cliente";
+import { Empleado } from "../empleados/empleado";
+import { Producto } from "../producto/producto";
+
 export class Domicilio{
     idDomicilio: number;
-    cliente_idCliente: number;
-    empleado_idEmpleado: number;
-    producto_idProducto: number;
+    cliente: Cliente;
+    empleado: Empleado;
+    producto: Producto;
     codigo: string;
     fecha: Date;
     direccion: string;

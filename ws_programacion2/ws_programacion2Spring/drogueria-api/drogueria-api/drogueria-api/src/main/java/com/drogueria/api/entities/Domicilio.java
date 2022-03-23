@@ -24,6 +24,7 @@ public class Domicilio implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idDomicilio;
     
+    
     private int cliente_idcliente;
     private int producto_idproducto;
     private int empleado_idempleado;

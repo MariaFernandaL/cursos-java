@@ -2,9 +2,11 @@ package co.edu.cue.drogueria.service;
 
 import java.util.ArrayList;
 
+import co.edu.cue.drogueria.exception.DomicilioException;
 import co.edu.cue.drogueria.model.Cliente;
 import co.edu.cue.drogueria.model.Empleado;
 import co.edu.cue.drogueria.model.Producto;
+import co.edu.cue.drogueria.model.Domicilio;
 
 
 public interface IModelFactoryController {
@@ -29,4 +31,12 @@ public interface IModelFactoryController {
 	public Producto obtenerProducto(String codigo);
 	public ArrayList<Producto> obtenerProducto();
 	boolean actualizarProducto(String codigoActual, String nombre, String codigo, String valorU, int cantExis);
+	
+	//DOMICILIO
+	public Domicilio crearDomicilio(String numeroDomicilio, String fecha, Cliente cliente, Producto producto, Empleado empleado, String direccion, double costo);
+	public Boolean eliminarDomicilio(String numeroDomicilio);
+	public Domicilio obtenerDomicilio(String numeroDomicilio);
+	public ArrayList<Domicilio> obtenerDomicilio();
+	boolean actualizarDomicilio(String numeroDomicilioActual,String numeroDomicilio, String fecha, Cliente cliente, Producto producto, Empleado empleado, String direccion, double costo);
+	
 }

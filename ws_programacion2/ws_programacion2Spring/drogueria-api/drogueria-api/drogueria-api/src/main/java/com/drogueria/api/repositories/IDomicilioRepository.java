@@ -18,4 +18,6 @@ public interface IDomicilioRepository extends CrudRepository<Domicilio, Integer>
 	Domicilio findClienteByIdEliminar(
 			@Param ("idcliente") int idcliente);
 	
+	
+	
 }

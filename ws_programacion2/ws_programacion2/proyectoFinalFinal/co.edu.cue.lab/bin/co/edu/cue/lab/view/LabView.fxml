@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="710.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.cue.lab.controller.LabController">
+   <children>
+      <TabPane layoutX="14.0" layoutY="14.0" prefHeight="688.0" prefWidth="1027.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Estudiantes">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" layoutX="7.0" layoutY="7.0" orientation="VERTICAL" prefHeight="652.0" prefWidth="1020.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="24.0" prefHeight="17.0" prefWidth="128.0" text="Información del estudiante" />
+                                    <Separator layoutX="14.0" layoutY="47.0" prefHeight="0.0" prefWidth="988.0" />
+                                    <Label layoutX="14.0" layoutY="69.0" text="Nombre(s):" />
+                                    <TextField fx:id="txtNombre" layoutX="88.0" layoutY="65.0" onMouseClicked="#mouseClicked" prefHeight="25.0" prefWidth="564.0" />
+                                    <TextField fx:id="txtApellido" layoutX="89.0" layoutY="105.0" onMouseClicked="#mouseClicked1" prefHeight="25.0" prefWidth="565.0" />
+                                    <Label layoutX="15.0" layoutY="109.0" text="Apellido(s):" />
+                                    <Label layoutX="17.0" layoutY="148.0" text="Documento" />
+                                    <TextField fx:id="txtDocumento" layoutX="91.0" layoutY="144.0" onMouseClicked="#mouseClicked2" prefHeight="25.0" prefWidth="563.0" />
+                                    <TextField fx:id="txtDireccion" layoutX="92.0" layoutY="184.0" onMouseClicked="#mouseClicked3" prefHeight="25.0" prefWidth="563.0" />
+                                    <Label layoutX="18.0" layoutY="188.0" text="Dirección:" />
+                                    <Separator layoutX="17.0" layoutY="249.0" prefHeight="0.0" prefWidth="985.0" />
+                                    <Button fx:id="btnActualizar" layoutX="156.0" layoutY="264.0" mnemonicParsing="false" onAction="#actualizarEstudiante" prefHeight="25.0" prefWidth="100.0" text="Actualizar" />
+                                    <Button fx:id="btnNuevo" layoutX="295.0" layoutY="264.0" mnemonicParsing="false" onAction="#nuevoEstudiante" prefHeight="25.0" prefWidth="101.0" text="Nuevo" />
+                                    <Button fx:id="btnAgregar" layoutX="435.0" layoutY="264.0" mnemonicParsing="false" onAction="#agregarEstudiante" prefHeight="25.0" prefWidth="100.0" text="Agregar" />
+                                    <Label layoutX="699.0" layoutY="153.0" text="Tipo Documento:" />
+                                    <ComboBox fx:id="cbTipoDocumento" layoutX="798.0" layoutY="144.0" onAction="#seleccionarTipoDocumentoAction" prefHeight="25.0" prefWidth="194.0" />
+                                 </children></AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Lista de estudiantes:" />
+                                    <TableView fx:id="tableEstudiantes" layoutX="14.0" layoutY="38.0" prefHeight="200.0" prefWidth="980.0">
+                                      <columns>
+                                        <TableColumn fx:id="columnNombre" prefWidth="150.0" text="Nombre(s)" />
+                                        <TableColumn fx:id="columnApellido" minWidth="0.0" prefWidth="201.0" text="Apellido(s)" />
+                                          <TableColumn fx:id="columnDocumento" prefWidth="261.0" text="Documento" />
+                                          <TableColumn fx:id="columnDireccion" prefWidth="372.0" text="Dirección" />
+                                      </columns>
+                                    </TableView>
+                                    <Button fx:id="btnEliminar" layoutX="454.0" layoutY="257.0" mnemonicParsing="false" onAction="#eliminarEstudiante" prefHeight="25.0" prefWidth="101.0" text="Eliminar" />
+                                 </children></AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Monitores">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" layoutX="7.0" layoutY="7.0" orientation="VERTICAL" prefHeight="653.0" prefWidth="1019.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                  <AnchorPane layoutX="59.0" layoutY="-29.0" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" AnchorPane.bottomAnchor="580.0" />
+                                 </children></AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Lista de monitores:" />
+                                    <TableView fx:id="tableMonitoresM" layoutX="14.0" layoutY="38.0" prefHeight="200.0" prefWidth="980.0">
+                                       <columns>
+                                          <TableColumn fx:id="columnNombreM" prefWidth="180.0" text="Nombre(s)" />
+                                          <TableColumn fx:id="columnApellidoM" minWidth="0.0" prefWidth="188.0" text="Apellido(s)" />
+                                          <TableColumn fx:id="columnDocumentoM" prefWidth="214.0" text="Documento" />
+                                          <TableColumn fx:id="columnDireccionM" prefWidth="212.0" text="Dirección" />
+                                          <TableColumn fx:id="columSalarioM" prefWidth="186.0" text="Salario" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="btnEliminarM" layoutX="454.0" layoutY="257.0" mnemonicParsing="false" onAction="#eliminarMonitor" prefHeight="25.0" prefWidth="101.0" text="Eliminar" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                        <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="317.0" prefWidth="1007.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="24.0" prefHeight="17.0" prefWidth="128.0" text="Informacion del monitor" />
+                              <Separator layoutX="14.0" layoutY="47.0" prefHeight="0.0" prefWidth="988.0" />
+                              <Label layoutX="15.0" layoutY="69.0" text="Nombre(s):" />
+                              <TextField fx:id="txtNombreM" layoutX="88.0" layoutY="65.0" onMouseClicked="#mouseClickedM" prefHeight="25.0" prefWidth="564.0" />
+                              <TextField fx:id="txtApellidoM" layoutX="89.0" layoutY="105.0" onMouseClicked="#mouseClickedM1" prefHeight="25.0" prefWidth="565.0" />
+                              <Label layoutX="15.0" layoutY="109.0" text="Apellido(s):" />
+                              <Label layoutX="17.0" layoutY="148.0" text="Documento" />
+                              <TextField fx:id="txtDocumentoM" layoutX="91.0" layoutY="144.0" onMouseClicked="#mouseClickedM2" prefHeight="25.0" prefWidth="563.0" />
+                              <TextField fx:id="txtDireccionM" layoutX="92.0" layoutY="184.0" onMouseClicked="#mouseClickedM3" prefHeight="25.0" prefWidth="563.0" />
+                              <Label layoutX="18.0" layoutY="188.0" text="Dirección:" />
+                              <Separator layoutX="17.0" layoutY="249.0" prefHeight="0.0" prefWidth="985.0" />
+                              <Button fx:id="btnActualizarM" layoutX="156.0" layoutY="264.0" mnemonicParsing="false" onAction="#actualizarMonitor" prefHeight="25.0" prefWidth="100.0" text="Actualizar" />
+                              <Button fx:id="btnNuevoM" layoutX="295.0" layoutY="264.0" mnemonicParsing="false" onAction="#nuevoMonitor" prefHeight="25.0" prefWidth="101.0" text="Nuevo" />
+                              <Button fx:id="btnAgregarM" layoutX="435.0" layoutY="264.0" mnemonicParsing="false" onAction="#agregarMonitor" prefHeight="25.0" prefWidth="100.0" text="Agregar" />
+                              <TextField fx:id="txtPassword" layoutX="730.0" layoutY="144.0" onMouseClicked="#mouseClickedM6" prefHeight="25.0" prefWidth="258.0" />
+                              <TextField fx:id="txtUsuario" layoutX="725.0" layoutY="97.0" onMouseClicked="#mouseClickedM5" prefHeight="25.0" prefWidth="258.0" />
+                              <TextField fx:id="txtSalarioM" layoutX="725.0" layoutY="65.0" onMouseClicked="#mouseClickedM4" prefHeight="25.0" prefWidth="258.0" />
+                              <Label layoutX="664.0" layoutY="148.0" text="Contraseña: " />
+                              <Label layoutX="673.0" layoutY="109.0" text="Usuario: " />
+                              <Label layoutX="675.0" layoutY="69.0" text="Salario: " />
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Equipos">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" layoutX="17.0" layoutY="17.0" orientation="VERTICAL" prefHeight="653.0" prefWidth="1019.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <AnchorPane layoutX="59.0" layoutY="-29.0" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" AnchorPane.bottomAnchor="580.0" />
+                                    <AnchorPane layoutX="3.0" layoutY="19.0" minHeight="0.0" minWidth="0.0" prefHeight="201.0" prefWidth="725.0">
+                                       <children>
+                                          <Label layoutX="7.0" layoutY="6.0" prefHeight="17.0" prefWidth="147.0" text="Informacion del monitor" />
+                                          <Separator layoutX="14.0" layoutY="33.0" prefHeight="0.0" prefWidth="988.0" />
+                                          <Label layoutX="15.0" layoutY="69.0" text="Nombre: " />
+                                          <TextField fx:id="txtNombreE" layoutX="134.0" layoutY="65.0" onMouseClicked="#mouseClickedE" prefHeight="25.0" prefWidth="564.0" />
+                                          <TextField fx:id="txtCodigoE" layoutX="133.0" layoutY="105.0" onMouseClicked="#mouseClickedE1" prefHeight="25.0" prefWidth="565.0" />
+                                          <Label layoutX="15.0" layoutY="109.0" text="Codigo:" />
+                                          <Label layoutX="14.0" layoutY="148.0" text="Cantidad Disponible: " />
+                                          <TextField fx:id="txtCantidadElementoE" layoutX="134.0" layoutY="144.0" onMouseClicked="#mouseClickedE2" prefHeight="25.0" prefWidth="563.0" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Separator layoutX="16.0" layoutY="227.0" prefHeight="0.0" prefWidth="985.0" />
+                                    <Button fx:id="btnActualizarE" layoutX="129.0" layoutY="246.0" mnemonicParsing="false" onAction="#actualizarElemento" prefHeight="25.0" prefWidth="100.0" text="Actualizar" />
+                                    <Button fx:id="btnNuevoE" layoutX="280.0" layoutY="246.0" mnemonicParsing="false" onAction="#nuevoElemento" prefHeight="25.0" prefWidth="101.0" text="Nuevo" />
+                                    <Button fx:id="btnAgregarE" layoutX="431.0" layoutY="246.0" mnemonicParsing="false" onAction="#agregarElemento" prefHeight="25.0" prefWidth="100.0" text="Agregar" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="239.0" prefWidth="916.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Lista de Elementos: " />
+                                    <TableView fx:id="tableElementosE" layoutX="14.0" layoutY="38.0" prefHeight="200.0" prefWidth="980.0">
+                                       <columns>
+                                          <TableColumn fx:id="columnNombreE" prefWidth="377.99999237060547" text="Nombre" />
+                                          <TableColumn fx:id="columnCodigoE" minWidth="0.0" prefWidth="249.0" text="Codigo" />
+                                          <TableColumn fx:id="columCantidadDispoE" prefWidth="352.0" text="Cantidad Disponible" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="btnEliminarE" layoutX="454.0" layoutY="257.0" mnemonicParsing="false" onAction="#eliminarElemento" prefHeight="25.0" prefWidth="101.0" text="Eliminar" />
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Gestión de prestamos">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="657.0" prefWidth="1027.0">
+                          <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <AnchorPane layoutX="14.0" layoutY="-12.0" prefHeight="323.0" prefWidth="1027.0">
+                                       <children>
+                                          <Label layoutX="16.0" layoutY="27.0" text="Informacion Prestamo" />
+                                          <Label layoutX="22.0" layoutY="63.0" text="Estudiante: " />
+                                          <TextField fx:id="txtEstudiante" layoutX="133.0" layoutY="59.0" onMouseClicked="#mouseClickedP" prefHeight="25.0" prefWidth="239.0" />
+                                          <Label layoutX="22.0" layoutY="101.0" text="Nombre Estudiante:" />
+                                          <TextField fx:id="txtNombreEstudiante" layoutX="133.0" layoutY="97.0" onMouseClicked="#mouseClickedP3" prefHeight="25.0" prefWidth="306.0" />
+                                          <DatePicker fx:id="fechaPrestamo" layoutX="643.0" layoutY="59.0" onMouseClicked="#mouseClickedP5" prefHeight="25.0" prefWidth="212.0" />
+                                          <Label layoutX="514.0" layoutY="63.0" text="Fecha de Prestamo:" />
+                                          <Label layoutX="519.0" layoutY="101.0" text="Fecha de Entrega:" />
+                                          <DatePicker fx:id="fechaEntrega" layoutX="641.0" layoutY="97.0" onMouseClicked="#mouseClickedP4" prefHeight="25.0" prefWidth="217.0" />
+                                          <Button fx:id="btnBuscarEstudiante" layoutX="384.0" layoutY="59.0" mnemonicParsing="false" onAction="#buscarEstudiante" text="Buscar" />
+                                          <AnchorPane layoutX="477.0" layoutY="149.0" prefHeight="170.0" prefWidth="425.0">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="26.0" text="Elemento:" />
+                                                <TextField fx:id="txtElemento" layoutX="77.0" layoutY="22.0" onMouseClicked="#mouseClickedP1" prefHeight="25.0" prefWidth="247.0" />
+                                                <TextField fx:id="txtNombreCantidadEle" layoutX="79.0" layoutY="55.0" onMouseClicked="#mouseClickedP6" prefHeight="25.0" prefWidth="244.0" />
+                                                <Button fx:id="btnBuscarElemento" layoutX="330.0" layoutY="22.0" mnemonicParsing="false" onAction="#buscarElemento" text="Buscar Elemento" />
+                                                <TextField fx:id="txtCantidadElementoPres" layoutX="79.0" layoutY="88.0" onMouseClicked="#mouseClickedP2" prefHeight="25.0" prefWidth="222.0" />
+                                                <Label layoutX="14.0" layoutY="92.0" text="Cantidad: " />
+                                                <Button fx:id="btnAgregarElementoPres" layoutX="79.0" layoutY="133.0" mnemonicParsing="false" onAction="#agregarElementoPrestamo" text="Agregar Elemento" />
+                                                <Button fx:id="btnNuevoElementoPres" layoutX="201.0" layoutY="133.0" mnemonicParsing="false" onAction="#nuevoElementoP" text="Nuevo Elemento" />
+                                             </children>
+                                          </AnchorPane>
+                                          <Label layoutX="22.0" layoutY="148.0" text="Codigo Prestamo:" />
+                                          <TextField fx:id="txtCodigoPrestamo" layoutX="133.0" layoutY="144.0" onMouseClicked="#mouseClickedP7" prefHeight="25.0" prefWidth="174.0" />
+                                          <Button fx:id="btnBuscarPrestamo" layoutX="320.0" layoutY="144.0" mnemonicParsing="false" onAction="#buscarPrestamo" text="Buscar Prestamo" />
+                                          <AnchorPane layoutX="77.0" layoutY="171.0" prefHeight="152.0" prefWidth="346.0">
+                                             <children>
+                                                <Button fx:id="btnNuevoPrestamo" layoutX="197.0" layoutY="33.0" mnemonicParsing="false" onAction="#nuevoPrestamo" prefHeight="43.0" prefWidth="135.0" text="Nuevo Prestamo" />
+                                                <Button fx:id="btnAgregarPrestamo" layoutX="197.0" layoutY="88.0" mnemonicParsing="false" onAction="#agregarPrestamo" prefHeight="43.0" prefWidth="136.0" text="Agregar Prestamo" />
+                                                <Button fx:id="btnEntregarPrestamo" layoutX="31.0" layoutY="54.0" mnemonicParsing="false" onAction="#entregarPrestamoP" prefHeight="45.0" prefWidth="135.0" text="Entregar Prestamo" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <AnchorPane layoutY="1.0" prefHeight="323.0" prefWidth="1027.0">
+                                       <children>
+                                          <TableView fx:id="tableElementosP" layoutX="27.0" layoutY="34.0" prefHeight="256.0" prefWidth="526.0">
+                                            <columns>
+                                                <TableColumn fx:id="columElemento" prefWidth="239.0" text="Elemento" />
+                                                <TableColumn fx:id="columCantidad" prefWidth="286.0" text="Cantidad" />
+                                            </columns>
+                                          </TableView>
+                                          <Label layoutX="27.0" layoutY="14.0" text="Informacion Elementos" />
+                                          <Button fx:id="btnEliminarElementoPres" layoutX="671.0" layoutY="137.0" mnemonicParsing="false" onAction="#eliminarElementoPres" prefHeight="57.0" prefWidth="110.0" text="Eliminar" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

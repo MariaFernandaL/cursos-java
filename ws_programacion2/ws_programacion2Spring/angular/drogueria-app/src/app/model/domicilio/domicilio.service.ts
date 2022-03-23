@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Domicilio } from './domicilio'; 
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { of } from 'rxjs';
 import { map } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,10 @@ export class DomicilioService {
   }
 
   crearDomicilio(Domicilio:Domicilio):Observable<Domicilio> {
-    return this.http.post<Domicilio>(this.urlEndPoint,Domicilio,{headers:this.httpHeaders});
+    return this.http.post<Domicilio>(this.urlEndPoint,Domicilio,{headers:this.httpHeaders})
+    .pipe(
+      catchError(this.errores)
+    );
   }
 
   getDomicilio(id): Observable<Domicilio>{
@@ -37,4 +40,15 @@ export class DomicilioService {
   deleteDomicilio(id: number): Observable<Domicilio>{
     return this.http.delete<Domicilio>(`${this.urlEndPoint}/${id}`, {headers: this.httpHeaders})
   }
+
+  
+  private errores(error: HttpErrorResponse){
+    if(error.status==0){
+      console.error("Error en: ", error.error);
+    } else{
+      console.error(`Codigo de retorno del backend ${error.status}, body was: `, error.error);
+    }
+    return throwError(()=> new Error("Algo esta mal, intentalo de nuevo"));
+  }
+
 }

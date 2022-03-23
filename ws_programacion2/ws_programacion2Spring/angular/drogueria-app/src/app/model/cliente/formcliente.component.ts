@@ -12,7 +12,7 @@ export class FormclienteComponent implements OnInit {
 
   titulo:string="Formulario Clientes";
   cliente: Cliente= new Cliente();
-  
+
   constructor(
     private ClienteService: ClienteService,
     private router: Router,
@@ -22,10 +22,12 @@ export class FormclienteComponent implements OnInit {
   ngOnInit(): void {
     this.cargarCliente();
   }
+  
+  
 
   crearCliente(): void{
-      this.ClienteService.crearCliente(this.cliente).subscribe(
-        cliente=> {
+      this.ClienteService.crearCliente(this.cliente).subscribe({
+        next: (cliente)=> {
           this.router.navigate(['./clientes'])
           Swal.fire({
             title: `Cliente ${this.cliente.nombre} creado con éxito!`,
@@ -33,10 +35,22 @@ export class FormclienteComponent implements OnInit {
             imageWidth: 400,
             imageHeight: 200,
             imageAlt: 'Custom image',
-          })
+          });
+        },
+        error: (e)=>{
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text:'Algo salio mal',
+            footer: '<p>Algun dato del formulario esta incorrecto o ya existe, vuelve a intentar</p>'
+          });
         }
-    );
-  }
+      })
+      }
+
+
+
+
   cargarCliente():void{
     this.activateRoute.params.subscribe(params =>{
       let id = params['id']

@@ -11,12 +11,12 @@ import html2canvas from 'html2canvas';
 })
 export class DomicilioComponent implements OnInit {
   
-  domicilio: Domicilio[];
+  domicilios: Domicilio[];
   constructor(private DomicilioService: DomicilioService) { }
 
   ngOnInit(): void {
     this.DomicilioService.getDomicilios().subscribe(
-      domicilio=> this.domicilio=domicilio
+      domicilios=> this.domicilios=domicilios
     );
   }
 
@@ -34,7 +34,7 @@ export class DomicilioComponent implements OnInit {
       if (result.isConfirmed) {
         this.DomicilioService.deleteDomicilio(domicilio.idDomicilio).subscribe(
           response => {
-          this.domicilio = this.domicilio.filter(domicilio => domicilio !== domicilio)
+          this.domicilios = this.domicilios.filter(domicilio => domicilio !== domicilio)
             Swal.fire('Domicilio Eliminado!',`Domicilio ${domicilio.codigo} eliminado con éxito.`,'success')
           }
         )

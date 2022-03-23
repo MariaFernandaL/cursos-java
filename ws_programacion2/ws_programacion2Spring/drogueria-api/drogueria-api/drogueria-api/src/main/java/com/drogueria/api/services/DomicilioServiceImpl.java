@@ -37,6 +37,7 @@ public class DomicilioServiceImpl implements IDomicilioService{
 		if (domicilio2!=null) {
 			throw new DomicilioException("El domiciloo ya esta registrado con este codigo");
 		}
+		
 		domicilioRepository.save(domicilio);
 	}
 

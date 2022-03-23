@@ -5,6 +5,7 @@ import { ClienteService } from './cliente.service';
 import Swal from 'sweetalert2';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-cliente',
@@ -13,6 +14,7 @@ import html2canvas from 'html2canvas';
 export class ClienteComponent implements OnInit {
 
   clientes: Cliente[];
+  
   constructor(private ClienteService: ClienteService) { }
 
 ngOnInit(): void {
@@ -32,15 +34,25 @@ delete(cliente: Cliente): void {
   confirmButtonText: 'Si, eliminar!',
   cancelButtonText: 'No, cancelar!'
   }).then((result) => {
+
     if (result.isConfirmed) {
       this.ClienteService.deleteClient(cliente.idCliente).subscribe(
         response => {
-        this.clientes = this.clientes.filter(cliente => cliente !== cliente)
+            this.clientes = this.clientes.filter(cliente => cliente !== cliente)
           Swal.fire('Cliente Eliminado!',`Cliente ${cliente.nombre} eliminado con éxito.`,'success')
+        },
+        err=>{
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text:'Algo salio mal',
+            footer: '<p>El cliente se encuentra en una transaccion</p>'
+          });
         }
-      )
-    }
-  }) }
+        )
+      }
+    }) }
+
 
 
 

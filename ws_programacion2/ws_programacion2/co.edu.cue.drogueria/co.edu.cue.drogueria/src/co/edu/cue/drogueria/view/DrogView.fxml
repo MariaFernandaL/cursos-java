@@ -186,11 +186,13 @@
                                  <children>
                                     <TableView fx:id="tableDomicilio" layoutX="-3.0" layoutY="7.0" prefHeight="286.0" prefWidth="861.0">
                                        <columns>
-                                          <TableColumn fx:id="colNumeroDomicilio" prefWidth="155.0" text="Numero Domicilio" />
-                                          <TableColumn fx:id="colFechaD" prefWidth="161.0" text="Fecha" />
-                                          <TableColumn fx:id="colEmpleadoD" prefWidth="199.0" text="Empleado" />
-                                          <TableColumn fx:id="colClienteD" prefWidth="184.0" text="Cliente" />
-                                          <TableColumn fx:id="colProductoD" prefWidth="161.0" text="Producto" />
+                                          <TableColumn fx:id="colNumeroDomicilio" prefWidth="156.0" text="Numero Domicilio" />
+                                          <TableColumn fx:id="colFechaD" prefWidth="108.0" text="Fecha" />
+                                          <TableColumn fx:id="colEmpleadoD" prefWidth="137.0" text="Empleado" />
+                                          <TableColumn fx:id="colClienteD" prefWidth="117.0" text="Cliente" />
+                                          <TableColumn fx:id="colProductoD" prefWidth="123.0" text="Producto" />
+                                          <TableColumn fx:id="colDireccionD" prefWidth="121.0" text="Direccion" />
+                                          <TableColumn fx:id="colCostosD" prefWidth="98.0" text="Costos" />
                                        </columns>
                                     </TableView>
                                  </children>

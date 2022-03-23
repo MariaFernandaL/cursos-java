@@ -77,27 +77,35 @@ public class ClienteRestController {
 	}
 
 	
+	
 	@PostMapping("/clientes")
 	@ResponseStatus(HttpStatus.CREATED)
-	public void createClient(@RequestBody Cliente cliente)throws ClienteException {
+	public ResponseEntity<String> createClient(@RequestBody Cliente cliente){
 		System.out.println("Servicio de crear solicitado");
 		try {
 			clienteServiceImpl.save(cliente);
 			ArchivoUtil.guardarRegistroLog("Se creo un cliente", 1, "PostMapping", RUTA_ARCHIVO_LOG);
-		} catch (Exception e) {
+		} catch (ClienteException e) {
 			e.printStackTrace();
+			return new ResponseEntity<>("",HttpStatus.BAD_REQUEST);
 		}
+		return new ResponseEntity<>("",HttpStatus.CREATED);
 	}
 
+	
+	
+	
 	@DeleteMapping("/clientes/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void deleteClient(@PathVariable int id) {
+	public ResponseEntity<String> deleteClient(@PathVariable int id) {
 		try {
 			clienteServiceImpl.delete(id);
 			ArchivoUtil.guardarRegistroLog("Se elimino un cliente", 1, "DeleteMapping", RUTA_ARCHIVO_LOG);
-		} catch (Exception e) {
+		} catch (ClienteException e) {
 			e.printStackTrace();
+			return new ResponseEntity<>("",HttpStatus.BAD_REQUEST);
 		}
+		return new ResponseEntity<>("",HttpStatus.NO_CONTENT);
 	}
 	
 	@PutMapping("/clientes/{id}")

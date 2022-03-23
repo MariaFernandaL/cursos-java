@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import co.edu.cue.drogueria.exception.ClienteException;
 import co.edu.cue.drogueria.exception.EmpleadoException;
 import co.edu.cue.drogueria.exception.ProductoException;
+import co.edu.cue.drogueria.exception.DomicilioException;
 import co.edu.cue.drogueria.model.Cliente;
+import co.edu.cue.drogueria.model.Domicilio;
 import co.edu.cue.drogueria.model.Drogueria;
 import co.edu.cue.drogueria.model.Empleado;
 import co.edu.cue.drogueria.model.Producto;
@@ -140,6 +142,37 @@ public class ModelFactoryController implements IModelFactoryController, Runnable
 			producto.setCantExis(4);
 			producto.setValorU("3.000");
 			drogueria.getListaProductos().add(producto);
+			
+			
+			Domicilio domicilio=new Domicilio();
+			domicilio.setNumeroDomicilio("001");
+			domicilio.setFecha("2022-04-14");
+			domicilio.setCliente(drogueria.getListaClientes().get(0));
+			domicilio.setProducto(drogueria.getListaProductos().get(0));
+			domicilio.setEmpleado(drogueria.getListaEmpleado().get(0));
+			domicilio.setDireccion("armenia");
+			domicilio.setCosto(10000);
+			drogueria.getListaDomicilios().add(domicilio);
+			
+			domicilio=new Domicilio();
+			domicilio.setNumeroDomicilio("002");
+			domicilio.setFecha("2022-04-15");
+			domicilio.setCliente(drogueria.getListaClientes().get(1));
+			domicilio.setProducto(drogueria.getListaProductos().get(1));
+			domicilio.setEmpleado(drogueria.getListaEmpleado().get(1));
+			domicilio.setDireccion("calarca");
+			domicilio.setCosto(20000);
+			drogueria.getListaDomicilios().add(domicilio);
+			
+			domicilio=new Domicilio();
+			domicilio.setNumeroDomicilio("003");
+			domicilio.setFecha("2022-04-16");
+			domicilio.setCliente(drogueria.getListaClientes().get(2));
+			domicilio.setProducto(drogueria.getListaProductos().get(2));
+			domicilio.setEmpleado(drogueria.getListaEmpleado().get(2));
+			domicilio.setDireccion("cordoba");
+			domicilio.setCosto(30000);
+			drogueria.getListaDomicilios().add(domicilio);
 			
 			System.out.println("Drogueria inicializada ");
 		}
@@ -284,6 +317,52 @@ public class ModelFactoryController implements IModelFactoryController, Runnable
 			return drogueria.actualizarProducto(codigoActual, nombre, codigo, valorU, cantExis);
 		}
 		
+
+		
+		//DOMICILIO
+		@Override
+		public Domicilio crearDomicilio(String numeroDomicilio, String fecha, Cliente cliente, Producto producto,
+				Empleado empleado, String direccion, double costo) {
+			Domicilio domicilio=null;
+			try {
+				domicilio= getDrogueria().crearDomicilio(numeroDomicilio, fecha,cliente,producto,empleado,direccion,costo);
+			} catch (DomicilioException e) {
+				e.getMessage();
+			}	
+			return domicilio;
+		}
+
+		@Override
+		public Boolean eliminarDomicilio(String numeroDomicilio) {
+			boolean domicilioExiste= false;
+			
+			try {
+				domicilioExiste= getDrogueria().eliminarDomicilio(numeroDomicilio);
+			} catch (DomicilioException e) {
+				e.getMessage();
+			}
+			
+			return domicilioExiste;
+		}
+
+		@Override
+		public Domicilio obtenerDomicilio(String numeroDomicilio) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public ArrayList<Domicilio> obtenerDomicilio() {
+			return drogueria.getListaDomicilios();
+		}
+
+		@Override
+		public boolean actualizarDomicilio(String numeroDomicilioActual, String numeroDomicilio, String fecha,
+				Cliente cliente, Producto producto, Empleado empleado, String direccion, double costo) {
+			return drogueria.actualizarDomicilio(numeroDomicilioActual,numeroDomicilio, fecha,cliente,producto,empleado,direccion,costo);
+		}
+		
+		
 		
 		//XML
 		public void guardarResourceXML() {
@@ -341,9 +420,9 @@ public class ModelFactoryController implements IModelFactoryController, Runnable
 				}
 			}
 			
-			
-			//3. Para genera un archivo de integracion
-			
-			//4. Para generar reporte
+		
 		}
+
+		
+		
 }

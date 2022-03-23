@@ -30,6 +30,7 @@ public class DrogueriaController {
 	CrudClienteViewController crudClienteViewController;
 	CrudEmpleadoViewController crudEmpleadoViewController;
 	CrudDrogaViewController crudDrogaViewController;
+	CrudDomicilioViewController crudDomicilioViewController;
 	
 	ObservableList<Empleado> listaEmpleadosData= FXCollections.observableArrayList();
 	Empleado empleadoSeleccionado;
@@ -260,6 +261,14 @@ public class DrogueriaController {
 
     @FXML
     private TableColumn<Producto, String> colValorUnidadP;
+    
+    @FXML
+    private TableColumn<Producto, String> colDireccionD;
+    
+    @FXML
+    private TableColumn<Producto, Double> colCostosD;
+    
+    
 
     @FXML
     void initialize() {
@@ -268,20 +277,23 @@ public class DrogueriaController {
     	crudClienteViewController= new CrudClienteViewController(modelFactory);
     	crudEmpleadoViewController= new CrudEmpleadoViewController(modelFactory);
     	crudDrogaViewController= new CrudDrogaViewController(modelFactory);
+    	crudDomicilioViewController= new CrudDomicilioViewController(modelFactory);
     	
     	inicializarEmpleadoView();
     	inicializarClienteView();
     	inicializarProductoView();
-    	//inicializarDomicilioView();
+    	inicializarDomicilioView();
     }
     
     private void inicializarDomicilioView() {
 
-    	this.colClienteD.setCellValueFactory(new PropertyValueFactory<>("cliente.getNombre"));
-    	this.colEmpleadoD.setCellValueFactory(new PropertyValueFactory<>("empleado.getNombre"));
-    	this.colProductoD.setCellValueFactory(new PropertyValueFactory<>("producto.getNombre"));
     	this.colNumeroDomicilio.setCellValueFactory(new PropertyValueFactory<>("numeroDomicilio"));
     	this.colFechaD.setCellValueFactory(new PropertyValueFactory<>("fecha"));
+    	this.colDireccionD.setCellValueFactory(new PropertyValueFactory<>("direccion"));
+    	this.colCostosD.setCellValueFactory(new PropertyValueFactory<>("costo"));
+    	this.colClienteD.setCellValueFactory(new PropertyValueFactory<>("cliente.getNombre()"));
+    	this.colEmpleadoD.setCellValueFactory(new PropertyValueFactory<>("getNombreEmpleado()"));
+    	this.colProductoD.setCellValueFactory(new PropertyValueFactory<>("getNombreProducto()"));
     	
     	tableDomicilio.getItems().clear();
     	tableDomicilio.setItems(getListaDomiciliosData());
@@ -297,6 +309,8 @@ public class DrogueriaController {
 		if(domicilioSeleccionado != null){
 			txtNumDomicilio.setText(domicilioSeleccionado.getNumeroDomicilio());
 			txtFechaD.setText(domicilioSeleccionado.getFecha());
+			txtDireccionD.setText(domicilioSeleccionado.getDireccion());
+			txtCostosD.setPromptText(String.valueOf(domicilioSeleccionado.getCosto()));
 			txtClienteD.setText(domicilioSeleccionado.getCliente().getCedula());
 			txtEmpleadoD.setText(domicilioSeleccionado.getEmpleado().getCedula());
 			txtProductoD.setText(domicilioSeleccionado.getProducto().getCodigo());
@@ -692,20 +706,117 @@ private void mostrarInformacionEmpleado(Empleado empleadoSeleccionado) {
 
     @FXML
     void agregarDomicilioAction(ActionEvent event) {
-
+    	agregarDomicilio();
     }
 
-    @FXML
+    private void agregarDomicilio() {
+    	String numeroDomicilio= txtNumDomicilio.getText();
+    	String fecha= txtFechaD.getText();
+    	String direccion=txtDireccionD.getText();
+    	Double costo= Double.parseDouble(txtCostosD.getText());
+    	String cedulaCliente= txtClienteD.getText();
+    	String codigoProducto=txtProductoD.getText();
+    	String cedulaEmpleado= txtEmpleadoD.getText();
+    	
+    	Cliente cliente= crudDomicilioViewController.getDrogueria().obtenerCliente(cedulaCliente);
+    	Producto producto= crudDomicilioViewController.getDrogueria().obtenerProducto(codigoProducto);
+    	Empleado empleado= crudDomicilioViewController.getDrogueria().obtenerEmpleado(cedulaEmpleado);
+    	
+    	
+    	if (datosValidosDomicilio(numeroDomicilio, fecha, direccion, costo, cliente,producto, empleado)) {
+			Domicilio domicilio= null;
+			domicilio= crudDomicilioViewController.crearDomicilio(numeroDomicilio, fecha, cliente,producto, empleado, direccion, costo);
+			if (domicilio!=null) {
+				listaDomiciliosData.add(domicilio);
+				crudDomicilioViewController.guardarDatos();
+				mostrarMensaje("Notificacion domicilio", "Domicilio creado", "El domicilio se ha creado con exito", AlertType.INFORMATION);
+				limpiarCamposDomicilio();
+			} else {
+				mostrarMensaje("Notificación domicilio", "Domicilio no creado", "El domicilio no se ha creado", AlertType.INFORMATION);
+			}
+		}else {
+			mostrarMensaje("Notificación domicilio", "Domicilio no creado", "Los datos ingresados no son invalidos", AlertType.ERROR);
+		}
+	}
+
+	@FXML
     void actualizarDomicilioAction(ActionEvent event) {
-
+		actualizarDomicilio();
     }
 
-    @FXML
+	
+	
+    private void actualizarDomicilio() {
+    	
+    	String numeroDomicilio= txtNumDomicilio.getText();
+    	String fecha= txtFechaD.getText();
+    	String direccion=txtDireccionD.getText();
+    	Double costo= Double.parseDouble(txtCostosD.getText());
+    	String cedulaCliente= txtClienteD.getText();
+    	String codigoProducto=txtProductoD.getText();
+    	String cedulaEmpleado= txtEmpleadoD.getText();
+    	
+    	Cliente cliente= crudDomicilioViewController.getDrogueria().obtenerCliente(cedulaCliente);
+    	Producto producto= crudDomicilioViewController.getDrogueria().obtenerProducto(codigoProducto);
+    	Empleado empleado= crudDomicilioViewController.getDrogueria().obtenerEmpleado(cedulaEmpleado);
+    	
+    	
+    
+    	boolean domicilioActualizado= false;
+    	
+    	if (domicilioSeleccionado!=null) {
+			if (datosValidosDomicilio(numeroDomicilio, fecha, direccion, costo, cliente,producto, empleado)) {
+				
+				domicilioActualizado= crudDomicilioViewController.actualizarDomicilio(domicilioSeleccionado.getNumeroDomicilio(), numeroDomicilio, fecha, cliente,producto, empleado, direccion, costo);
+				if (domicilioActualizado==true) {
+					tableDomicilio.refresh();
+        			mostrarMensaje("Notificación domicilio", "Domicilio actualizado", "El domicilio se ha actualizado con éxito", AlertType.INFORMATION);
+        			limpiarCamposDomicilio();
+				}else {
+        			mostrarMensaje("Notificación domicilio", "Domicilio no actualizado", "El domicilio no se ha actualizado con éxito", AlertType.INFORMATION);
+				}
+			}else {
+        		mostrarMensaje("Notificación domicilio", "Domicilio no creado", "Los datos ingresados son invalidos", AlertType.ERROR);
+			}
+		}else {
+    		mostrarMensaje("Notificación domicilio", "Domicilio no actualizado", "El domicilio no ha sido seleccionado", AlertType.ERROR);
+		}	
+		
+	}
+
+    	
+    	
+    	
+	
+
+	@FXML
     void eliminarDomicilioAction(ActionEvent event) {
+		eliminarDomicilio();
+}
 
-    }
+    private void eliminarDomicilio() {
+    	boolean domicilioEliminado= false;
+    	if (domicilioSeleccionado!=null) {
+			if (mostrarMensajeConfirmacion("¿Estas seguro de elmininar el domicilio?")) {
+				domicilioEliminado= crudDomicilioViewController.eliminarDomicilio(domicilioSeleccionado.getNumeroDomicilio());
+				if (domicilioEliminado==true) {
+					listaDomiciliosData.remove(domicilioSeleccionado);
+					domicilioSeleccionado=null;
+					
+					tableDomicilio.getSelectionModel().clearSelection();
+					limpiarCamposDomicilio();
+					mostrarMensaje("Notificación domicilio", "Domicilio eliminado", "El domicilio se ha eliminado con éxito", AlertType.INFORMATION);
+				} else {
+					mostrarMensaje("Notificación domicilio", "Domicilio no eliminado", "El domicilio no se puede eliminar", AlertType.ERROR);
+				}
+			}
+		}else {
+			mostrarMensaje("Notificación domicilio", "Domicilio no seleccionado", "Seleccione un domicilio de la lista", AlertType.WARNING);
+		}
+		
+	}
 
-    @FXML
+	@FXML
     void nuevoDomicilioAction(ActionEvent event) {
 
     	txtNumDomicilio.setText("Ingrese el numero");
@@ -848,4 +959,38 @@ private void mostrarInformacionEmpleado(Empleado empleadoSeleccionado) {
 			return false;
 		}
 	}
+    
+    private boolean datosValidosDomicilio(String numeroDomicilio, String fecha, String direccion, Double costo,
+			Cliente cliente, Producto producto, Empleado empleado) {
+    	String mensaje = "";
+    	if(numeroDomicilio == null || numeroDomicilio.equals(""))
+			mensaje += "El numero es invalido \n" ;
+
+		if(fecha == null || fecha.equals(""))
+			mensaje += "La fecha es invalida \n" ;
+
+		if(direccion == null || direccion.equals(""))
+			mensaje += "La direccion es invalida \n" ;
+
+		if(costo <= 0 )
+			mensaje += "El costo es invalido \n" ;
+		
+		if(cliente == null )
+			mensaje += "El cliente es invalido \n" ;
+		
+		if(empleado == null )
+			mensaje += "El empleado es invalido \n" ;
+		
+		if(producto == null )
+			mensaje += "El producto es invalido \n" ;
+		
+		if(mensaje.equals("")){
+			return true;
+		}else{
+			mostrarMensaje("Notificación domicilio","Datos invalidos",mensaje, AlertType.WARNING);
+			return false;
+		}
+    }
+    
+    
 }

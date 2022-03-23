@@ -11,9 +11,9 @@
             </button>
         </div>
 
-        <div *ngIf="domicilio?.length == 0" class="alert alert-info">Hay registros</div>
+        <div *ngIf="domicilios?.length == 0" class="alert alert-info">Hay registros</div>
 
-        <table class="table table-bordered table-striped" *ngIf="domicilio?.length>0" id="htmlData4">
+        <table class="table table-bordered table-striped" *ngIf="domicilios?.length>0" id="htmlData4">
             <thead>
                 <tr>
                     <th scope="col">Id</th>
@@ -29,11 +29,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let domicilio of domicilio">
+                <tr *ngFor="let domicilio of domicilios">
                     <td>{{domicilio.idDomicilio}}</td>
-                    <td>{{domicilio.cliente_idCliente}}</td>
-                    <td>{{domicilio.empleado_idEmpleado}}</td>
-                    <td>{{domicilio.producto_idProducto}}</td>
+                    <td>{{domicilio.cliente.nombre}}</td>
+                    <td>{{domicilio.empleado.nombre}}</td>
+                    <td>{{domicilio.producto.nombre}}</td>
                     <td>{{domicilio.codigo}}</td>
                     <td>{{domicilio.fecha}}</td>
                     <td>{{domicilio.direccion}}</td>

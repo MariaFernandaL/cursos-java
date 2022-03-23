@@ -5,9 +5,11 @@ import java.util.ArrayList;
 import co.edu.cue.drogueria.exception.ClienteException;
 import co.edu.cue.drogueria.exception.EmpleadoException;
 import co.edu.cue.drogueria.exception.ProductoException;
+import co.edu.cue.drogueria.exception.DomicilioException;
 import co.edu.cue.drogueria.model.Cliente;
 import co.edu.cue.drogueria.model.Empleado;
 import co.edu.cue.drogueria.model.Producto;
+import co.edu.cue.drogueria.model.Domicilio;
 
 public interface IDrogueriaController {
 
@@ -34,4 +36,12 @@ public interface IDrogueriaController {
 	public boolean verificarProductoExistente(String codigo);
 	public Producto obtenerProducto(String codigo);
 	public ArrayList<Producto> obtenerProductos();
+	
+	//DOMICILIO
+	public Domicilio crearDomicilio(String numeroDomicilio, String fecha, Cliente cliente, Producto producto, Empleado empleado, String direccion, double costo) throws DomicilioException;
+	public boolean actualizarDomicilio(String numeroDomicilioActual,String numeroDomicilio, String fecha, Cliente cliente, Producto producto, Empleado empleado, String direccion, double costo);
+	public Boolean eliminarDomicilio(String numeroDomicilio)throws DomicilioException;
+	public boolean verificarDomicilioExistente(String numeroDomicilio);
+	public Domicilio obtenerDomicilio(String numeroDomicilio);
+	public ArrayList<Domicilio> obtenerDomicilios();
 }

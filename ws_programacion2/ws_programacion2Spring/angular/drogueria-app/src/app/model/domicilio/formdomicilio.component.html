@@ -2,24 +2,41 @@
     <div class="card-header">{{titulo}}</div>
     <div class="card-body">
         <form>
+
             <div class="form-group-row">
                 <label for="" class="col-form-label col-sm-2">Cliente:</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" [(ngModel)]="domicilio.cliente_idCliente" name="cliente_idCliente">
+                    <select class="form-select" required name="name" [(ngModel)]="domicilio.cliente" name="cliente">
+                        <option selected>Seleccione un cliente</option>
+                        <option *ngFor="let cliente of clientes">{{cliente.nombre}}</option>
+                      </select>
                 </div>
             </div>
 
             <div class="form-group-row">
-                <label for="" class="col-form-label col-sm-2">Empleado:</label>
+                <label for="" class="col-form-label col-sm-2">Cliente:</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" [(ngModel)]="domicilio.empleado_idEmpleado" name="empleado_idEmpleado">
+                    <select class="form-select" required name="name" [(ngModel)]="domicilio.cliente" name="cliente">
+                        <option selected>Seleccione un cliente</option>
+                        <option *ngFor="let cliente of clientes">{{cliente.nombre}}</option>
+                      </select>
+                </div>
+            </div>
+
+            <div class="form-group-row">
+                <label for="" class="col-form-label col-sm-2">Cliente:</label>
+                <div class="col-sm-6">
+                    <select class="form-select" required name="name" [(ngModel)]="domicilio.cliente" name="cliente">
+                        <option selected>Seleccione un cliente</option>
+                        <option *ngFor="let cliente of clientes">{{cliente.nombre}}</option>
+                      </select>
                 </div>
             </div>
 
             <div class="form-group-row">
                 <label for="" class="col-form-label col-sm-2">Producto:</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" [(ngModel)]="domicilio.producto_idProducto" name="producto_idProducto">
+                    <input type="text" class="form-control" [(ngModel)]="domicilio.producto" name="producto">
                 </div>
             </div>
 
@@ -43,14 +60,12 @@
                     <input type="text" class="form-control" [(ngModel)]="domicilio.direccion" name="direccion">
                 </div>
             </div>
-
             <div class="form-group-row">
                 <label for="" class="col-form-label col-sm-2">Costo:</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" [(ngModel)]="domicilio.costo" name="costo">
                 </div>
             </div>
-
             <div class="form-group row">
                 <div class="col-sm-6">
                     <button class="btn btn-primary" role="button" (click)='crearDomicilio()' *ngIf="!domicilio.idDomicilio else elseBlock">Crear</button>
@@ -59,6 +74,8 @@
                             Actualizar
                         </button>
                     </ng-template>
+
+
                 </div>
             </div>
         </form>

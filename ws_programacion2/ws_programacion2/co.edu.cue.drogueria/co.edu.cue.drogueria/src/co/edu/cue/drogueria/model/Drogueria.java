@@ -7,6 +7,7 @@ import co.edu.cue.drogueria.exception.ClienteException;
 import co.edu.cue.drogueria.exception.EmpleadoException;
 import co.edu.cue.drogueria.exception.ProductoException;
 import co.edu.cue.drogueria.service.IDrogueriaController;
+import co.edu.cue.drogueria.exception.DomicilioException;
 
 public class Drogueria implements IDrogueriaController, Serializable{
 
@@ -19,7 +20,7 @@ public class Drogueria implements IDrogueriaController, Serializable{
 	ArrayList<Producto> listaProductos= new ArrayList<>();
 	ArrayList<Empleado> listaEmpleado= new ArrayList<>();
 	ArrayList<Cliente> listaClientes= new ArrayList<>();
-	ArrayList<Domicilio> listaVentas= new ArrayList<>();
+	ArrayList<Domicilio> listaDomicilios= new ArrayList<>();
 	
 	public ArrayList<Producto> getListaProductos() {
 		return listaProductos;
@@ -39,11 +40,11 @@ public class Drogueria implements IDrogueriaController, Serializable{
 	public void setListaClientes(ArrayList<Cliente> listaClientes) {
 		this.listaClientes = listaClientes;
 	}
-	public ArrayList<Domicilio> getListaVentas() {
-		return listaVentas;
+	public ArrayList<Domicilio> getListaDomicilios() {
+		return listaDomicilios;
 	}
-	public void setListaVentas(ArrayList<Domicilio> listaVentas) {
-		this.listaVentas = listaVentas;
+	public void setListaDomicilios(ArrayList<Domicilio> listaDomicilios) {
+		this.listaDomicilios = listaDomicilios;
 	}
 	
 	//EMPLEADO
@@ -321,4 +322,110 @@ public class Drogueria implements IDrogueriaController, Serializable{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	
+	
+	
+	
+	//DOMICILIO
+	@Override
+	public Domicilio crearDomicilio(String numeroDomicilio, String fecha, Cliente cliente, Producto producto,
+			Empleado empleado, String direccion, double costo) throws DomicilioException {
+		Domicilio domicilio =  null;
+		boolean existeDomicilio= false;
+		existeDomicilio= verificarDomicilioExistente(numeroDomicilio);
+		if (existeDomicilio== true) {
+			throw new DomicilioException("El domicilio con numero: "+ numeroDomicilio+" no se puede crear, Ya existe");
+		} else {
+
+			domicilio= new Domicilio();
+			domicilio.setNumeroDomicilio(numeroDomicilio);
+			domicilio.setFecha(fecha);
+			domicilio.setCliente(cliente);
+			domicilio.setProducto(producto);
+			domicilio.setEmpleado(empleado);
+			domicilio.setDireccion(direccion);
+			domicilio.setCosto(costo);
+			
+			getListaDomicilios().add(domicilio);
+		}
+		
+		return domicilio;
+	}
+	@Override
+	public boolean actualizarDomicilio(String numeroDomicilioActual, String numeroDomicilio, String fecha,
+			Cliente cliente, Producto producto, Empleado empleado, String direccion, double costo) {
+		
+		Domicilio domicilio = null;
+		boolean domicilioActualizado = false;
+		
+		domicilio = obtenerDomicilio(numeroDomicilioActual);
+		
+		if(domicilio != null){
+			
+			domicilio.setNumeroDomicilio(numeroDomicilio);
+			domicilio.setFecha(fecha);
+			domicilio.setCliente(cliente);
+			domicilio.setProducto(producto);
+			domicilio.setEmpleado(empleado);
+			domicilio.setDireccion(direccion);
+			domicilio.setCosto(costo);
+			domicilioActualizado=true;
+}
+		return domicilioActualizado;
+	}
+	
+	
+	@Override
+	public Boolean eliminarDomicilio(String numeroDomicilio) throws DomicilioException {
+		boolean eliminado = false;
+		Domicilio domicilio = null;
+		
+		domicilio = obtenerDomicilio(numeroDomicilio);
+		
+		if(domicilio != null){
+			
+			getListaDomicilios().remove(domicilio);
+			eliminado = true;
+		}else{
+			throw new DomicilioException("El domicilio con numero "+ numeroDomicilio+" no se puede eliminar. No existe");
+		}
+		
+		return eliminado;
+	}
+	
+	
+	
+	@Override
+	public boolean verificarDomicilioExistente(String numeroDomicilio) {
+		boolean domicilioExiste= false;
+		
+		for (Domicilio domicilio: listaDomicilios) {
+			if (domicilio.getNumeroDomicilio().equalsIgnoreCase(numeroDomicilio)) {
+				domicilioExiste=true;
+				break;
+			}
+		}
+		return domicilioExiste;
+	}
+	@Override
+	public Domicilio obtenerDomicilio(String numeroDomicilio) {
+		Domicilio domicilioExiste= null;
+		for (Domicilio domicilio: listaDomicilios) {
+			if (domicilio.getNumeroDomicilio().equalsIgnoreCase(numeroDomicilio)) {
+				domicilioExiste= domicilio;
+				break;
+			}
+		}
+		
+		return domicilioExiste;
+	}
+	@Override
+	public ArrayList<Domicilio> obtenerDomicilios() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+		
 }

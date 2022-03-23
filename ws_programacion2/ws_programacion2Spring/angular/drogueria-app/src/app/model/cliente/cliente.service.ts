@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Cliente } from './cliente';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { of } from 'rxjs';
 import { map } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,10 @@ export class ClienteService {
   }
 
   crearCliente(Cliente:Cliente):Observable<Cliente> {
-    return this.http.post<Cliente>(this.urlEndPoint,Cliente,{headers:this.httpHeaders});
+    return this.http.post<Cliente>(this.urlEndPoint,Cliente,{headers:this.httpHeaders})
+    .pipe(
+      catchError(this.errores)
+    );
   }
 
   getCliente(id): Observable<Cliente>{
@@ -36,7 +39,21 @@ export class ClienteService {
 
   deleteClient(id: number): Observable<Cliente>{
     return this.http.delete<Cliente>(`${this.urlEndPoint}/${id}`, {headers: this.httpHeaders})
+    .pipe(
+      catchError(this.errores)
+    );
   }
+
+
+  private errores(error: HttpErrorResponse){
+    if(error.status==0){
+      console.error("Error en: ", error.error);
+    } else{
+      console.error(`Codigo de retorno del backend ${error.status}, body was: `, error.error);
+    }
+    return throwError(()=> new Error("Algo esta mal, intentalo de nuevo"));
+  }
+
 
 
 }

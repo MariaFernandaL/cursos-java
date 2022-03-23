@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import co.edu.cue.drogueria.model.Cliente;
 import co.edu.cue.drogueria.model.Drogueria;
-import co.edu.cue.drogueria.model.Empleado;
 
 public class CrudClienteViewController {
 
