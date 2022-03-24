@@ -64,6 +64,7 @@ public class ClienteServiceImpl implements IClienteService{
 //		if (domicilio!=null) {
 //			throw new ClienteException("El cliente no se puede eliminar");
 //		}
+		
 		clienteRepository.deleteById(id);
 	}
 	

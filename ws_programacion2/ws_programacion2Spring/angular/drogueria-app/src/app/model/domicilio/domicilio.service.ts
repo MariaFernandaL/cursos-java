@@ -23,10 +23,7 @@ export class DomicilioService {
   }
 
   crearDomicilio(Domicilio:Domicilio):Observable<Domicilio> {
-    return this.http.post<Domicilio>(this.urlEndPoint,Domicilio,{headers:this.httpHeaders})
-    .pipe(
-      catchError(this.errores)
-    );
+    return this.http.post<Domicilio>(this.urlEndPoint,Domicilio,{headers:this.httpHeaders});
   }
 
   getDomicilio(id): Observable<Domicilio>{

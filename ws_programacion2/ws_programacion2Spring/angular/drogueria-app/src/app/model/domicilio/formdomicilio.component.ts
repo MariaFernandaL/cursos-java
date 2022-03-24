@@ -22,8 +22,6 @@ export class FormdomicilioComponent implements OnInit {
   productos: Producto[]= [];
   empleados: Empleado[]= [];
 
-
-
   constructor(
     private DomicilioService: DomicilioService,
     private router: Router,
@@ -35,6 +33,7 @@ export class FormdomicilioComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarDomicilio();
+
     this.clienteService.getClientes().subscribe(
       clientes=> this.clientes=clientes
     );
@@ -50,12 +49,11 @@ export class FormdomicilioComponent implements OnInit {
   }
 
   crearDomicilio(): void{
-    this.buscarCliente(this.domicilio.cliente.idCliente);
-    this.buscarProducto(this.domicilio.producto.idProducto);
-    this.buscarEmpleado(this.domicilio.empleado.idEmpleado);
-      this.DomicilioService.crearDomicilio(this.domicilio).subscribe(
-        //{next: ()
-        domicilio=> {
+    this.domicilio.cliente=this.buscarCliente(this.domicilio.cliente.nombre);
+    this.domicilio.producto=this.buscarProducto(this.domicilio.producto.nombre);
+    this.domicilio.empleado=this.buscarEmpleado(this.domicilio.empleado.nombre);
+      this.DomicilioService.crearDomicilio(this.domicilio).subscribe({
+        next: (domicilio)=> {
           this.router.navigate(['./domicilios'])
           Swal.fire({
             title: `Domicilio ${this.domicilio.codigo} creado con éxito!`,
@@ -63,19 +61,19 @@ export class FormdomicilioComponent implements OnInit {
             imageWidth: 400,
             imageHeight: 200,
             imageAlt: 'Custom image',
-          });
-        }//,
-        //error: (e)=>{
-         // Swal.fire({
-          //  icon: 'error',
-           // title: 'Error',
-           // text:'Algo salio mal',
-           // footer: '<p>Algun dato del domicilio esta incorrecto o ya existe, vuelve a intentar</p>'
-        //  });
-        //}
-      //}
-      )
+          })
+        },
+        error: (e)=>{
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text:'Algo salio mal',
+           footer: '<p>Algun dato del domicilio esta incorrecto o ya existe, vuelve a intentar</p>'
+          })
+        }
+      });
      }
+
 
   cargarDomicilio():void{
     this.activateRoute.params.subscribe(params =>{
@@ -86,38 +84,37 @@ export class FormdomicilioComponent implements OnInit {
     })
   }
 
-  buscarCliente(id:number):void{
-    let clienteD: Cliente = new Cliente;
+  buscarCliente(nombre:String):Cliente{
+    let clienteD: Cliente = new Cliente();
     this.clientes.forEach((clienteeee) =>{
-      if(id == clienteeee.idCliente){
+      if(nombre == clienteeee.nombre){
         clienteD = clienteeee;
         console.log(clienteD);
       }
     });
-
-    this.domicilio.cliente = clienteD;
+    return this.domicilio.cliente = clienteD;
   }
 
-  buscarProducto(id:number):void{
+  buscarProducto(nombre:String):Producto{
     let productoD: Producto = new Producto;
     this.productos.forEach((productoooos) =>{
-      if(id == productoooos.idProducto){
+      if(nombre == productoooos.nombre){
         productoD = productoooos;
         console.log(productoD);
       }
     });
-    this.domicilio.producto = productoD;
+    return this.domicilio.producto = productoD;
   }
 
-  buscarEmpleado(id:number):void{
+  buscarEmpleado(nombre:String):Empleado{
     let empleadoD: Empleado = new Empleado;
     this.empleados.forEach((empleadoooos) =>{
-      if(id == empleadoooos.idEmpleado){
+      if(nombre == empleadoooos.nombre){
         empleadoD = empleadoooos;
         console.log(empleadoD);
       }
     });
-    this.domicilio.empleado = empleadoD;
+    return this.domicilio.empleado = empleadoD;
   }
   
 

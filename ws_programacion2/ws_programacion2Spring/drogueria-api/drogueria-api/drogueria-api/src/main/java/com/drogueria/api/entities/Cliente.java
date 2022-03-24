@@ -30,7 +30,7 @@ public class Cliente implements Serializable {
     @JsonIgnoreProperties(value = {"cliente", "hybernateLazyInitializer", "handler"}, allowSetters = true)
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Domicilio> domicilios;
-    
+   
     public Cliente(){
 
     }

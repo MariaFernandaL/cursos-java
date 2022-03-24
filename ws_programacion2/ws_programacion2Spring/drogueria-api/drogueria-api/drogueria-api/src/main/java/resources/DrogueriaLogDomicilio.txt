@@ -562,3 +562,77 @@ mar. 23, 2022 12:36:42 P. M. com.drogueria.api.persistencia.ArchivoUtil guardar
 INFORMACIÓN: PostMapping,Se creo un domicilio,-03-23-0-36
 mar. 23, 2022 12:42:22 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: PostMapping,Se creo un domicilio,-03-23-0-42
+mar. 23, 2022 12:50:11 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-0-50
+mar. 23, 2022 12:50:37 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-0-50
+mar. 23, 2022 12:52:12 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-0-52
+mar. 23, 2022 12:54:09 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-0-54
+mar. 23, 2022 5:22:51 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-5-22
+mar. 23, 2022 5:24:26 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-5-24
+mar. 23, 2022 5:24:45 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-5-24
+mar. 23, 2022 5:26:52 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-5-26
+mar. 23, 2022 5:27:15 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-5-27
+mar. 23, 2022 5:27:43 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: DeleteMapping,Se elimino un domicilio,-03-23-5-27
+mar. 23, 2022 5:27:46 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-5-27
+mar. 23, 2022 5:31:16 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-5-31
+mar. 23, 2022 5:31:54 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-5-31
+mar. 23, 2022 5:32:07 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-5-32
+mar. 23, 2022 5:38:51 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-5-38
+mar. 23, 2022 5:58:06 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-5-58
+mar. 23, 2022 5:58:11 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-5-58
+mar. 23, 2022 5:58:43 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-5-58
+mar. 23, 2022 5:58:59 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-5-58
+mar. 23, 2022 6:00:49 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-6-0
+mar. 23, 2022 6:01:09 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-6-1
+mar. 23, 2022 6:01:34 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-6-1
+mar. 23, 2022 6:08:17 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-6-8
+mar. 23, 2022 6:10:01 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-6-10
+mar. 23, 2022 6:14:14 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-6-14
+mar. 23, 2022 6:16:45 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-6-16
+mar. 23, 2022 6:17:30 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PostMapping,Se creo un domicilio,-03-23-6-17
+mar. 23, 2022 6:19:48 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PostMapping,Se creo un domicilio,-03-23-6-19
+mar. 23, 2022 6:20:29 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-6-20
+mar. 23, 2022 6:20:40 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: DeleteMapping,Se elimino un domicilio,-03-23-6-20
+mar. 23, 2022 6:20:43 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-6-20
+mar. 23, 2022 6:37:50 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PostMapping,Se creo un domicilio,-03-23-6-37
+mar. 23, 2022 6:45:01 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-6-45
+mar. 23, 2022 6:46:37 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PostMapping,Se creo un domicilio,-03-23-6-46
+mar. 23, 2022 6:46:45 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-6-46
+mar. 23, 2022 6:46:46 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-6-46
+mar. 23, 2022 6:55:45 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PostMapping,Se creo un domicilio,-03-23-6-55
