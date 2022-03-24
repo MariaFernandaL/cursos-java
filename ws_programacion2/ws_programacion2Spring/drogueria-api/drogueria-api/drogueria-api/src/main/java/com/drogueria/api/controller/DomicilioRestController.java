@@ -78,9 +78,13 @@ public class DomicilioRestController {
 	@PostMapping("/domicilios")
 	@ResponseStatus(HttpStatus.CREATED)
 	public  ResponseEntity<String> createDomicilio(@RequestBody Domicilio domicilio) {
-		System.out.println("Servicio de crear solicitado");
+		
+		
 		try {
 			domicilioServiceImpl.save(domicilio);
+			System.out.println("Servicio de crear realizado");
+			domicilio.toString();
+			
 			ArchivoUtil.guardarRegistroLog("Se creo un domicilio", 1, "PostMapping", RUTA_ARCHIVO_LOG);
 		} catch (Exception e) {
 			e.printStackTrace();

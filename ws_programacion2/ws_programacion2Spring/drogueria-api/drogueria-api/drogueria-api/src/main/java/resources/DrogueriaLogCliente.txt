@@ -344,3 +344,155 @@ mar. 23, 2022 7:01:26 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarR
 INFORMACIÓN: GetMapping,Se muestran todos los empleados,-03-23-7-1
 mar. 23, 2022 7:01:26 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: GetMapping,Se muestran todos los productos,-03-23-7-1
+mar. 23, 2022 9:51:17 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-23-9-51
+mar. 23, 2022 9:51:18 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-23-9-51
+mar. 23, 2022 10:04:10 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: DeleteMapping,Se elimino un cliente,-03-23-10-4
+mar. 23, 2022 10:04:14 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-23-10-4
+mar. 23, 2022 10:05:43 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PostMapping,Se creo un cliente,-03-23-10-5
+mar. 23, 2022 10:05:56 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-23-10-5
+mar. 23, 2022 10:10:34 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-23-10-10
+mar. 23, 2022 10:11:34 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-23-10-11
+mar. 23, 2022 10:11:38 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-23-10-11
+mar. 23, 2022 10:18:18 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los empleados,-03-23-10-18
+mar. 23, 2022 10:18:18 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-23-10-18
+mar. 23, 2022 10:19:03 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-23-10-19
+mar. 23, 2022 10:19:15 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-23-10-19
+mar. 23, 2022 10:19:15 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los productos,-03-23-10-19
+mar. 23, 2022 10:19:15 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los empleados,-03-23-10-19
+mar. 23, 2022 10:21:49 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-23-10-21
+mar. 24, 2022 7:30:20 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-7-30
+mar. 24, 2022 7:30:31 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-7-30
+mar. 24, 2022 7:31:13 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-7-31
+mar. 24, 2022 7:32:09 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-7-32
+mar. 24, 2022 7:33:00 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-7-33
+mar. 24, 2022 7:33:00 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los productos,-03-24-7-33
+mar. 24, 2022 7:34:15 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-7-34
+mar. 24, 2022 7:37:21 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-7-37
+mar. 24, 2022 7:38:14 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-7-38
+mar. 24, 2022 7:38:21 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-7-38
+mar. 24, 2022 7:43:33 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-7-43
+mar. 24, 2022 7:43:33 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los empleados,-03-24-7-43
+mar. 24, 2022 7:43:33 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los productos,-03-24-7-43
+mar. 24, 2022 7:51:14 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-7-51
+mar. 24, 2022 7:51:14 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los productos,-03-24-7-51
+mar. 24, 2022 7:51:14 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los empleados,-03-24-7-51
+mar. 24, 2022 8:17:48 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-17
+mar. 24, 2022 8:17:48 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los productos,-03-24-8-17
+mar. 24, 2022 8:17:48 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los empleados,-03-24-8-17
+mar. 24, 2022 8:18:21 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-18
+mar. 24, 2022 8:19:29 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-19
+mar. 24, 2022 8:19:33 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-19
+mar. 24, 2022 8:20:05 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-20
+mar. 24, 2022 8:20:05 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los empleados,-03-24-8-20
+mar. 24, 2022 8:20:11 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-20
+mar. 24, 2022 8:21:06 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-21
+mar. 24, 2022 8:21:39 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-21
+mar. 24, 2022 8:24:01 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-24
+mar. 24, 2022 8:24:33 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-24
+mar. 24, 2022 8:24:33 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los empleados,-03-24-8-24
+mar. 24, 2022 8:26:44 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-26
+mar. 24, 2022 8:27:05 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-27
+mar. 24, 2022 8:29:23 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-29
+mar. 24, 2022 8:29:53 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-29
+mar. 24, 2022 8:30:58 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-30
+mar. 24, 2022 8:31:17 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los empleados,-03-24-8-31
+mar. 24, 2022 8:31:17 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-31
+mar. 24, 2022 8:31:25 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-31
+mar. 24, 2022 8:31:25 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran el domicilio,-03-24-8-31
+mar. 24, 2022 8:31:25 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los productos,-03-24-8-31
+mar. 24, 2022 8:31:25 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los empleados,-03-24-8-31
+mar. 24, 2022 8:31:33 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-31
+mar. 24, 2022 8:31:40 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-31
+mar. 24, 2022 8:31:40 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los empleados,-03-24-8-31
+mar. 24, 2022 8:31:49 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-31
+mar. 24, 2022 8:31:49 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran el domicilio,-03-24-8-31
+mar. 24, 2022 8:31:57 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-31
+mar. 24, 2022 8:32:03 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-32
+mar. 24, 2022 8:32:25 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-32
+mar. 24, 2022 8:32:49 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-32
+mar. 24, 2022 8:35:01 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-35
+mar. 24, 2022 8:35:11 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-35
+mar. 24, 2022 8:35:26 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-35
+mar. 24, 2022 8:35:44 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-35
+mar. 24, 2022 8:37:00 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-37
+mar. 24, 2022 8:37:00 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los productos,-03-24-8-37
+mar. 24, 2022 8:37:00 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los empleados,-03-24-8-37
+mar. 24, 2022 8:37:05 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-37
+mar. 24, 2022 8:37:21 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-37
+mar. 24, 2022 8:37:48 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-37

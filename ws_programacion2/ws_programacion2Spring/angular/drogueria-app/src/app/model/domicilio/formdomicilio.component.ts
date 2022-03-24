@@ -9,6 +9,7 @@ import { Producto } from '../producto/producto';
 import { Empleado } from '../empleados/empleado';
 import { ProductoService } from '../producto/producto.service';
 import { EmpleadoService } from '../empleados/empleado.service';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-formdomicilio',
@@ -18,6 +19,9 @@ export class FormdomicilioComponent implements OnInit {
 
   titulo:string="Formulario Domicilios";
   domicilio: Domicilio= new Domicilio();
+  cliente:Cliente;
+  empleado:Empleado;
+  producto:Producto;
   clientes: Cliente[]= [];
   productos: Producto[]= [];
   empleados: Empleado[]= [];
@@ -34,9 +38,7 @@ export class FormdomicilioComponent implements OnInit {
   ngOnInit(): void {
     this.cargarDomicilio();
 
-    this.clienteService.getClientes().subscribe(
-      clientes=> this.clientes=clientes
-    );
+    this.clienteService.getClientes().subscribe(clientes=> this.clientes=clientes);
 
     this.empleadoService.getEmpleados().subscribe(
       empleados=> this.empleados=empleados
@@ -49,11 +51,15 @@ export class FormdomicilioComponent implements OnInit {
   }
 
   crearDomicilio(): void{
-    this.domicilio.cliente=this.buscarCliente(this.domicilio.cliente.nombre);
-    this.domicilio.producto=this.buscarProducto(this.domicilio.producto.nombre);
-    this.domicilio.empleado=this.buscarEmpleado(this.domicilio.empleado.nombre);
-      this.DomicilioService.crearDomicilio(this.domicilio).subscribe({
-        next: (domicilio)=> {
+    this.buscarCliente(this.domicilio.cliente);
+    this.buscarEmpleado(this.domicilio.empleado);
+    this.buscarProducto(this.domicilio.producto);
+    console.log(this.domicilio.cliente.nombre);
+    console.log(this.domicilio.empleado.nombre);
+    console.log(this.domicilio.producto.nombre);
+
+    this.DomicilioService.crearDomicilio(this.domicilio).subscribe({
+        next: (domiclio)=> {
           this.router.navigate(['./domicilios'])
           Swal.fire({
             title: `Domicilio ${this.domicilio.codigo} creado con éxito!`,
@@ -84,7 +90,7 @@ export class FormdomicilioComponent implements OnInit {
     })
   }
 
-  buscarCliente(nombre:String):Cliente{
+  buscarCliente(nombre:any):Cliente{
     let clienteD: Cliente = new Cliente();
     this.clientes.forEach((clienteeee) =>{
       if(nombre == clienteeee.nombre){
@@ -95,8 +101,8 @@ export class FormdomicilioComponent implements OnInit {
     return this.domicilio.cliente = clienteD;
   }
 
-  buscarProducto(nombre:String):Producto{
-    let productoD: Producto = new Producto;
+  buscarProducto(nombre:any):Producto{
+    let productoD: Producto = new Producto();
     this.productos.forEach((productoooos) =>{
       if(nombre == productoooos.nombre){
         productoD = productoooos;
@@ -106,7 +112,7 @@ export class FormdomicilioComponent implements OnInit {
     return this.domicilio.producto = productoD;
   }
 
-  buscarEmpleado(nombre:String):Empleado{
+  buscarEmpleado(nombre:any):Empleado{
     let empleadoD: Empleado = new Empleado;
     this.empleados.forEach((empleadoooos) =>{
       if(nombre == empleadoooos.nombre){

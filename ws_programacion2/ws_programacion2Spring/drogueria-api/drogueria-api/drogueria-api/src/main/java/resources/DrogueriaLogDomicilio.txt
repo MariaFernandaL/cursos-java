@@ -636,3 +636,119 @@ mar. 23, 2022 6:46:46 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarR
 INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-6-46
 mar. 23, 2022 6:55:45 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: PostMapping,Se creo un domicilio,-03-23-6-55
+mar. 23, 2022 9:51:13 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-9-51
+mar. 23, 2022 10:11:36 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-23-10-11
+mar. 23, 2022 10:13:22 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PostMapping,Se creo un domicilio,-03-23-10-13
+mar. 24, 2022 7:28:12 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-7-28
+mar. 24, 2022 7:30:19 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-7-30
+mar. 24, 2022 7:30:29 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-7-30
+mar. 24, 2022 8:30:03 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PostMapping,Se creo un domicilio,-03-24-8-30
+mar. 24, 2022 8:30:03 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-30
+mar. 24, 2022 8:30:49 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-30
+mar. 24, 2022 8:30:54 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-30
+mar. 24, 2022 8:30:58 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran el domicilio,-03-24-8-30
+mar. 24, 2022 8:31:05 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-31
+mar. 24, 2022 8:31:17 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran el domicilio,-03-24-8-31
+mar. 24, 2022 8:31:22 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PutMapping,Se actualizo un domicilio,-03-24-8-31
+mar. 24, 2022 8:31:22 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-31
+mar. 24, 2022 8:31:25 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran el domicilio,-03-24-8-31
+mar. 24, 2022 8:31:29 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PutMapping,Se actualizo un domicilio,-03-24-8-31
+mar. 24, 2022 8:31:29 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-31
+mar. 24, 2022 8:31:33 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran el domicilio,-03-24-8-31
+mar. 24, 2022 8:31:37 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PutMapping,Se actualizo un domicilio,-03-24-8-31
+mar. 24, 2022 8:31:37 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-31
+mar. 24, 2022 8:31:40 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran el domicilio,-03-24-8-31
+mar. 24, 2022 8:31:45 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PutMapping,Se actualizo un domicilio,-03-24-8-31
+mar. 24, 2022 8:31:45 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-31
+mar. 24, 2022 8:31:49 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran el domicilio,-03-24-8-31
+mar. 24, 2022 8:31:53 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PutMapping,Se actualizo un domicilio,-03-24-8-31
+mar. 24, 2022 8:31:53 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-31
+mar. 24, 2022 8:31:57 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran el domicilio,-03-24-8-31
+mar. 24, 2022 8:32:00 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PutMapping,Se actualizo un domicilio,-03-24-8-32
+mar. 24, 2022 8:32:00 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-32
+mar. 24, 2022 8:32:03 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran el domicilio,-03-24-8-32
+mar. 24, 2022 8:32:13 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PutMapping,Se actualizo un domicilio,-03-24-8-32
+mar. 24, 2022 8:32:13 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-32
+mar. 24, 2022 8:32:25 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran el domicilio,-03-24-8-32
+mar. 24, 2022 8:32:45 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-32
+mar. 24, 2022 8:33:28 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PostMapping,Se creo un domicilio,-03-24-8-33
+mar. 24, 2022 8:33:29 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-33
+mar. 24, 2022 8:35:01 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran el domicilio,-03-24-8-35
+mar. 24, 2022 8:35:01 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los clientes,-03-24-8-35
+mar. 24, 2022 8:35:05 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PutMapping,Se actualizo un domicilio,-03-24-8-35
+mar. 24, 2022 8:35:05 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-35
+mar. 24, 2022 8:35:11 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran el domicilio,-03-24-8-35
+mar. 24, 2022 8:35:18 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PutMapping,Se actualizo un domicilio,-03-24-8-35
+mar. 24, 2022 8:35:18 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-35
+mar. 24, 2022 8:35:26 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran el domicilio,-03-24-8-35
+mar. 24, 2022 8:35:40 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PutMapping,Se actualizo un domicilio,-03-24-8-35
+mar. 24, 2022 8:35:40 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-35
+mar. 24, 2022 8:35:44 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran el domicilio,-03-24-8-35
+mar. 24, 2022 8:35:53 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PutMapping,Se actualizo un domicilio,-03-24-8-35
+mar. 24, 2022 8:35:53 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-35
+mar. 24, 2022 8:37:03 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-37
+mar. 24, 2022 8:37:26 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-37
+mar. 24, 2022 8:37:44 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-37
+mar. 24, 2022 8:37:47 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-37
+mar. 24, 2022 8:38:15 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: PostMapping,Se creo un domicilio,-03-24-8-38
+mar. 24, 2022 8:38:15 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-38
+mar. 24, 2022 8:38:31 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: DeleteMapping,Se elimino un domicilio,-03-24-8-38
+mar. 24, 2022 8:38:34 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-24-8-38

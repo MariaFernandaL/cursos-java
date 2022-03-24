@@ -267,6 +267,44 @@
      </void>
     </object>
    </void>
+   <void method="add">
+    <object class="co.edu.cue.drogueria.model.Domicilio">
+     <void property="cliente">
+      <object idref="Cliente0"/>
+     </void>
+     <void property="costo">
+      <double>10000.0</double>
+     </void>
+     <void property="direccion">
+      <string>calarca</string>
+     </void>
+     <void property="empleado">
+      <object idref="Empleado1"/>
+     </void>
+     <void property="fecha">
+      <string>2022-04-01</string>
+     </void>
+     <void property="numeroDomicilio">
+      <string>009</string>
+     </void>
+     <void property="producto">
+      <object class="co.edu.cue.drogueria.model.Producto" id="Producto3">
+       <void property="cantExis">
+        <int>20</int>
+       </void>
+       <void property="codigo">
+        <string>87239823</string>
+       </void>
+       <void property="nombre">
+        <string>algodon blanco</string>
+       </void>
+       <void property="valorU">
+        <string>3000</string>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
   </void>
   <void property="listaEmpleado">
    <void method="add">
@@ -341,20 +379,7 @@
     </object>
    </void>
    <void method="add">
-    <object class="co.edu.cue.drogueria.model.Producto">
-     <void property="cantExis">
-      <int>20</int>
-     </void>
-     <void property="codigo">
-      <string>87239823</string>
-     </void>
-     <void property="nombre">
-      <string>algodon blanco</string>
-     </void>
-     <void property="valorU">
-      <string>3000</string>
-     </void>
-    </object>
+    <object idref="Producto3"/>
    </void>
    <void method="add">
     <object class="co.edu.cue.drogueria.model.Producto">
