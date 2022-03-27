@@ -18,6 +18,7 @@ import { FormempleadosComponent } from './model/empleados/formempleados.componen
 import { FormproductosComponent } from './model/producto/formproductos.component';
 import { FormdomicilioComponent } from './model/domicilio/formdomicilio.component';
 import { HomeComponent } from './base_components/homeee/home.components';
+import { ConsultaFormComponent } from './model/domicilio/consultas/consulta-form-component';
 
 
 const routes: Routes=[
@@ -35,7 +36,8 @@ const routes: Routes=[
   {path: 'empleados/formempleados/:id', component: FormempleadosComponent},
   {path: 'productos/formproductos/:id', component: FormproductosComponent},
   {path: 'domicilios/formdomicilio/:id', component: FormdomicilioComponent},
-  {path: 'homes', component: HomeComponent}
+  {path: 'homes', component: HomeComponent},
+  {path: 'consultas', component: ConsultaFormComponent}
 ]
 
   @NgModule({
@@ -52,7 +54,8 @@ const routes: Routes=[
       FormempleadosComponent,
       FormproductosComponent,
       FormdomicilioComponent,
-      HomeComponent
+      HomeComponent,
+      ConsultaFormComponent
     ],
   
   imports: [

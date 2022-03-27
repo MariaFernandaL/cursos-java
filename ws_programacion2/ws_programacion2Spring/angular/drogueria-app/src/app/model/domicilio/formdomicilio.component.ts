@@ -19,33 +19,32 @@ export class FormdomicilioComponent implements OnInit {
 
   titulo:string="Formulario Domicilios";
   domicilio: Domicilio= new Domicilio();
-  cliente:Cliente;
-  empleado:Empleado;
-  producto:Producto;
   clientes: Cliente[]= [];
   productos: Producto[]= [];
   empleados: Empleado[]= [];
-
+  
   constructor(
-    private DomicilioService: DomicilioService,
     private router: Router,
     private activateRoute: ActivatedRoute,
     private clienteService: ClienteService,
     private productoService: ProductoService,
-    private empleadoService: EmpleadoService
+    private empleadoService: EmpleadoService,
+    private domicilioService: DomicilioService
   ) { }
 
   ngOnInit(): void {
     this.cargarDomicilio();
 
-    this.clienteService.getClientes().subscribe(clientes=> this.clientes=clientes);
+    this.clienteService.getClientes().subscribe(
+      clientes=> {this.clientes=clientes}
+    );
 
     this.empleadoService.getEmpleados().subscribe(
-      empleados=> this.empleados=empleados
+      empleados=> {this.empleados=empleados}
     );
 
     this.productoService.getProductos().subscribe(
-      productos=> this.productos=productos
+      productos=> {this.productos=productos}
     );
     
   }
@@ -58,7 +57,7 @@ export class FormdomicilioComponent implements OnInit {
     console.log(this.domicilio.empleado.nombre);
     console.log(this.domicilio.producto.nombre);
 
-    this.DomicilioService.crearDomicilio(this.domicilio).subscribe({
+    this.domicilioService.crearDomicilio(this.domicilio).subscribe({
         next: (domiclio)=> {
           this.router.navigate(['./domicilios'])
           Swal.fire({
@@ -81,14 +80,14 @@ export class FormdomicilioComponent implements OnInit {
      }
 
 
-  cargarDomicilio():void{
-    this.activateRoute.params.subscribe(params =>{
-      let id = params['id']
-      if(id){
-        this.DomicilioService.getDomicilio(id).subscribe( (domicilio) => this.domicilio = domicilio )
-      }
-    })
-  }
+     cargarDomicilio():void{
+      this.activateRoute.params.subscribe(params =>{
+        let id = params['id']
+        if(id){
+          this.domicilioService.getDomicilio(id).subscribe( (domicilio) =>{ this.domicilio = domicilio })
+        }
+      })
+    }
 
   buscarCliente(nombre:any):Cliente{
     let clienteD: Cliente = new Cliente();
@@ -122,16 +121,14 @@ export class FormdomicilioComponent implements OnInit {
     });
     return this.domicilio.empleado = empleadoD;
   }
-  
-
 
   actualizarDomicilio():void{
-    this.DomicilioService.updateDomicilio(this.domicilio).subscribe(
+    this.domicilioService.updateDomicilio(this.domicilio).subscribe(
       domicilio =>{
         this.router.navigate(['/domicilios'])
-        Swal.fire('Domicilio Actualizado', `Domicilio ${this.domicilio.codigo} actualizado con éxito!`, 'success')
-      }
-    )
+        Swal.fire('Domicilio Actualizado', `Domicilio ${this.domicilio.codigo} actualizado con éxito!`, 'success'
+        );
+      })
   }
 
 }

@@ -8,6 +8,7 @@ import co.edu.cue.drogueria.model.Cliente;
 import co.edu.cue.drogueria.model.Drogueria;
 import co.edu.cue.drogueria.model.Empleado;
 import co.edu.cue.drogueria.model.Producto;
+import co.edu.cue.drogueria.model.Domicilio;
 
 public class Persistencia {
 	
@@ -15,6 +16,7 @@ public class Persistencia {
 	public static final String RUTA_ARCHIVO_EMPLEADOS = "src/resources/archivoEmpleados.txt";
 	public static final String RUTA_ARCHIVO_LOG = "src/resources/DrogueriaLog.txt";
 	public static final String RUTA_ARCHIVO_PRODUCTOS = "src/resources/archivoProductos.txt";
+	public static final String RUTA_ARCHIVO_DOMICILIOS = "src/resources/archivoDomicilos.txt";
 	public static final String RUTA_ARCHIVO_MODELO_DROGUERIA_BINARIO = "src/resources/model.dat";
 	public static final String RUTA_ARCHIVO_MODELO_DROGUERIA_XML = "src/resources/model.xml";
 
@@ -39,8 +41,7 @@ public class Persistencia {
 		ArrayList<Producto> productosCargados = cargarProductos();
 		
 		if(productosCargados.size() > 0)
-			drogueria.getListaProductos().addAll(productosCargados);
-		
+			drogueria.getListaProductos().addAll(productosCargados);		
 	}
 
 	/**
@@ -237,7 +238,7 @@ public static void guardarProductos(ArrayList<Producto> listaProductos) throws I
 
 	
 	
-	public static void guardarRecursoDrogueriaXML( Drogueria drogueria) {
+	public static void guardarRecursoDrogueriaXML(Drogueria drogueria) {
 		
 		try {
 			ArchivoUtil.salvarRecursoSerializadoXML(RUTA_ARCHIVO_MODELO_DROGUERIA_XML, drogueria);

@@ -13,4 +13,6 @@ public interface IDomicilioService {
 	public Domicilio findById(int id);
 	void update(Domicilio domicilio, int id) throws DomicilioException;
 	void delete(int id) throws DomicilioException;
+	List<Domicilio> consulta1Costo(double costo1, double costo2);
+	List<Domicilio> consulta2Direccion(String direccion);
 }

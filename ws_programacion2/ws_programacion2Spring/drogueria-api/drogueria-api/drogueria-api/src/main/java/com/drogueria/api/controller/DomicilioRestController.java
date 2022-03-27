@@ -44,6 +44,7 @@ public class DomicilioRestController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 		return domicilioServiceImpl.findAll();
 	}
 	
@@ -108,12 +109,22 @@ public class DomicilioRestController {
 	@ResponseStatus(HttpStatus.ACCEPTED)
 	public void updateDomicilio(@RequestBody Domicilio domicilio, @PathVariable int id) throws DomicilioException{
 		try {
-			ArchivoUtil.guardarRegistroLog("Se actualizo un domicilio", 1, "PutMapping", RUTA_ARCHIVO_LOG);
 			domicilioServiceImpl.update(domicilio, id);
+			ArchivoUtil.guardarRegistroLog("Se actualizo un domicilio", 1, "PutMapping", RUTA_ARCHIVO_LOG);
 		} catch (DomicilioException e) {
 			e.printStackTrace();
 		}
-		domicilioServiceImpl.update(domicilio, id);
 	}
+	
+	@GetMapping("/domicilios/{costo1}/{costo2}")
+	public List<Domicilio> consulta1(@PathVariable double costo1, @PathVariable double costo2) {
+		return domicilioServiceImpl.consulta1Costo(costo1, costo2);
+	}
+	
+//	@GetMapping("/domicilios/{direccion}")
+//	public List<Domicilio> consulta2(@PathVariable String direccion) {
+//		return domicilioServiceImpl.consulta2Direccion(direccion);
+//	}
+	
 
 }

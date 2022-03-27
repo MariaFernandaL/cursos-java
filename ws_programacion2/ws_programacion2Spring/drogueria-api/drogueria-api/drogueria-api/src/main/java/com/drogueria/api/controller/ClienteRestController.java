@@ -112,8 +112,8 @@ public class ClienteRestController {
 	@ResponseStatus(HttpStatus.ACCEPTED)
 	public void updateDomicilio(@RequestBody Cliente cliente, @PathVariable int id) throws ClienteException{
 		try {
-			ArchivoUtil.guardarRegistroLog("Se actualizo un cliente", 1, "PutMapping", RUTA_ARCHIVO_LOG);
 			clienteServiceImpl.update(cliente, id);
+			ArchivoUtil.guardarRegistroLog("Se actualizo un cliente", 1, "PutMapping", RUTA_ARCHIVO_LOG);
 		} catch (ClienteException e) {
 			e.printStackTrace();
 		}

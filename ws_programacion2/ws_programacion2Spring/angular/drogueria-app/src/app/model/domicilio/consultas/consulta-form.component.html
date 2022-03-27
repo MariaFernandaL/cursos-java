@@ -1,0 +1,55 @@
+<div class="card bg-light text-black">
+    <div class="card-header">Consultas</div>
+    <div class="card-body">
+        <form>
+            <div class="form-group-row">
+                <label for="" class="col-form-label col-sm-2">Costo 1 del domicilio:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="costo1" [(ngModel)]="costo1">
+                </div>
+
+                <label for="" class="col-form-label col-sm-2">Costo 2 del domicilio:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="costo2" [(ngModel)]="costo2">
+                </div>
+            </div>
+            <div class="form-group row my-sm-3">
+                <div class="col-sm-6">
+                    <button class="btn btn-primary" (click)="consultar()" role="button">
+                        Consultar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title text-black">Domicilio Consultado</h5>
+        <table class="table table-bordered table-striped" *ngIf="domicilios">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">codigo</th>
+                    <th scope="col">cliente</th>
+                    <th scope="col">empleado</th>
+                    <th scope="col">producto</th>
+                    <th scope="col">fecha</th>
+                    <th scope="col">direccion</th>
+                    <th scope="col">costo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let domicilio of domicilios">
+                    <td>{{domicilio.idDomicilio}}</td>
+                    <td>{{domicilio.codigo}}</td>
+                    <td>{{domicilio.cliente.nombre}}</td>
+                    <td>{{domicilio.empleado.nombre}}</td>
+                    <td>{{domicilio.producto.nombre}}</td>
+                    <td>{{domicilio.fecha}}</td>
+                    <td>{{domicilio.direccion}}</td>
+                    <td>{{domicilio.costo}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

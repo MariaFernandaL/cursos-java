@@ -101,9 +101,6 @@ public class DrogueriaController {
     private Button btnNuevoD;
 
     @FXML
-    private TableColumn<Domicilio, String> colClienteD;
-
-    @FXML
     private Button btnActualizarC;
 
     @FXML
@@ -218,9 +215,6 @@ public class DrogueriaController {
     private TextField txtCantidadP;
 
     @FXML
-    private TableColumn<Empleado, String> colEmpleadoD;
-
-    @FXML
     private TableColumn<Producto, String> colNombreP;
 
     @FXML
@@ -231,9 +225,6 @@ public class DrogueriaController {
 
     @FXML
     private TextField txtNumDomicilio;
-
-    @FXML
-    private TableColumn<Domicilio, String> colProductoD;
 
     @FXML
     private TableColumn<Empleado, String> colTelefonoE;
@@ -291,9 +282,6 @@ public class DrogueriaController {
     	this.colFechaD.setCellValueFactory(new PropertyValueFactory<>("fecha"));
     	this.colDireccionD.setCellValueFactory(new PropertyValueFactory<>("direccion"));
     	this.colCostosD.setCellValueFactory(new PropertyValueFactory<>("costo"));
-    	this.colClienteD.setCellValueFactory(new PropertyValueFactory<>("cliente.getNombre()"));
-    	this.colEmpleadoD.setCellValueFactory(new PropertyValueFactory<>("getNombreEmpleado()"));
-    	this.colProductoD.setCellValueFactory(new PropertyValueFactory<>("getNombreProducto()"));
     	
     	tableDomicilio.getItems().clear();
     	tableDomicilio.setItems(getListaDomiciliosData());

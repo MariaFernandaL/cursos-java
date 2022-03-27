@@ -305,35 +305,117 @@
      </void>
     </object>
    </void>
+   <void method="add">
+    <object class="co.edu.cue.drogueria.model.Domicilio">
+     <void property="cliente">
+      <object idref="Cliente0"/>
+     </void>
+     <void property="costo">
+      <double>10900.0</double>
+     </void>
+     <void property="direccion">
+      <string>armenia</string>
+     </void>
+     <void property="empleado">
+      <object idref="Empleado2"/>
+     </void>
+     <void property="fecha">
+      <string>2022-09-03</string>
+     </void>
+     <void property="numeroDomicilio">
+      <string>003333367</string>
+     </void>
+     <void property="producto">
+      <object class="co.edu.cue.drogueria.model.Producto" id="Producto4">
+       <void property="cantExis">
+        <int>7</int>
+       </void>
+       <void property="codigo">
+        <string>2327483</string>
+       </void>
+       <void property="nombre">
+        <string>helado</string>
+       </void>
+       <void property="valorU">
+        <string>3000</string>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.cue.drogueria.model.Domicilio">
+     <void property="cliente">
+      <object idref="Cliente1"/>
+     </void>
+     <void property="costo">
+      <double>6000.0</double>
+     </void>
+     <void property="direccion">
+      <string>calarca</string>
+     </void>
+     <void property="empleado">
+      <object class="co.edu.cue.drogueria.model.Empleado" id="Empleado3">
+       <void property="cedula">
+        <string>37847</string>
+       </void>
+       <void property="correoE">
+        <string>pablo@gmail.com</string>
+       </void>
+       <void property="nombre">
+        <string>pablitoo</string>
+       </void>
+       <void property="salario">
+        <string>456.553</string>
+       </void>
+       <void property="telefono">
+        <string>2389749874</string>
+       </void>
+      </object>
+     </void>
+     <void property="fecha">
+      <string>2022-09-01</string>
+     </void>
+     <void property="numeroDomicilio">
+      <string>457437</string>
+     </void>
+     <void property="producto">
+      <object idref="Producto2"/>
+     </void>
+    </object>
+   </void>
   </void>
   <void property="listaEmpleado">
    <void method="add">
     <object idref="Empleado0"/>
    </void>
    <void method="add">
-    <object class="co.edu.cue.drogueria.model.Empleado">
-     <void property="cedula">
-      <string>37847</string>
-     </void>
-     <void property="correoE">
-      <string>pablo@gmail.com</string>
-     </void>
-     <void property="nombre">
-      <string>pablitoo</string>
-     </void>
-     <void property="salario">
-      <string>456.553</string>
-     </void>
-     <void property="telefono">
-      <string>2389749874</string>
-     </void>
-    </object>
+    <object idref="Empleado3"/>
    </void>
    <void method="add">
     <object idref="Empleado1"/>
    </void>
    <void method="add">
     <object idref="Empleado2"/>
+   </void>
+   <void method="add">
+    <object class="co.edu.cue.drogueria.model.Empleado">
+     <void property="cedula">
+      <string>896378928309</string>
+     </void>
+     <void property="correoE">
+      <string>maria@gmail.com</string>
+     </void>
+     <void property="nombre">
+      <string>maria</string>
+     </void>
+     <void property="salario">
+      <string>603000</string>
+     </void>
+     <void property="telefono">
+      <string>5126367</string>
+     </void>
+    </object>
    </void>
   </void>
   <void property="listaProductos">
@@ -363,20 +445,7 @@
     </object>
    </void>
    <void method="add">
-    <object class="co.edu.cue.drogueria.model.Producto">
-     <void property="cantExis">
-      <int>7</int>
-     </void>
-     <void property="codigo">
-      <string>2327483</string>
-     </void>
-     <void property="nombre">
-      <string>helado</string>
-     </void>
-     <void property="valorU">
-      <string>3000</string>
-     </void>
-    </object>
+    <object idref="Producto4"/>
    </void>
    <void method="add">
     <object idref="Producto3"/>

@@ -1,8 +1,10 @@
 package com.drogueria.api.services;
 
+import java.io.Console;
 import java.util.List;
 import java.util.Optional;
 
+import javax.swing.JOptionPane;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +36,7 @@ public class DomicilioServiceImpl implements IDomicilioService{
 		domicilio2=domicilioRepository.findDomicilioByCodigo(domicilio.getCodigo());
 		
 		if (domicilio2!=null) {
-			throw new DomicilioException("El domiciloo ya esta registrado con este codigo");
+			throw new DomicilioException("El domicilo ya esta registrado con este codigo");
 		}
 		domicilioRepository.save(domicilio);
 	}
@@ -58,6 +60,26 @@ public class DomicilioServiceImpl implements IDomicilioService{
 	@Transactional
 	public void delete(int id) {
 		domicilioRepository.deleteById(id);
+	}
+	
+	@Override
+	@Transactional
+	public List<Domicilio> consulta1Costo(double costo1, double costo2) {
+		List<Domicilio> domicilios= domicilioRepository.findDomicilioByCosto(costo1, costo2);
+		for(Domicilio domicilio: domicilios) {
+			System.out.print(domicilio.toString());
+		}
+		return domicilios;
+	}
+	
+	@Override
+	@Transactional
+	public List<Domicilio> consulta2Direccion(String direccion) {
+		List<Domicilio> domicilios= domicilioRepository.findDomicilioByDireccion(direccion);
+		for(Domicilio domicilio: domicilios) {
+			System.out.print(domicilio.toString());
+		}
+		return domicilios;
 	}
 
 }

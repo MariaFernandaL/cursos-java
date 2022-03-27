@@ -19,7 +19,6 @@ public class Aplicacion extends  Application {
 			this.primaryStage = primaryStage;
 			this.primaryStage.setTitle("Drogueria");
 			mostrarVentanaPrincipal();
-
 		}
 	
 	public static void main(String[] args) {

@@ -27,15 +27,21 @@ export class DomicilioService {
   }
 
   getDomicilio(id): Observable<Domicilio>{
-    return this.http.get<Domicilio>(`${this.urlEndPoint}/${id}`)
+    return this.http.get<Domicilio>(`${this.urlEndPoint}/${id}`);
   }
 
   updateDomicilio(Domicilio: Domicilio): Observable<Domicilio>{
-    return this.http.put<Domicilio>(`${this.urlEndPoint}/${Domicilio.idDomicilio}`, Domicilio, {headers: this.httpHeaders})
+    return this.http.put<Domicilio>(`${this.urlEndPoint}/${Domicilio.idDomicilio}`, Domicilio, {headers: this.httpHeaders});
   }
 
   deleteDomicilio(id: number): Observable<Domicilio>{
     return this.http.delete<Domicilio>(`${this.urlEndPoint}/${id}`, {headers: this.httpHeaders})
+  }
+
+  consultar1(costo1: number, costo2:number): Observable<Domicilio[]>{
+   return this.http.get(`${this.urlEndPoint}/${costo2}/${costo1}`).pipe(
+    map(response => response as Domicilio[])
+   );
   }
 
   
