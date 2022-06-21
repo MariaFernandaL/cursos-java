@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8044c951-89b7-4a3c-9ca0-953e60007a5c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.digiturno/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.digiturno/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.digiturno/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.digiturno/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.digiturno/src/co/edu/cue/ed/digiturno/app/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.digiturno/src/co/edu/cue/ed/digiturno/model/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.digiturno/src/co/edu/cue/ed/digiturno/model/DigiTurn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.digiturno/src/co/edu/cue/ed/digiturno/model/TypeClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/app/MainAlfabeto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/app/MainBinarySearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/app/MainFactorial.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/app/MainFibonacci.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/app/MainMinimumArray.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/app/MainPalindromo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/app/MainPositiveNegative.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/app/MainPotenciaRecursiva.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/app/MainPow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/app/MainStringRevers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/app/MainSumatoria.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/model/BinarySearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/model/Factorial.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/model/Fibonacci.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/model/MinimumArray.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/model/Palindromo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/model/PositiveNegative.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/model/PotenciaRecursiva.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/model/Pow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/model/StringRevers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/co.edu.cue.ed.recursividad/src/co/edu/cue/ed/recursividad/model/Sumatoria.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/cokmdk/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/cokmdk/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/cokmdk/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ws_estructurasdedatos/cokmdk/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ws_programacion2EE/webapp-drogueria/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../ws_programacion2EE/webapp-drogueria/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ws_programacion2EE/webapp-drogueria/target/webapp-drogueria-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../ws_programacion2EE/webapp-drogueria/target/webapp-drogueria-1.0-SNAPSHOT.war" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="29jcHEaWMg9vdLrUZBLjyTENVju" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8044c951-89b7-4a3c-9ca0-953e60007a5c" name="Changes" comment="" />
+      <created>1653629847712</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1653629847712</updated>
+    </task>
+    <servers />
+  </component>
+</project>

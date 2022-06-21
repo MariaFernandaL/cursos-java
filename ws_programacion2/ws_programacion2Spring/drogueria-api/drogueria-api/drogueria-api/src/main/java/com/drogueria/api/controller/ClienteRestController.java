@@ -27,7 +27,7 @@ import com.drogueria.api.exception.DomicilioException;
 import com.drogueria.api.persistencia.ArchivoUtil;
 import com.drogueria.api.services.ClienteServiceImpl;
 
-@CrossOrigin(origins = {"http://localhost:4200" })
+@CrossOrigin(origins = {"http://localhost:8080" })
 @RestController
 @RequestMapping("/api/drogueria")
 public class ClienteRestController {
@@ -118,6 +118,7 @@ public class ClienteRestController {
 			e.printStackTrace();
 		}
 	}
+	
 	
 	/*
 	private ArrayList<Cliente> getClientes() {
