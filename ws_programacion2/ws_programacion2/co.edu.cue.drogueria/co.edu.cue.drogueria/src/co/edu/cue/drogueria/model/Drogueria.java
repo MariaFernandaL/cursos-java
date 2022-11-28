@@ -148,7 +148,7 @@ public class Drogueria implements IDrogueriaController, Serializable{
 		
 		Cliente cliente =  null;
 		boolean existeClien= false;
-		existeClien= verificarEmpleadoExistente(cedula);
+		existeClien= verificarClienteExistente(cedula);
 		if (existeClien== true) {
 			throw new ClienteException("El cliente con cedula: "+ cedula+" no se puede crear, Ya existe");
 		} else {

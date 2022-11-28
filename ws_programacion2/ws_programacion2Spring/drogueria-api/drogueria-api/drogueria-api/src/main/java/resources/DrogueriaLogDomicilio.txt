@@ -984,3 +984,5 @@ mar. 26, 2022 9:13:56 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarR
 INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-03-26-9-13
 jun. 08, 2022 4:34:04 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-06-08-4-34
+oct. 12, 2022 10:25:53 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los domicilios,-10-12-10-25

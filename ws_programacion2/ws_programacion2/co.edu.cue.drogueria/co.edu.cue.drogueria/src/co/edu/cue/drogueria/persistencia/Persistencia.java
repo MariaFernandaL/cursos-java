@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import co.edu.cue.drogueria.model.Cliente;
 import co.edu.cue.drogueria.model.Drogueria;
+import co.edu.cue.drogueria.model.DrogueriaCliente;
 import co.edu.cue.drogueria.model.Empleado;
 import co.edu.cue.drogueria.model.Producto;
 import co.edu.cue.drogueria.model.Domicilio;

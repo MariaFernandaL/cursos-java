@@ -458,3 +458,7 @@ mar. 26, 2022 9:12:13 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarR
 INFORMACIÓN: GetMapping,Se muestran todos los empleados,-03-26-9-12
 mar. 26, 2022 9:13:29 A. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: GetMapping,Se muestran todos los productos,-03-26-9-13
+oct. 12, 2022 10:25:44 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los productos,-10-12-10-25
+oct. 12, 2022 10:25:52 P. M. com.drogueria.api.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: GetMapping,Se muestran todos los productos,-10-12-10-25
